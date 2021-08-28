@@ -1,5 +1,5 @@
 
-# Phy-Q: A Benchmark for Hierarchical Physical Reasoning
+# Phy-Q: A Benchmark for Physical Reasoning
 <p align="center">
 Cheng Xue*, Vimukthini Pinto*, Chathura Gamage*, Peng Zhang, Jochen Renz<br>
 School of Computing<br>
