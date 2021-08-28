@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-16"?>
+<Level width="2">
+  <Camera x="0" y="-1" minWidth="25" maxWidth="35" />
+  <Score highScore="0" />
+  <Birds>
+    <Bird type="BirdRed" />
+  </Birds>
+  <Slingshot x="-12.0" y="-2.5" />
+  <GameObjects>
+    <Block type="RectBig" material="stone" x="-3.85601" y="-0.69486" rotation="359.7365" />
+    <Block type="TriangleHole" material="ice" x="-4.795" y="-1.19961" rotation="0.1635" />
+    <Block type="TriangleHole" material="stone" x="-3.73998" y="-1.19983" rotation="0.1655" />
+    <Block type="Circle" material="stone" x="-3.95979" y="-0.21189" rotation="359.7201" />
+    <Block type="SquareHole" material="stone" x="-3.80001" y="1.56059" rotation="0.31444" />
+    <Block type="RectBig" material="stone" x="-4.01928" y="2.05606" rotation="359.6061" />
+    <Block type="SquareHole" material="ice" x="-4.80826" y="1.5624" rotation="90.19112" />
+    <Block type="Circle" material="stone" x="-3.99" y="2.53812" rotation="359.5839" />
+    <Block type="SquareHole" material="stone" x="-6.05" y="3.63386" rotation="0.29939" />
+    <Block type="SquareHole" material="ice" x="-8.59915" y="3.63375" rotation="0.12281" />
+    <Block type="Circle" material="stone" x="-7.22999" y="3.62245" rotation="0.01577" />
+    <Pig type="BasicSmall" x="-5.83998" y="-3.26387" rotation="1.07234" />
+    <Platform type="Platform" x="-3.581" y="-1.67" rotation="0" scaleX="4.98179" scaleY="0.225" />
+    <Platform type="Platform" x="-3.654" y="1.1" rotation="0" scaleX="5.02874" scaleY="0.186" />
+    <Platform type="Platform" x="-6.258" y="-3.035" rotation="0" scaleX="0.23621" scaleY="1.55761" />
+    <Platform type="Platform" x="-7.1444" y="3.17" rotation="0" scaleX="5.81249" scaleY="0.195" />
+    <Platform type="Platform" x="-6.152" y="-2.326" rotation="327.658" scaleX="0.19794" scaleY="0.78348" />
+    <Platform type="Platform" x="-8.964" y="2.2152" rotation="90" scaleX="3.16442" scaleY="0.195" />
+    <Platform type="Platform" x="-4.152" y="-3.58" rotation="0" scaleX="6.76527" scaleY="0.225" />
+  </GameObjects>
+</Level>

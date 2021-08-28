@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-16"?>
+<Level width="2">
+  <Camera x="0" y="-1" minWidth="25" maxWidth="35" />
+  <Score highScore="0" />
+  <Birds>
+    <Bird type="BirdRed" />
+    <Bird type="BirdRed" />
+  </Birds>
+  <Slingshot x="-12.0" y="-2.5" />
+  <GameObjects>
+    <Block type="RectBig" material="wood" x="-3.14115" y="2.16863" rotation="89.99625" />
+    <Block type="RectBig" material="wood" x="-3.08834" y="3.63932" rotation="359.7639" />
+    <Block type="CircleSmall" material="wood" x="-3.12978" y="1.01499" rotation="-0.00296" />
+    <Block type="CircleSmall" material="wood" x="-1.03388" y="1.0151" rotation="0.04962" />
+    <Block type="CircleSmall" material="wood" x="-3.13631" y="3.33662" rotation="359.9912" />
+    <Block type="Circle" material="wood" x="-3.97" y="5.01006" rotation="0.01875" />
+    <Block type="Circle" material="wood" x="2.1" y="1.18006" rotation="0.02206" />
+    <Block type="Circle" material="stone" x="0.81" y="1.18006" rotation="0.02206" />
+    <Block type="Circle" material="stone" x="-2.13" y="5.01002" rotation="0.0072" />
+    <Block type="Circle" material="ice" x="-0.43002" y="5.01042" rotation="0.13411" />
+    <Pig type="BasicSmall" x="-1.61011" y="1.02668" rotation="0.70401" />
+    <Pig type="BasicSmall" x="2.19004" y="-0.87392" rotation="1.10644" />
+    <Pig type="BasicSmall" x="-2.27996" y="1.02767" rotation="2.37319" />
+    <Platform type="Platform" x="-2.19" y="4.3" rotation="0" scaleX="7.459" scaleY="1" />
+    <Platform type="Platform" x="-0.16" y="2.0892" rotation="0" scaleX="1" scaleY="6.09809" />
+    <Platform type="Platform" x="-0.03" y="0.47" rotation="0" scaleX="9.82785" scaleY="1" />
+    <Platform type="Platform" x="2.78" y="-0.76" rotation="0" scaleX="1" scaleY="3.05021" />
+    <Platform type="Platform" x="-0.725" y="-1.43" rotation="0" scaleX="11.96723" scaleY="1" />
+    <Platform type="Platform" x="-4.61" y="-1.095" rotation="0" scaleX="1" scaleY="2.05365" />
+    <Platform type="Platform" x="-3.04" y="0.0605" rotation="0" scaleX="0.437" scaleY="1.03239" />
+  </GameObjects>
+</Level>
