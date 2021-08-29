@@ -18,7 +18,7 @@ Humans are well-versed in reasoning about the behaviors of physical objects when
 ---
 #### Table of contents
 1. [Physical Scenarios in Phy-Q](#Scenarios)
-2. [Hi-Phy in Angry Birds](#Hi-Phy)
+2. [Phy-Q in Angry Birds](#Phy-Q)
 3. [Task Generator](#Task-generator)
 4. [Tasks generted for the baseline analysis](#Tasks-generated-for-baselines)
 5. [Baseline Agents](#BAF)
@@ -58,7 +58,7 @@ We consider 15 physical scenarios in Phy-Q benchmark. Firstly, we consider the b
    15. **Manoeuvring:** Powers of objects need to be activated correctly to reach a target.
 
 ## 2. Phy-Q in Angry Birds
-<a name="Hi-Phy"/></a>
+<a name="Phy-Q"/></a>
 Based on the above physical scenarios, we develop Phy-Q benchmark in Angry Birds. Phy-Q contains tasks from 75 task templates belonging to the fifteen scenarios. The goal of an agent is to destroy all the pigs (green-coloured objects) in the tasks by shooting a given number of birds from the slingshot. Shown below are fifteen example tasks in Phy-Q representing the fifteen scenarios and the solutions for those tasks.
 
 | Task             |  Description |
@@ -811,7 +811,7 @@ simple description. Detailed documentation in progress):
 
 ## 7.Human Player Data 
 <a name="HumanPlayerData"/></a>
-The human player data on Hi-Phy is given in ```human_player_data.zip```. This includes summarized data for 20 players. Each .csv file is for a player and the following are the columns.
+The human player data on Phy-Q is given in ```human_player_data.zip```. This includes summarized data for 20 players. Each .csv file is for a player and the following are the columns.
 1.	levelIndex: The index assigned to the task 
 2.	levelName: The name of the task 
 3.	attempts: Number of attempts taken to solve the task
