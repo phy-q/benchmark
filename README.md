@@ -1,7 +1,7 @@
 
 # Phy-Q: A Benchmark for Physical Reasoning
 <p align="center">
-Cheng Xue*, Vimukthini Pinto*, Chathura Gamage*, Peng Zhang, Jochen Renz<br>
+Cheng Xue*, Vimukthini Pinto*, Chathura Gamage*, Ekaterina Nikonova, Peng Zhang, Jochen Renz<br>
 School of Computing<br>
 The Australian National University<br>
 Canberra, Australia<br>
@@ -9,27 +9,13 @@ Canberra, Australia<br>
 {p.zhang, jochen.renz}@anu.edu.au
  </p>
 
-Reasoning about the behaviour of physical objects is a key capability of agents operating in physical worlds. Humans are
-very experienced in physical reasoning while it remains a major challenge for AI. To facilitate research addressing this
-problem, several benchmarks have been proposed recently. However, these benchmarks do not enable us to measure an
-agent's granular physical reasoning capabilities when solving a complex reasoning task. In this paper, we propose a new
-benchmark for physical reasoning that allows us to test individual physical reasoning capabilities. Inspired by how
-humans acquire these capabilities, we propose a general hierarchy of physical reasoning capabilities with increasing
-complexity. Our benchmark tests capabilities according to this hierarchy through generated physical reasoning tasks in
-the video game Angry Birds. This benchmark enables us to conduct a comprehensive agent evaluation by measuring the
-agent's granular physical reasoning capabilities. We conduct an evaluation with human players, learning agents, and
-heuristic agents and determine their capabilities. Our evaluation shows that learning agents, with good local
-generalization ability, still struggle to learn the underlying physical reasoning capabilities and perform worse than
-current state-of-the-art heuristic agents and humans. We believe that this benchmark will encourage researchers to
-develop intelligent agents with advanced, human-like physical reasoning capabilities.
+Humans are well-versed in reasoning about the behaviors of physical objects when choosing actions to accomplish tasks, while it remains a major challenge for AI. To facilitate research addressing this problem, we propose a new benchmark that requires an agent to reason about physical scenarios and take an action accordingly. Inspired by the physical knowledge acquired in infancy and the capabilities required for robots to operate in real-world environments, we identify 15 essential physical scenarios. For each scenario, we create a wide variety of distinct task templates, and we ensure all the task templates within the same scenario can be solved by using one specific physical rule. By having such a design, we evaluate two distinct levels of generalization, namely the local generalization and the broad generalization. We conduct an extensive evaluation with human players, learning agents with varying input types and architectures, and heuristic agents with different strategies. The benchmark gives a Phy-Q (physical reasoning quotient) score that reflects the physical reasoning ability of the agents. Our evaluation shows that 1) all agents fail to reach human performance, and 2) learning agents, even with good local generalization ability, struggle to learn the underlying physical reasoning rules and fail to generalize broadly. We encourage the development of intelligent agents with broad generalization abilities in physical domains.
 
 \* equal contribution
 
-link of the paper: https://arxiv.org/abs/2106.09692
-
 ---
 #### Table of contents
-1. [Hierarchy](#Hierarchy)
+1. [Physical Scenarios in Phy-Q](#Scenarios)
 2. [Hi-Phy in Angry Birds](#Hi-Phy)
 3. [Task Generator](#Task-generator)
 4. [Tasks generted for the baseline analysis](#Tasks-generated-for-baselines)
@@ -49,48 +35,28 @@ link of the paper: https://arxiv.org/abs/2106.09692
 
 
 
-## 1.Hierarchy 
-<a name="Hierarchy"/></a>
-Humans and AI approaches learn much better when examples are presented in a meaningful order with increasing complexity
-than when examples are presented randomly. We thereby propose a hierarchy for physical reasoning that enables an agent
-to start with increasing complexity to facilitate training and evaluating agents to work in the real physical world.
+## 1.Physical Scenarios in Phy-Q 
+<a name="Scenarios"/></a>
+We consider 15 physical scenarios in Phy-Q benchmark. Firstly, we consider the basic physical scenarios associated with applying forces directly on the target objects, i.e., the effect of a single force and the effect of multiple forces. On top of simple forces application, we also include the scenarios associated with more complex motion including rolling, falling, sliding, and bouncing, which are inspired by the physical reasoning capabilities developed in human infancy. Furthermore, we define the objects' relative weight, the relative height, the relative width, the shape differences, and the stability scenarios, which require physical reasoning abilities infants acquire typically in a later stage. On the other hand, we also incorporate clearing path, adequate timing, and tool usage capabilities, and taking non-greedy actions, which are required to overcome challenges for robots to work safely and efficiently in physical environments. To sum up, the physical scenarios we consider and the corresponding physical rules that can use to achieve the goal of the associated tasks are:
+    1. **Single force:** Some target objects can be destroyed with a single force.
+    2. **Multiple forces:** Some target objects need multiple forces to destroy.
+    3. **Rolling:** Circular objects can be rolled along a surface to a target.
+    4. **Falling:** Objects can be fallen on to a target.
+    5. **Sliding:** Non-circular objects can be slid along a surface to a target.
+    6. **Bouncing:** Objects can be bounced off a surface to reach a target.
+    7. **Relative weight:** Objects with correct weight need to be moved to reach a target.
+    8. **Relative height:** Objects with correct height need to be moved to reach a target.
+    9. **Relative width:** Objects with correct width or the opening with correct width should be selected164to reach a target.
+    10. **Shape difference:** Objects with correct shape need to be moved/destroyed to reach a target.
+    11. **Non-greedy actions:** Actions need to be selected in the correct order based on physical conse-167quences. The immediate action may be less effective in the short term 				but advantageous in long term. i.e., reach less targets in the short term to reach more targets later.
+    12. **Structural analysis:** The correct target needs to be chosen to break the stability of a structure.
+    13. **Clearing paths:** A path needs to be created before the target can be reached.
+    14. **Adequate timing:** Correct actions need to be performed within time constraints.
+    15. **Manoeuvring:** Powers of objects need to be activated correctly to reach a target.
 
-Our hierarchy consists three levels and fifteen capabilities:
-
-**Level 1: Understanding the instant effect of the first force applied to objects in an environment as a result of an
-agent's action.**
-
-    Level 1 capabilities:
-    1.1: Understanding the instant effect of objects in an environment when an agent applies a single force.
-    1.2: Understanding the instant effect of objects in an environment when an agent applies multiple forces.
-
-**Level 2: Understanding objects movement in the environment after a force is applied.**
-
-    Level 2 capabilities:
-    2.1: Understanding that objects in the environment may roll.
-    2.2: Understanding that objects in the environment may fall.
-    2.3: Understanding that objects in the environment may slide.
-    2.4: Understanding that objects in the environment may bounce.
-
-**Level 3: Performing in tasks that require capabilities 1) human developed in infancy, 2) required in robotics to develop agents that
-work alongside people, and 3) currently fall short in reinforcement learning.**
-
-    Level 3 capabilities:
-    3.1: Understanding relative weight of objects.
-    3.2: Understanding relative height of objects.
-    3.3: Understanding relative width of objects.
-    3.4: Understanding shape difference of objects.
-    3.5: Understanding how to perform non-greedy actions.
-    3.6: Understanding structural weak points/stability.
-    3.7: Understanding how to clear a path towards the goal.
-    3.8: Understanding how to perform actions with adequate timing.
-    3.9: Understanding how to use tools.
-
-Please refer to the paper for more details how and why we attributed the capabilities in this way.
-
-## 2. Hi-Phy in Angry Birds
+## 2. Phy-Q in Angry Birds
 <a name="Hi-Phy"/></a>
-Based on the proposed hierarchy, we develop Hi-Phy benchmark in Angry Birds. Hi-Phy contains tasks from 65 task templates belonging to the fifteen capabilities. The goal of an agent is to destroy all the pigs (green-coloured objects) in the tasks by shooting a given number of birds from the slingshot. Shown below are fifteen example tasks in Hi-Phy representing the fifteen capabilities and the solutions for those tasks. 
+Based on the above physical scenarios, we develop Phy-Q benchmark in Angry Birds. Phy-Q contains tasks from 75 task templates belonging to the fifteen scenarios. The goal of an agent is to destroy all the pigs (green-coloured objects) in the tasks by shooting a given number of birds from the slingshot. Shown below are fifteen example tasks in Phy-Q representing the fifteen scenarios and the solutions for those tasks.
 
 | Task             |  Description |
 :-------------------------:|:-----------
