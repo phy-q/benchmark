@@ -1,6 +1,7 @@
 <center><h1>Phy-Q: A Benchmark for Physical Reasoning</h1></center>
 
 <p align="center">
+<h1>Phy-Q: A Benchmark for Physical Reasoning</h1>
 Cheng Xue*, Vimukthini Pinto*, Chathura Gamage*, Ekaterina Nikonova, Peng Zhang, Jochen Renz<br>
 School of Computing<br>
 The Australian National University<br>
