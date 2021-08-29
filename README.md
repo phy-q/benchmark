@@ -40,8 +40,7 @@ Humans are well-versed in reasoning about the behaviors of physical objects when
 ## 1.Physical Scenarios in Phy-Q 
 <a name="Scenarios"/></a>
 We consider 15 physical scenarios in Phy-Q benchmark. Firstly, we consider the basic physical scenarios associated with applying forces directly on the target objects, i.e., the effect of a single force and the effect of multiple forces. On top of simple forces application, we also include the scenarios associated with more complex motion including rolling, falling, sliding, and bouncing, which are inspired by the physical reasoning capabilities developed in human infancy. Furthermore, we define the objects' relative weight, the relative height, the relative width, the shape differences, and the stability scenarios, which require physical reasoning abilities infants acquire typically in a later stage. On the other hand, we also incorporate clearing path, adequate timing, and tool usage capabilities, and taking non-greedy actions, which are required to overcome challenges for robots to work safely and efficiently in physical environments. To sum up, the physical scenarios we consider and the corresponding physical rules that can use to achieve the goal of the associated tasks are:
-
-    1. Single force: Some target objects can be destroyed with a single force.
+    1. **Single force:** Some target objects can be destroyed with a single force.
     2. **Multiple forces:** Some target objects need multiple forces to destroy.
     3. **Rolling:** Circular objects can be rolled along a surface to a target.
     4. **Falling:** Objects can be fallen on to a target.
@@ -51,7 +50,7 @@ We consider 15 physical scenarios in Phy-Q benchmark. Firstly, we consider the b
     8. **Relative height:** Objects with correct height need to be moved to reach a target.
     9. **Relative width:** Objects with correct width or the opening with correct width should be selected164to reach a target.
     10. **Shape difference:** Objects with correct shape need to be moved/destroyed to reach a target.
-    11. **Non-greedy actions:** Actions need to be selected in the correct order based on physical conse-167quences. The immediate action may be less effective in the short term 				but advantageous in long term. i.e., reach less targets in the short term to reach more targets later.
+    11. **Non-greedy actions:** Actions need to be selected in the correct order based on physical consequences. The immediate action may be less effective in the short term but advantageous in long term. i.e., reach less targets in the short term to reach more targets later.
     12. **Structural analysis:** The correct target needs to be chosen to break the stability of a structure.
     13. **Clearing paths:** A path needs to be created before the target can be reached.
     14. **Adequate timing:** Correct actions need to be performed within time constraints.
