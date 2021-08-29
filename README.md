@@ -1,4 +1,4 @@
-#Phy-Q: A Benchmark for Physical Reasoning
+# Phy-Q: A Benchmark for Physical Reasoning
 
 <p align="center">
 Cheng Xue*, Vimukthini Pinto*, Chathura Gamage*, Ekaterina Nikonova, Peng Zhang, Jochen Renz<br>
