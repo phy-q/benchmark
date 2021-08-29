@@ -83,146 +83,168 @@ Sceenshots of the 75 task templates are shown below.
 
 <table align="center">
 <tr>
-	<td><img src="tasks/example_tasks/images/1.1.1.png" width="500"/></td>
-	<td><img src="tasks/example_tasks/images/1.1.2.png" width="500"/></td>
 	<td><img src="tasks/example_tasks/images/1.1.3.png" width="500"/></td>
+	<td><img src="tasks/example_tasks/images/1.1.4.png" width="500"/></td>
+	<td><img src="tasks/example_tasks/images/1.1.5.png" width="500"/></td>
 </tr>
 <tr align="center">
-	<td> 1.1.1 </td>
-	<td> 1.1.2 </td>
-	<td> 1.1.3 </td>
+	<td> 1.1 </td>
+	<td> 1.2 </td>
+	<td> 1.3 </td>
 </tr>
 	
 <tr>
-	<td><img src="tasks/example_tasks/images/1.2.1.png" width="500"/></td>
-	<td><img src="tasks/example_tasks/images/1.2.2.png" width="500"/></td>
+	<td><img src="tasks/example_tasks/images/1.1.1.png" width="500"/></td>
+	<td><img src="tasks/example_tasks/images/1.1.2.png" width="500"/></td>
 	<td><img src="tasks/example_tasks/images/1.2.3.png" width="500"/></td>
 </tr>
 <tr align="center">
-	<td> 1.2.1 </td>
-	<td> 1.2.2 </td>
-	<td> 1.2.3 </td>
+	<td> 1.4 </td>
+	<td> 1.5 </td>
+	<td> 2.1 </td>
 </tr>
 	
 <tr>
 	<td><img src="tasks/example_tasks/images/1.2.4.png" width="500"/></td>
 	<td><img src="tasks/example_tasks/images/1.2.5.png" width="500"/></td>
-	<td><img src="tasks/example_tasks/images/2.1.1.png" width="500"/></td>
+	<td><img src="tasks/example_tasks/images/1.2.1.png" width="500"/></td>
 </tr>
 <tr align="center">
-	<td> 1.2.4 </td>
-	<td> 1.2.5 </td>
-	<td> 2.1.1 </td>
-</tr>
-
-<tr>
-	<td><img src="tasks/example_tasks/images/2.1.2.png" width="500"/></td>
-	<td><img src="tasks/example_tasks/images/2.1.3.png" width="500"/></td>
-	<td><img src="tasks/example_tasks/images/2.1.4.png" width="500"/></td>
-</tr>
-<tr align="center">
-	<td> 2.1.2 </td>
-	<td> 2.1.3 </td>
-	<td> 2.1.4 </td>
+	<td> 2.2 </td>
+	<td> 2.3 </td>
+	<td> 2.4 </td>
 </tr>
 	
 <tr>
+	<td><img src="tasks/example_tasks/images/1.2.2.png" width="500"/></td>
+	<td><img src="tasks/example_tasks/images/2.1.2.png" width="500"/></td>
 	<td><img src="tasks/example_tasks/images/2.1.5.png" width="500"/></td>
+</tr>
+<tr align="center">
+	<td> 2.5 </td>
+	<td> 3.1 </td>
+	<td> 3.2 </td>
+</tr>
+
+<tr>
+	<td><img src="tasks/example_tasks/images/2.1.6.png" width="500"/></td>
+	<td><img src="tasks/example_tasks/images/2.1.1.png" width="500"/></td>
+	<td><img src="tasks/example_tasks/images/2.1.3.png" width="500"/></td>
+</tr>
+<tr align="center">
+	<td> 3.3 </td>
+	<td> 3.4 </td>
+	<td> 3.5 </td>
+</tr>
+	
+<tr>	
+	<td><img src="tasks/example_tasks/images/2.1.4.png" width="500"/></td>
+	<td><img src="tasks/example_tasks/images/2.2.3.png" width="500"/></td>
+	<td><img src="tasks/example_tasks/images/2.2.4.png" width="500"/></td>
+</tr>
+<tr align="center">
+	<td> 3.6 </td>
+	<td> 4.1 </td>
+	<td> 4.2 </td>
+</tr>	
+	
+<tr>
+	<td><img src="tasks/example_tasks/images/2.2.5.png" width="500"/></td>
 	<td><img src="tasks/example_tasks/images/2.2.1.png" width="500"/></td>
 	<td><img src="tasks/example_tasks/images/2.2.2.png" width="500"/></td>
 </tr>
 <tr align="center">
-	<td> 2.1.5 </td>
-	<td> 2.2.1 </td>
-	<td> 2.2.2 </td>
-</tr>	
-	
-<tr>
-	<td><img src="tasks/example_tasks/images/2.2.3.png" width="500"/></td>
-	<td><img src="tasks/example_tasks/images/2.2.4.png" width="500"/></td>
-	<td><img src="tasks/example_tasks/images/2.2.5.png" width="500"/></td>
-</tr>
-<tr align="center">
-	<td> 2.2.3 </td>
-	<td> 2.2.4 </td>
-	<td> 2.2.5 </td>
+	<td> 4.3 </td>
+	<td> 4.4 </td>
+	<td> 4.5 </td>
 </tr>
 	
 <tr>
 	<td><img src="tasks/example_tasks/images/2.3.1.png" width="500"/></td>
-	<td><img src="tasks/example_tasks/images/2.3.2.png" width="500"/></td>
-	<td><img src="tasks/example_tasks/images/2.3.3.png" width="500"/></td>
+	<td><img src="tasks/example_tasks/images/2.3.4.png" width="500"/></td>
+	<td><img src="tasks/example_tasks/images/2.3.5.png" width="500"/></td>
 </tr>
 <tr align="center">
-	<td> 2.3.1 </td>
-	<td> 2.3.2 </td>
-	<td> 2.3.3 </td>
+	<td> 5.1 </td>
+	<td> 5.2 </td>
+	<td> 5.3 </td>
 </tr>
 
 <tr>
-	<td><img src="tasks/example_tasks/images/2.3.4.png" width="500"/></td>
-	<td><img src="tasks/example_tasks/images/2.4.1.png" width="500"/></td>
+	<td><img src="tasks/example_tasks/images/2.3.2.png" width="500"/></td>
+	<td><img src="tasks/example_tasks/images/2.3.3.png" width="500"/></td>
 	<td><img src="tasks/example_tasks/images/2.4.2.png" width="500"/></td>
 </tr>
 <tr align="center">
-	<td> 2.3.4 </td>
-	<td> 2.4.1 </td>
-	<td> 2.4.2 </td>
+	<td> 5.4 </td>
+	<td> 5.5 </td>
+	<td> 6.1 </td>
 </tr>
 	
 <tr>
-	<td><img src="tasks/example_tasks/images/2.4.3.png" width="500"/></td>
-	<td><img src="tasks/example_tasks/images/3.1.1.png" width="500"/></td>
-	<td><img src="tasks/example_tasks/images/3.1.2.png" width="500"/></td>
+	<td><img src="tasks/example_tasks/images/2.4.5.png" width="500"/></td>
+	<td><img src="tasks/example_tasks/images/2.4.6.png" width="500"/></td>
+	<td><img src="tasks/example_tasks/images/2.4.1.png" width="500"/></td>
 </tr>
 <tr align="center">
-	<td> 2.4.3 </td>
-	<td> 3.1.1 </td>
-	<td> 3.1.2 </td>
+	<td> 6.2 </td>
+	<td> 6.3 </td>
+	<td> 6.4 </td>
+</tr>	
+
+<tr>
+	<td><img src="tasks/example_tasks/images/2.4.3.png" width="500"/></td>
+	<td><img src="tasks/example_tasks/images/2.4.4.png" width="500"/></td>
+	<td><img src="tasks/example_tasks/images/3.1.1.png" width="500"/></td>
+</tr>
+<tr align="center">
+	<td> 6.5 </td>
+	<td> 6.6 </td>
+	<td> 7.1 </td>
 </tr>	
 	
 <tr>
+	<td><img src="tasks/example_tasks/images/3.1.2.png" width="500"/></td>
 	<td><img src="tasks/example_tasks/images/3.1.3.png" width="500"/></td>
 	<td><img src="tasks/example_tasks/images/3.1.4.png" width="500"/></td>
-	<td><img src="tasks/example_tasks/images/3.1.5.png" width="500"/></td>
 </tr>
 <tr align="center">
-	<td> 3.1.3 </td>
-	<td> 3.1.4 </td>
-	<td> 3.1.5 </td>
+	<td> 7.2 </td>
+	<td> 7.3 </td>
+	<td> 7.4 </td>
 </tr>
 	
 <tr>
-	<td><img src="tasks/example_tasks/images/3.2.1.png" width="500"/></td>
+	<td><img src="tasks/example_tasks/images/3.1.5.png" width="500"/></td>
 	<td><img src="tasks/example_tasks/images/3.2.2.png" width="500"/></td>
-	<td><img src="tasks/example_tasks/images/3.2.3.png" width="500"/></td>
+	<td><img src="tasks/example_tasks/images/3.2.4.png" width="500"/></td>
 </tr>
 <tr align="center">
-	<td> 3.2.1 </td>
-	<td> 3.2.2 </td>
-	<td> 3.2.3 </td>
+	<td> 7.5 </td>
+	<td> 8.1 </td>
+	<td> 8.2 </td>
 </tr>
 
 <tr>
-	<td><img src="tasks/example_tasks/images/3.2.4.png" width="500"/></td>
-	<td><img src="tasks/example_tasks/images/3.3.1.png" width="500"/></td>
+	<td><img src="tasks/example_tasks/images/3.2.1.png" width="500"/></td>
+	<td><img src="tasks/example_tasks/images/3.2.3.png" width="500"/></td>
 	<td><img src="tasks/example_tasks/images/3.3.2.png" width="500"/></td>
 </tr>
 <tr align="center">
-	<td> 3.2.4 </td>
-	<td> 3.3.1 </td>
-	<td> 3.3.2 </td>
+	<td> 8.3 </td>
+	<td> 8.4 </td>
+	<td> 9.1 </td>
 </tr>
 
 <tr>
-	<td><img src="tasks/example_tasks/images/3.3.3.png" width="500"/></td>
 	<td><img src="tasks/example_tasks/images/3.3.4.png" width="500"/></td>
-	<td><img src="tasks/example_tasks/images/3.4.1.png" width="500"/></td>
+	<td><img src="tasks/example_tasks/images/3.3.1.png" width="500"/></td>
+	<td><img src="tasks/example_tasks/images/3.3.3.png" width="500"/></td>
 </tr>
 <tr align="center">
-	<td> 3.3.3 </td>
-	<td> 3.3.4 </td>
-	<td> 3.4.1 </td>
+	<td> 9.2 </td>
+	<td> 9.3 </td>
+	<td> 9.4 </td>
 </tr>
 
 <tr>
