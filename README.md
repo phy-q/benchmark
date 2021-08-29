@@ -49,7 +49,7 @@ We consider 15 physical scenarios in Phy-Q benchmark. Firstly, we consider the b
    6. **Bouncing:** Objects can be bounced off a surface to reach a target.
    7. **Relative weight:** Objects with correct weight need to be moved to reach a target.
    8. **Relative height:** Objects with correct height need to be moved to reach a target.
-   9. **Relative width:** Objects with correct width or the opening with correct width should be selected164to reach a target.
+   9. **Relative width:** Objects with correct width or the opening with correct width should be selected to reach a target.
    10. **Shape difference:** Objects with correct shape need to be moved/destroyed to reach a target.
    11. **Non-greedy actions:** Actions need to be selected in the correct order based on physical consequences. The immediate action may be less effective in the short term but advantageous in long term. i.e., reach less targets in the short term to reach more targets later.
    12. **Structural analysis:** The correct target needs to be chosen to break the stability of a structure.
@@ -79,7 +79,7 @@ Based on the above physical scenarios, we develop Phy-Q benchmark in Angry Birds
 <img src="tasks/example_tasks/videos/3.8.1.gif" width="2000"/> | 14: Adequate timing: First, the two circular objects are needed to be rolled to the ramp. Then, after the first circle passes the prop and before the second circle reaches the prop, the prop needs to be destroyed to make the second circle fall onto the lower pig.
 <img src="tasks/example_tasks/videos/3.9.4.gif" width="2000"/> | 15: Manoeuvring: The blue bird splits into three other birds when it is tapped in the flight. The blue bird is needed to be tapped at the correct position to manoeuvre the birds to reach the two separated pigs.
 
-Sceenshots of the 65 task templates are shown below. x.y.z represents the z<sup>th</sup> task template of the y<sup>th</sup> capability of the x<sup>th</sup> hierarchy level .
+Sceenshots of the 75 task templates are shown below.
 
 <table align="center">
 <tr>
