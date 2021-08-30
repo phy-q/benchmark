@@ -891,7 +891,7 @@ The human player data on Phy-Q is given in ```human_player_data.zip```. This inc
 2.	attempts: Number of attempts taken to solve the task (The value is given as 100 if the task is not solved)
 3.	time_breakdown: Thinking time taken for each attempt (e.g. {1: 27, 2: 14}: Player has taken two attempts to solve the task. Time taken in the first attempt is 27 seconds and time taken for the second attempt is 14 seconds)
 4.	total_time: Total thinking time taken to for all attempts (calculated only for 5 attempts)
-5.	average_rate: The calculated pass rate (e.g. if the player solved the task in the first attempt, the value is given as 1/5. If the player has taken more than 5 attempts, the value is 0) 
+5.	average_rate: The calculated pass rate (e.g. if the player solved the task in the first attempt, the value is given as 1.0 i.e., (6-1)/5. If the player has taken more than 5 attempts, the value is 0) 
 6.	scenario: The index of the physical scenario of the task 
 
 
