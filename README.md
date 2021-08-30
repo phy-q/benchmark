@@ -847,13 +847,10 @@ simple description. Detailed documentation in progress):
 <a name="HumanPlayerData"/></a>
 The human player data on Phy-Q is given in ```human_player_data.zip```. This includes summarized data for 20 players. Each .csv file is for a player and the following are the columns.
 1.	levelIndex: The index assigned to the task 
-2.	levelName: The name of the task 
-3.	attempts: Number of attempts taken to solve the task
-4.	total_thinking_time: Total thinking time taken to solve the task
-5.	time_breakdown: Thinking time taken for each attempt (e.g. {1: 27, 2: 14}: Player has taken two attempts to solve the task. Time taken in the first attempt is 27 seconds and time taken for the second attempt is 14 seconds)
-6.	hierachy_level: The level of the hierarchy 
-7.	capability: The index of the capability
-8.	h_c: The index of the hierarchy and the capability (e.g. 2_3: hierarchy level 2, capability 3) 
-
+2.	attempts: Number of attempts taken to solve the task (The value is given as 100 if the task is not solved)
+3.	time_breakdown: Thinking time taken for each attempt (e.g. {1: 27, 2: 14}: Player has taken two attempts to solve the task. Time taken in the first attempt is 27 seconds and time taken for the second attempt is 14 seconds)
+4.	total_time: Total thinking time taken to for all attempts (calculated only for 5 attempts)
+5.	average_rate: The calculated pass rate (e.g. if the player solved the task in the first attempt, the value is given as 1/5. If the player has taken more than 5 attempts, the value is 0) 
+6.	scenario: The index of the physical scenario of the task 
 
 
