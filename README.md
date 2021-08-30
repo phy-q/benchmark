@@ -452,8 +452,8 @@ Before running agents, please:
     ```sh
     ./TrainLearningAgent.sh benchmark
     ```
-3. Models will be saved to ```Agents/LearningAgents/saved_model```
-4. To test learning agents, go the folder ```Agents```:
+3. Models will be saved to ```sciencebirdsagents/LearningAgents/saved_model```
+4. To test learning agents, go the folder ```sciencebirdsagents```:
     1. test within template performance, run
     ```
     python TestAgentOfflineWithinTemplate.py
@@ -519,7 +519,7 @@ for level_idx in level_list:
     
 ### 5.4 Outline of the Agent Code <a name="Code"></a>
 
-The ```./Agents``` folder contains all the relevant source code of our agents. Below is the outline of the code (this is a
+The ```./sciencebirdsagents``` folder contains all the relevant source code of our agents. Below is the outline of the code (this is a
 simple description. Detailed documentation in progress):
 
 1. ```Client```:
@@ -555,8 +555,7 @@ simple description. Detailed documentation in progress):
        usage.
     6. ```Parameters.py```: Training/testing parameters used to pass to the agent.
     7. ```PrepareTestConfig.py```: Script to generate config file for the game console to use for testing agents only.
-    8. ```trajectory_planner.py```:  It calculates two possible trajectories given a directly reachable target point. It
-       returns None if the target is non-reachable by the bird
+    8. ```trajectory_planner.py```:  It calculates two possible trajectories given a directly reachable target point. It returns None if the target is non-reachable by the bird
 8. ```demo.py```: A demo to showcase how to use the framework.
 9. ```SBAgent.py```: Base class for all agents.
 10. ```MultiAgentTestOnly.py```: To test python heuristic agents with running multiple instances on one particular template.
@@ -569,6 +568,7 @@ simple description. Detailed documentation in progress):
 15. ```TrainLearningAgent.sh```: Bash Script to train DQN baseline agents to test both local and board generalization. 
 16. ```OpenAI_StableBaseline_Train.py```: Python script to run OpenAI Stable Baseline 3 agents on particular template with defined mode..
 17. ```TrainAndTestOpenAIStableBaselines.sh```: Bash script to run OpenAI Stable Baseline 3 agents to test both local and board generalization.
+18. 
 
 ## 6. Framework<a name="Framework"></a>
 
