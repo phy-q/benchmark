@@ -23,7 +23,8 @@ Humans are well-versed in reasoning about the behaviors of physical objects when
 4. [Tasks generted for the baseline analysis](#Tasks-generated-for-baselines)
 5. [Baseline Agents](#BAF)
    1. [How to run heuristic agents](#RHA)
-   2. [How to run DQN Baseline](#RLA)
+   2.1 [How to run DQN Baseline](#RLA)
+   2.1 [How to run DQN Baseline](#OLA)
    3. [How to develop your own agent](#ROA)
    4. [Outline of the Agent Code](#code)
 6. [Framework](#Framework)
@@ -396,8 +397,8 @@ Tested environments:
 
 Before running agents, please:
 
-1. Go to ```buildgame``` and unzip ```Linux.zip```
-2. Go to ```task/generated_tasks``` and unzip ```generated_tasks.zip```
+1. Go to ```sciencebirdsgames``` and unzip ```Linux.zip```
+2. Go to ```sciencebirdslevels/generated_tasks``` and unzip ```fifth_generation.zip```
 
 ### 5.1 How to run heuristic agents<a name="RHA"></a>
 
@@ -407,11 +408,11 @@ Before running agents, please:
           ```
           python PrepareTestConfig.py
           ```
-    2. Go to ```buildgame/Linux```, in terminal run
+    2. Go to ```sciencebirdsgames/Linux```, in terminal run
           ```sh
           java -jar game_playing_interface.jar
           ```
-    3. Go to ```Agents/HeuristicAgents/``` and in terminal run Datalab
+    3. Go to ```sciencebirdsagents/HeuristicAgents/``` and in terminal run Datalab
         ```sh
         java -jar datalab_037_v4_java12.jar 1
         ```
@@ -420,7 +421,7 @@ Before running agents, please:
           java -jar eaglewings_037_v3_java12.jar 1
           ```
 2. Run *Random Agent* and *Pig Shooter*: <br>
-    1. Go to ```Agents/```
+    1. Go to ```sciencebirdsagents/```
     2. In terminal, after grant execution permission run Random Agent
        ```sh
        ./TestPythonHeuristicAgent.sh RandomAgent
@@ -430,16 +431,25 @@ Before running agents, please:
        ./TestPythonHeuristicAgent.sh PigShooter
        ```
 
-### 5.2 How to run DQN Baseline<a name="RLA"></a>
+### 5.2.1 How to run DQN Baselines<a name="RLA"></a>
 
-1. Go to ```Agents/```
-2. In terminal, after grant execution permission, train the agent for within capability training
-    ```sh
-    ./TrainLearningAgent.sh within_capability
-    ```
-   and for within template training
+#### For symbolic Agent
+1. Go to ```sciencebirdsagents/Utils```
+2. Open ```Parameters.py``` and set ```agent``` to be DQNDiscreteAgent and ```network``` to be DQNSymbolicDuelingFC_v2 and ```state_repr_type``` to be "symbolic"
+
+#### For image Agent
+1. Go to ```sciencebirdsagents/Utils```
+2. Open ```Parameters.py``` and set ```agent``` to be DQNDiscreteAgent and ```network``` to be DQNImageResNet and ```state_repr_type``` to be "image"
+
+
+1. Go to ```sciencebirdsagents/```
+2. In terminal, after grant execution permission, train the agent for within template training 
     ```sh
     ./TrainLearningAgent.sh within_template
+    ```
+   and for within scenatio
+    ```sh
+    ./TrainLearningAgent.sh benchmark
     ```
 3. Models will be saved to ```Agents/LearningAgents/saved_model```
 4. To test learning agents, go the folder ```Agents```:
@@ -451,6 +461,32 @@ Before running agents, please:
     ```
     python TestAgentOfflineWithinCapability.py
     ```
+    
+
+### 5.2.2 How to run Stable Baselines 3 Agents<a name="OLA"></a>
+
+#### For symbolic Agent
+1. Go to ```sciencebirdsagents/Utils```
+2. Open ```Parameters.py``` and set ```agent``` to be "ppo" or "a2c" and ```state_repr_type``` to be "symbolic"
+
+
+#### For image Agent
+1. Go to ```sciencebirdsagents/Utils```
+2. Open ```Parameters.py``` and set ```agent``` to be "ppo" or "a2c" and ```state_repr_type``` to be "image"
+
+
+1. Go to ```sciencebirdsagents/```
+2. In terminal, after grant execution permission, train the agent for within template training 
+    ```sh
+    ./TrainAndTestOpenAIStableBaselines.sh within_template
+    ```
+   and for within scenatio
+    ```sh
+    ./TrainAndTestOpenAIStableBaselines.sh benchmark
+    ```
+3. Models will be saved to ```sciencebirdsagents/OpenAIModelCheckpoints``` and tensorboard log will be saved to ```OpenAIStableBaseline```
+    
+
 
 ### 5.3 How to develop your own agent <a name="ROA"></a>
 
