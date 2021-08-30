@@ -79,7 +79,7 @@ Based on the above physical scenarios, we develop Phy-Q benchmark in Angry Birds
 <img src="tasks/example_tasks/videos/3.8.1.gif" width="2000"/> | 14. Adequate timing: First, the two circular objects are needed to be rolled to the ramp. Then, after the first circle passes the prop and before the second circle reaches the prop, the prop needs to be destroyed to make the second circle fall onto the lower pig.
 <img src="tasks/example_tasks/videos/3.9.4.gif" width="2000"/> | 15. Manoeuvring: The blue bird splits into three other birds when it is tapped in the flight. The blue bird is needed to be tapped at the correct position to manoeuvre the birds to reach the two separated pigs.
 
-Sceenshots of the 75 task templates are shown below.
+Sceenshots of the 75 task templates are shown below. x.y represents the y<sup>th</sup> template of the x<sup>th</sup> scenario. The indexes of the scenarios are: 1. single force, 2. multiple forces, 3. rolling, 4. falling, 5. sliding, 6. bouncing, 7. relative weight, 8. relative height, 9. relative width, 10. shape difference, 11. non-greedy actions, 12. structural analysis, 13. clearing paths, 14. adequate timing, and 15. manoeuvring: 
 
 <table align="center">
 <tr>
