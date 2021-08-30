@@ -362,7 +362,7 @@ Sceenshots of the 75 task templates are shown below. x.y represents the y<sup>th
 
 ## 3. Task generator
 <a name="Task-generator"/></a>
-We develop a task generator that can generate tasks for the task templates we designed.<br>
+We develop a task generator that can generate tasks for the task templates we designed for each scenario.<br>
 1. To run the task generator:<br>
     1. Go to ```tasks/task_generator```
     2. Copy the task templates that you want to generate tasks into the ```input``` (level templates can be found in ```tasks/task_templates```)
@@ -374,10 +374,11 @@ We develop a task generator that can generate tasks for the task templates we de
 
 ## 4. Tasks generated for baseline analysis
 <a name="Tasks-generated-for-baselines"/></a>
-We generated 100 tasks from each of the 75 task templates for the baseline analysis. The generated tasks can be found in ```tasks/generated_tasks.zip```. After extracting this file, the generatd tasks can be found located in the folder structure: <br>
+We generated 100 tasks from each of the 75 task templates for the baseline analysis. We have categorized the 15 scenarios into 3 categories for convenience. The scenarios belong to each category are: category 1 (1.1 single force, 1.2 multiple forces), category 2 (2.1 rolling, 2.2 falling, 2.3 sliding, 2.4 bouncing), and category 3 (3.1 relative weight, 3.2 relative height, 3.3 relative width, 3.4 shape difference, 3.5 non-greedy actions, 3.6 structural analysis, 3.7 clearing paths, 3.8 adequate timing, and 3.9 manoeuvring). Here  x.y represents the y<sup>th</sup> scenario of the x<sup>th</sup> category. The generated tasks can be found in ```tasks/generated_tasks.zip```. After extracting this file, the generatd tasks can be found located in the folder structure: 
+<br>
 &nbsp;&nbsp;&nbsp;&nbsp;generated_tasks/<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-- index of the hierarchy level/ <br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-- index of the capability/ <br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-- index of the category/ <br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-- index of the scenario/ <br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-- index of the template/ <br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-- task files named as hierarchyLevelIndex_capabilityIndex_templateIndex_taskIndex.xml<br>	
 
