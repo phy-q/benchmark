@@ -63,21 +63,21 @@ Based on the above physical scenarios, we develop Phy-Q benchmark in Angry Birds
 
 | Task             |  Description |
 :-------------------------:|:-----------
-<img src="tasks/example_tasks/videos/1.1.1.gif" width="1000"/> | 1: Single force: A single force is needed to be applied to the pig to destroy it by a direct bird shot.
-<img src="tasks/example_tasks/videos/1.2.2.gif" width="1000"/> | 2: Multiple forces: Multiple forces are needed to be applied to destroy the pig by multiple bird shots.
-<img src="tasks/example_tasks/videos/2.1.4.gif" width="1000"/> | 3: Rolling: The circular object is needed to be rolled onto the pig, which is unreachable for the bird from the slingshot, causing the pig to be destroyed.
-<img src="tasks/example_tasks/videos/2.2.1.gif" width="1000"/> | 4: Falling: The circular object is needed to be fallen onto the pig causing the pig to be destroyed.
-<img src="tasks/example_tasks/videos/2.3.1.gif" width="1000"/> | 5: Sliding: The square object is needed to be slid to hit the pig, which is unreachable for the bird from the slingshot, causing the pig to be destroyed.
-<img src="tasks/example_tasks/videos/2.4.2.gif" width="1000"/> | 6: Bouncing: The bird is needed to be bounced off the platform (dark-brown object) to hit and destroy the pig.
-<img src="tasks/example_tasks/videos/3.1.3.gif" width="1000"/> | 7: Relative weight: The small circular block is lighter than the big circular block. Out of the two blocks, the small circular block can only be rolled to reach the pig and destroy.
-<img src="tasks/example_tasks/videos/3.2.3.gif" width="2000"/> | 8: Relative height: The square block on top of the taller rectangular block will not fall through the gap due to the height of the rectangular block. Hence the square block on top of the shorter rectangular block needs to be toppled to fall through the gap and destroy the pig.
-<img src="tasks/example_tasks/videos/3.3.3.gif" width="2000"/> | 9: Relative width: The bird cannot go through the lower entrance which has a narrow opening. Hence the bird is needed to be shot to the upper entrance to reach the pig and destroy it.
-<img src="tasks/example_tasks/videos/3.4.3.gif" width="2000"/> | 10: Shape difference: The circular block on two triangle blocks can be rolled down by breaking a one triangle block and the circular block on two square blocks cannot be rolled down by breaking a one square block. Hence, the triangle block needs to be destroyed to make the circular block roll and fall onto the pig causing the pig to be destroyed.
-<img src="tasks/example_tasks/videos/3.5.5.gif" width="2000"/> | 11: Non-greedy actions: A greedy action tries to destroy the highest number of pigs in a single bird shot. If the two pigs resting on the circular block are destroyed, then the circular block will roll down and block the entrance to reach the below pig. Hence, the below pig is needed to be destroyed first and then the upper two pigs.
-<img src="tasks/example_tasks/videos/3.6.5.gif" width="2000"/> | 12: Structural analysis: The bird is needed to be shot at the weak point of the structure to break the stability and destroy the pigs. Shooting elsewhere does not destroy the two pigs with a single bird shot.
-<img src="tasks/example_tasks/videos/3.7.5.gif" width="2000"/> | 13: Clearing paths: First, the rectangle block is needed to be positioned correctly to open the path for the circular block to reach the pig. Then the circular block is needed to be rolled to destroy the pig.
-<img src="tasks/example_tasks/videos/3.8.1.gif" width="2000"/> | 14: Adequate timing: First, the two circular objects are needed to be rolled to the ramp. Then, after the first circle passes the prop and before the second circle reaches the prop, the prop needs to be destroyed to make the second circle fall onto the lower pig.
-<img src="tasks/example_tasks/videos/3.9.4.gif" width="2000"/> | 15: Manoeuvring: The blue bird splits into three other birds when it is tapped in the flight. The blue bird is needed to be tapped at the correct position to manoeuvre the birds to reach the two separated pigs.
+<img src="tasks/example_tasks/videos/1.1.1.gif" width="1000"/> | 1. Single force: A single force is needed to be applied to the pig to destroy it by a direct bird shot.
+<img src="tasks/example_tasks/videos/1.2.2.gif" width="1000"/> | 2. Multiple forces: Multiple forces are needed to be applied to destroy the pig by multiple bird shots.
+<img src="tasks/example_tasks/videos/2.1.4.gif" width="1000"/> | 3. Rolling: The circular object is needed to be rolled onto the pig, which is unreachable for the bird from the slingshot, causing the pig to be destroyed.
+<img src="tasks/example_tasks/videos/2.2.1.gif" width="1000"/> | 4. Falling: The circular object is needed to be fallen onto the pig causing the pig to be destroyed.
+<img src="tasks/example_tasks/videos/2.3.1.gif" width="1000"/> | 5. Sliding: The square object is needed to be slid to hit the pig, which is unreachable for the bird from the slingshot, causing the pig to be destroyed.
+<img src="tasks/example_tasks/videos/2.4.2.gif" width="1000"/> | 6. Bouncing: The bird is needed to be bounced off the platform (dark-brown object) to hit and destroy the pig.
+<img src="tasks/example_tasks/videos/3.1.3.gif" width="1000"/> | 7. Relative weight: The small circular block is lighter than the big circular block. Out of the two blocks, the small circular block can only be rolled to reach the pig and destroy.
+<img src="tasks/example_tasks/videos/3.2.3.gif" width="2000"/> | 8. Relative height: The square block on top of the taller rectangular block will not fall through the gap due to the height of the rectangular block. Hence the square block on top of the shorter rectangular block needs to be toppled to fall through the gap and destroy the pig.
+<img src="tasks/example_tasks/videos/3.3.3.gif" width="2000"/> | 9. Relative width: The bird cannot go through the lower entrance which has a narrow opening. Hence the bird is needed to be shot to the upper entrance to reach the pig and destroy it.
+<img src="tasks/example_tasks/videos/3.4.3.gif" width="2000"/> | 10. Shape difference: The circular block on two triangle blocks can be rolled down by breaking a one triangle block and the circular block on two square blocks cannot be rolled down by breaking a one square block. Hence, the triangle block needs to be destroyed to make the circular block roll and fall onto the pig causing the pig to be destroyed.
+<img src="tasks/example_tasks/videos/3.5.5.gif" width="2000"/> | 11. Non-greedy actions: A greedy action tries to destroy the highest number of pigs in a single bird shot. If the two pigs resting on the circular block are destroyed, then the circular block will roll down and block the entrance to reach the below pig. Hence, the below pig is needed to be destroyed first and then the upper two pigs.
+<img src="tasks/example_tasks/videos/3.6.5.gif" width="2000"/> | 12. Structural analysis: The bird is needed to be shot at the weak point of the structure to break the stability and destroy the pigs. Shooting elsewhere does not destroy the two pigs with a single bird shot.
+<img src="tasks/example_tasks/videos/3.7.5.gif" width="2000"/> | 13. Clearing paths: First, the rectangle block is needed to be positioned correctly to open the path for the circular block to reach the pig. Then the circular block is needed to be rolled to destroy the pig.
+<img src="tasks/example_tasks/videos/3.8.1.gif" width="2000"/> | 14. Adequate timing: First, the two circular objects are needed to be rolled to the ramp. Then, after the first circle passes the prop and before the second circle reaches the prop, the prop needs to be destroyed to make the second circle fall onto the lower pig.
+<img src="tasks/example_tasks/videos/3.9.4.gif" width="2000"/> | 15. Manoeuvring: The blue bird splits into three other birds when it is tapped in the flight. The blue bird is needed to be tapped at the correct position to manoeuvre the birds to reach the two separated pigs.
 
 Sceenshots of the 75 task templates are shown below.
 
@@ -249,100 +249,113 @@ Sceenshots of the 75 task templates are shown below.
 
 <tr>
 	<td><img src="tasks/example_tasks/images/3.4.2.png" width="500"/></td>
-	<td><img src="tasks/example_tasks/images/3.4.3.png" width="500"/></td>
 	<td><img src="tasks/example_tasks/images/3.4.4.png" width="500"/></td>
+	<td><img src="tasks/example_tasks/images/3.4.1.png" width="500"/></td>
 </tr>
 <tr align="center">
-	<td> 3.4.2 </td>
-	<td> 3.4.3 </td>
-	<td> 3.4.4 </td>
+	<td> 10.1 </td>
+	<td> 10.2 </td>
+	<td> 10.3 </td>
 </tr>
 
 <tr>
-	<td><img src="tasks/example_tasks/images/3.5.1.png" width="500"/></td>
+	<td><img src="tasks/example_tasks/images/3.4.3.png" width="500"/></td>
 	<td><img src="tasks/example_tasks/images/3.5.2.png" width="500"/></td>
 	<td><img src="tasks/example_tasks/images/3.5.3.png" width="500"/></td>
 </tr>
 <tr align="center">
-	<td> 3.5.1 </td>
-	<td> 3.5.2 </td>
-	<td> 3.5.3 </td>
+	<td> 10.4 </td>
+	<td> 11.1 </td>
+	<td> 11.2 </td>
 </tr>
 
 <tr>
 	<td><img src="tasks/example_tasks/images/3.5.4.png" width="500"/></td>
+	<td><img src="tasks/example_tasks/images/3.5.1.png" width="500"/></td>
 	<td><img src="tasks/example_tasks/images/3.5.5.png" width="500"/></td>
-	<td><img src="tasks/example_tasks/images/3.6.1.png" width="500"/></td>
 </tr>
 <tr align="center">
-	<td> 3.5.4 </td>
-	<td> 3.5.5 </td>
-	<td> 3.6.1 </td>
+	<td> 11.3 </td>
+	<td> 11.4 </td>
+	<td> 11.5 </td>
 </tr>
 
 <tr>
-	<td><img src="tasks/example_tasks/images/3.6.2.png" width="500"/></td>
 	<td><img src="tasks/example_tasks/images/3.6.3.png" width="500"/></td>
 	<td><img src="tasks/example_tasks/images/3.6.4.png" width="500"/></td>
-</tr>
-<tr align="center">
-	<td> 3.6.2 </td>
-	<td> 3.6.3 </td>
-	<td> 3.6.4 </td>
-</tr>
-
-<tr>
 	<td><img src="tasks/example_tasks/images/3.6.5.png" width="500"/></td>
-	<td><img src="tasks/example_tasks/images/3.7.1.png" width="500"/></td>
-	<td><img src="tasks/example_tasks/images/3.7.2.png" width="500"/></td>
 </tr>
 <tr align="center">
-	<td> 3.6.5 </td>
-	<td> 3.7.1 </td>
-	<td> 3.7.2 </td>
+	<td> 12.1 </td>
+	<td> 12.2 </td>
+	<td> 12.3 </td>
 </tr>
 
 <tr>
+	<td><img src="tasks/example_tasks/images/3.6.1.png" width="500"/></td>
+	<td><img src="tasks/example_tasks/images/3.6.2.png" width="500"/></td>
+	<td><img src="tasks/example_tasks/images/3.6.6.png" width="500"/></td>
+</tr>
+<tr align="center">
+	<td> 12.4 </td>
+	<td> 12.5 </td>
+	<td> 12.6 </td>
+</tr>
+
+<tr>
+	<td><img src="tasks/example_tasks/images/3.7.1.png" width="500"/></td>
 	<td><img src="tasks/example_tasks/images/3.7.3.png" width="500"/></td>
 	<td><img src="tasks/example_tasks/images/3.7.4.png" width="500"/></td>
-	<td><img src="tasks/example_tasks/images/3.7.5.png" width="500"/></td>
 </tr>
 <tr align="center">
-	<td> 3.7.3 </td>
-	<td> 3.7.4 </td>
-	<td> 3.7.5 </td>
+	<td> 13.1 </td>
+	<td> 13.2 </td>
+	<td> 13.3 </td>
 </tr>
 
 <tr>
+	<td><img src="tasks/example_tasks/images/3.7.2.png" width="500"/></td>
+	<td><img src="tasks/example_tasks/images/3.7.5.png" width="500"/></td>
 	<td><img src="tasks/example_tasks/images/3.8.1.png" width="500"/></td>
+</tr>
+<tr align="center">
+	<td> 13.4 </td>
+	<td> 13.5 </td>
+	<td> 14.1 </td>
+</tr>
+	
+<tr>
 	<td><img src="tasks/example_tasks/images/3.8.2.png" width="500"/></td>
+	<td><img src="tasks/example_tasks/images/3.9.2.png" width="500"/></td>
+	<td><img src="tasks/example_tasks/images/3.9.3.png" width="500"/></td>
+</tr>
+<tr align="center">
+	<td> 14.2 </td>
+	<td> 15.1 </td>
+	<td> 15.2 </td>
+</tr>
+
+<tr>
+	<td><img src="tasks/example_tasks/images/3.9.6.png" width="500"/></td>
+	<td><img src="tasks/example_tasks/images/3.9.8.png" width="500"/></td>
 	<td><img src="tasks/example_tasks/images/3.9.1.png" width="500"/></td>
 </tr>
 <tr align="center">
-	<td> 3.8.1 </td>
-	<td> 3.8.2 </td>
-	<td> 3.9.1 </td>
+	<td> 15.3 </td>
+	<td> 15.4 </td>
+	<td> 15.5 </td>
 </tr>
 
 <tr>
-	<td><img src="tasks/example_tasks/images/3.9.2.png" width="500"/></td>
-	<td><img src="tasks/example_tasks/images/3.9.3.png" width="500"/></td>
 	<td><img src="tasks/example_tasks/images/3.9.4.png" width="500"/></td>
-</tr>
-<tr align="center">
-	<td> 3.9.2 </td>
-	<td> 3.9.3 </td>
-	<td> 3.9.4 </td>
-</tr>
-
-<tr>
 	<td><img src="tasks/example_tasks/images/3.9.5.png" width="500"/></td>
-	<td><img src="tasks/example_tasks/images/3.9.6.png" width="500"/></td>
+	<td><img src="tasks/example_tasks/images/3.9.7.png" width="500"/></td>
 	<td></td>
 </tr>
 <tr align="center">
-	<td> 3.9.5 </td>
-	<td> 3.9.6 </td>
+	<td> 15.6 </td>
+	<td> 15.7 </td>
+	<td> 15.8 </td>
 	<td></td>
 </tr>
 
