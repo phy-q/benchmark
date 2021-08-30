@@ -394,6 +394,7 @@ Tested environments:
 - lxml: 4.6.3
 - tensorboard: 2.5.0
 - Java: 13.0.2/13.0.7
+- stable-baselines3: 1.1.0
 
 Before running agents, please:
 
@@ -540,6 +541,8 @@ simple description. Detailed documentation in progress):
        PrioritizedReplayMemory and PrioritizedReplayMemory with balanced samples.
 5. ```SBEnvironment```
     1. ```SBEnvironmentWrapper.py```: A wrapper class to provide gym-like environment.
+    2. ```SBEnvironmentWrapperOpenAI.py```: A wrapper class to provide gym-like environment for OpenAI Stable Baseline 3 agents.
+    3. ```Server.py```: A wrapper class for the game server for the OpenAI Stable Baseline 3 agents.
 6. ```StateReader```: Folder that contains files to convert symbolic state representation to inputs to the agents.
 7. ```Utils```:
     1. ```Config.py```: Config class that used to pass parameter to agents.
@@ -561,9 +564,11 @@ simple description. Detailed documentation in progress):
     within capability performance on test set.
 12. ```TestAgentOfflineWithinTemplate.py```: Using the saved models in ```LearningAgents/saved_model``` to test agent's
     within template performance on test set.
-13. ```TrainLearningAgent.py```: Script to train learning agents on particular template with defined mode.
+13. ```TrainLearningAgent.py```: Script to train DQN baseline agents on particular template with defined mode.
 14. ```TestPythonHeuristicAgent.sh```: Bash Script to test heuristic agent's performance on all templates.
-15. ```TrainLearningAgent.sh```: Bash Script to train learning agents on all templates/capabilities. 
+15. ```TrainLearningAgent.sh```: Bash Script to train DQN baseline agents to test both local and board generalization. 
+16. ```OpenAI_StableBaseline_Train.py```: Python script to run OpenAI Stable Baseline 3 agents on particular template with defined mode..
+17. ```TrainAndTestOpenAIStableBaselines.sh```: Bash script to run OpenAI Stable Baseline 3 agents to test both local and board generalization.
 
 ## 6. Framework<a name="Framework"></a>
 
