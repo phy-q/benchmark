@@ -350,13 +350,11 @@ Sceenshots of the 75 task templates are shown below.
 	<td><img src="tasks/example_tasks/images/3.9.4.png" width="500"/></td>
 	<td><img src="tasks/example_tasks/images/3.9.5.png" width="500"/></td>
 	<td><img src="tasks/example_tasks/images/3.9.7.png" width="500"/></td>
-	<td></td>
 </tr>
 <tr align="center">
 	<td> 15.6 </td>
 	<td> 15.7 </td>
 	<td> 15.8 </td>
-	<td></td>
 </tr>
 
 </table>
