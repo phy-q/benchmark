@@ -3,7 +3,7 @@
 </div>
 
 <p align="center">
-Cheng Xue*, Vimukthini Pinto*, Chathura Gamage*, Ekaterina Nikonova, Peng Zhang, Jochen Renz<br>
+Cheng Xue*, Vimukthini Pinto*, Chathura Gamage*<br> Ekaterina Nikonova, Peng Zhang, Jochen Renz<br>
 School of Computing<br>
 The Australian National University<br>
 Canberra, Australia<br>
