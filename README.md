@@ -22,6 +22,7 @@ Humans are well-versed in reasoning about the behaviors of physical objects when
 3. [Task Generator](#Task-generator)
 4. [Tasks generted for the baseline analysis](#Tasks-generated-for-baselines)
 5. [Baseline Agents](#BAF)
+
 &nbsp;&nbsp;&nbsp;&nbsp;[How to run heuristic agents](#RHA)
 &nbsp;&nbsp;&nbsp;&nbsp;[How to run DQN Baseline](#RLA)
 &nbsp;&nbsp;&nbsp;&nbsp;[How to run DQN Baseline](#OLA)
