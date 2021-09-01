@@ -368,7 +368,7 @@ We develop a task generator that can generate tasks for the task templates we de
 1. To run the task generator:<br>
     1. Go to ```tasks/task_generator```
     2. Copy the task templates that you want to generate tasks into the ```input``` (level templates can be found in ```tasks/task_templates```)
-    3. Run the tak generator providing the number of tasks as an argument
+    3. Run the task generator providing the number of tasks as an argument
      ```
         python generate_tasks.py <number of tasks to generate>
      ```
