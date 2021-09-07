@@ -15,7 +15,7 @@ Humans are well-versed in reasoning about the behaviors of physical objects when
 
 \* equal contribution
 
-The research paper can be cound here: https://arxiv.org/abs/2108.13696
+The research paper can be found here: https://arxiv.org/abs/2108.13696
 
 ---
 #### Table of contents
