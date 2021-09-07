@@ -885,7 +885,7 @@ simple description. Detailed documentation in progress):
 
 </table>
 
-## 7.Human Player Data 
+## 7. Human Player Data 
 <a name="HumanPlayerData"/></a>
 The human player data on Phy-Q is given in ```human_player_data.zip```. This includes summarized data for 20 players. Each .csv file is for a player and the following are the columns.
 1.	levelIndex: The index assigned to the task 
