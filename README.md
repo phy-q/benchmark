@@ -362,7 +362,7 @@ Sceenshots of the 75 task templates are shown below. x.y represents the y<sup>th
 </table>
 
 
-## 3. Task generator
+## 3. Task Generator
 <a name="Task-generator"/></a>
 We develop a task generator that can generate tasks for the task templates we designed for each scenario.<br>
 1. To run the task generator:<br>
@@ -374,7 +374,7 @@ We develop a task generator that can generate tasks for the task templates we de
      ```
     4. Generated tasks will be available in the ```output```
 
-## 4. Tasks generated for baseline analysis
+## 4. Tasks Generated for Baseline Analysis
 <a name="Tasks-generated-for-baselines"/></a>
 We generated 100 tasks from each of the 75 task templates for the baseline analysis. We have categorized the 15 scenarios into 3 categories for convenience. The scenarios belong to each category are: category 1 (1.1 single force and 1.2 multiple forces), category 2 (2.1 rolling, 2.2 falling, 2.3 sliding, and 2.4 bouncing), and category 3 (3.1 relative weight, 3.2 relative height, 3.3 relative width, 3.4 shape difference, 3.5 non-greedy actions, 3.6 structural analysis, 3.7 clearing paths, 3.8 adequate timing, and 3.9 manoeuvring). Here  x.y represents the y<sup>th</sup> scenario of the x<sup>th</sup> category. The generated tasks can be found in ```tasks/generated_tasks.zip```. After extracting this file, the generatd tasks can be found located in the folder structure: 
 <br>
@@ -402,7 +402,7 @@ Before running agents, please:
 1. Go to ```sciencebirdsgames``` and unzip ```Linux.zip```
 2. Go to ```sciencebirdslevels/generated_tasks``` and unzip ```fifth_generation.zip```
 
-### 5.1 How to run heuristic agents<a name="RHA"></a>
+### 5.1 How to Run Heuristic Agents<a name="RHA"></a>
 
 1. Run Java heuristic agents: Datalab and Eagle Wings: <br>
 
@@ -433,13 +433,13 @@ Before running agents, please:
        ./TestPythonHeuristicAgent.sh PigShooter
        ```
 
-### 5.2.1 How to run DQN Baselines<a name="RLA"></a>
+### 5.2.1 How to Run DQN Baselines<a name="RLA"></a>
 
-#### For symbolic Agent
+#### For Symbolic Agent
 1. Go to ```sciencebirdsagents/Utils```
 2. Open ```Parameters.py``` and set ```agent``` to be DQNDiscreteAgent and ```network``` to be DQNSymbolicDuelingFC_v2 and ```state_repr_type``` to be "symbolic"
 
-#### For image Agent
+#### For Image Agent
 1. Go to ```sciencebirdsagents/Utils```
 2. Open ```Parameters.py``` and set ```agent``` to be DQNDiscreteAgent and ```network``` to be DQNImageResNet and ```state_repr_type``` to be "image"
 
@@ -465,14 +465,14 @@ Before running agents, please:
     ```
     
 
-### 5.2.2 How to run Stable Baselines 3 Agents<a name="OLA"></a>
+### 5.2.2 How to Run Stable Baselines 3 Agents<a name="OLA"></a>
 
-#### For symbolic Agent
+#### For Symbolic Agent
 1. Go to ```sciencebirdsagents/Utils```
 2. Open ```Parameters.py``` and set ```agent``` to be "ppo" or "a2c" and ```state_repr_type``` to be "symbolic"
 
 
-#### For image Agent
+#### For Image Agent
 1. Go to ```sciencebirdsagents/Utils```
 2. Open ```Parameters.py``` and set ```agent``` to be "ppo" or "a2c" and ```state_repr_type``` to be "image"
 
@@ -490,7 +490,7 @@ Before running agents, please:
     
 
 
-### 5.3 How to develop your own agent <a name="ROA"></a>
+### 5.3 How to Develop Your Own Agent <a name="ROA"></a>
 
 We provide a gym-like environment. For a simple demo, which can be found at ```demo.py```
 
