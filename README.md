@@ -392,7 +392,7 @@ We generated 100 tasks from each of the 75 task templates for the baseline analy
 
 ### 3.3. Creating Your Own Tasks<a name="Creating-Your-Own-Tasks"/></a>
 
-If you want to design your own task templates, you can use the interactive task _template designer tool_ we have provided which is developed in Unity.
+If you want to design your own task templates, you can use the interactive task _template designer tool_ we have provided, which is developed in Unity.
 1. To design your own task template:<br>
     1. Open the ```tasks/task_template_designer``` in Unity
     2. Run the application in Unity Editor and load any game level
