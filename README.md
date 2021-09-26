@@ -390,7 +390,22 @@ We generated 100 tasks from each of the 75 task templates for the baseline analy
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-- index of the template/ <br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-- task files named as categoryIndex_scenarioIndex_templateIndex_taskIndex.xml<br>	
 
-### Creating Your Own Tasks<a name="Creating-Your-Own-Tasks"/></a>
+### 3.3. Creating Your Own Tasks<a name="Creating-Your-Own-Tasks"/></a>
+
+If you want to design your own task templates, you can use the interactive task _template designer tool_ we have provided which is developed in Unity.
+1. To design your own task template:<br>
+    1. Open the ```tasks/task_template_designer``` in Unity
+    2. Run the application in Unity Editor and load any game level
+    3. While in the game level, open the Level Editor menu by navigating to the ```Level Editor -> Edit Level``` in the top-menu of the Unity editor
+    4. From the Level Editor menu you can load a game level, save the level, and add any game object to the level
+    5. Design the template by adding new game objects, adjusting their poisitions, and resizing them as you wish
+    6. After designing the task template, save the template using the ```Save Level``` button in the Level Editor menu
+
+
+2. To generate tasks using your own task template
+    1. Add necessary constraints according to your template into the ```tasks/task_generator/utils/generate_variations.py``` script of the task generator
+    2. Run the task generator using the instructions given in [Section 3.1](#Task-generator)
+    
 
 ## 5. Baseline Agents and the Framework<a name="BAF"></a>
 
