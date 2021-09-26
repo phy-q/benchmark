@@ -1,0 +1,643 @@
+{
+"sprites":
+[{
+    "type": "ground",
+    "colormap": "({color: 36,percent: 0.6231758},{color: 76,percent: 0.09799492},{color: 145,percent: 0.0820942},{color: 222,percent: 0.1547801})"
+},{
+    "type": "Slingshot",
+    "colormap": "({color: 104,percent: 0.07918871},{color: 172,percent: 0.09329806},{color: 109,percent: 0.05714286},{color: 68,percent: 0.1067019},{color: 146,percent: 0.0654321},{color: 32,percent: 0.110582},{color: 182,percent: 0.07160494},{color: 219,percent: 0.06243386},{color: 255,percent: 0.1081129},{color: 209,percent: 0.05820106})"
+},{
+    "type": "bird_black_1",
+    "colormap": "({color: 0,percent: 0.1052632},{color: 36,percent: 0.1547988},{color: 73,percent: 0.6790506})"
+},{
+    "type": "bird_black_2",
+    "colormap": "({color: 0,percent: 0.1263383},{color: 36,percent: 0.1156317},{color: 73,percent: 0.7312634})"
+},{
+    "type": "bird_black_3",
+    "colormap": "({color: 0,percent: 0.1308901},{color: 36,percent: 0.1078534},{color: 73,percent: 0.7267016})"
+},{
+    "type": "bird_black_4",
+    "colormap": "({color: 0,percent: 0.1067616},{color: 36,percent: 0.09074733},{color: 73,percent: 0.6165481},{color: 32,percent: 0.1094306})"
+},{
+    "type": "bird_black_5",
+    "colormap": "({color: 0,percent: 0.08311229},{color: 36,percent: 0.08134394},{color: 73,percent: 0.6286472},{color: 32,percent: 0.106985})"
+},{
+    "type": "bird_black_6",
+    "colormap": "({color: 100,percent: 0.2807802},{color: 64,percent: 0.5355546})"
+},{
+    "type": "bird_black_7",
+    "colormap": "({color: 164,percent: 0.7941353})"
+},{
+    "type": "bird_black_8",
+    "colormap": "({color: 0,percent: 0.08695652},{color: 109,percent: 0.04347826},{color: 219,percent: 0.06086956},{color: 36,percent: 0.4956522},{color: 255,percent: 0.07826087})"
+},{
+    "type": "bird_black_9",
+    "colormap": "({color: 0,percent: 0.112703},{color: 36,percent: 0.1098376},{color: 73,percent: 0.6590258})"
+},{
+    "type": "bird_blue_1",
+    "colormap": "({color: 0,percent: 0.2154195},{color: 119,percent: 0.4058957},{color: 36,percent: 0.06122449})"
+},{
+    "type": "bird_blue_2",
+    "colormap": "({color: 0,percent: 0.1990172},{color: 119,percent: 0.4496315},{color: 82,percent: 0.06633907})"
+},{
+    "type": "bird_blue_3",
+    "colormap": "({color: 0,percent: 0.225058},{color: 41,percent: 0.05568445},{color: 82,percent: 0.06728538},{color: 119,percent: 0.4269142})"
+},{
+    "type": "bird_blue_4",
+    "colormap": "({color: 0,percent: 0.2613065},{color: 41,percent: 0.07788945},{color: 119,percent: 0.3442211},{color: 82,percent: 0.05527638})"
+},{
+    "type": "bird_blue_5",
+    "colormap": "({color: 0,percent: 0.2382134},{color: 82,percent: 0.05459057},{color: 119,percent: 0.3176179},{color: 36,percent: 0.06451613})"
+},{
+    "type": "bird_blue_6",
+    "colormap": "({color: 0,percent: 0.2392776},{color: 82,percent: 0.06772009},{color: 119,percent: 0.3250564})"
+},{
+    "type": "bird_red_1",
+    "colormap": "({color: 0,percent: 0.2644444},{color: 36,percent: 0.06},{color: 250,percent: 0.24},{color: 244,percent: 0.09111111})"
+},{
+    "type": "bird_red_2",
+    "colormap": "({color: 0,percent: 0.3170103},{color: 250,percent: 0.2912371},{color: 244,percent: 0.1108247})"
+},{
+    "type": "bird_red_3",
+    "colormap": "({color: 0,percent: 0.3629977},{color: 250,percent: 0.2693208},{color: 244,percent: 0.1100703})"
+},{
+    "type": "bird_red_4",
+    "colormap": "({color: 0,percent: 0.3350254},{color: 250,percent: 0.1979695},{color: 64,percent: 0.0609137},{color: 244,percent: 0.1116751})"
+},{
+    "type": "bird_red_5",
+    "colormap": "({color: 0,percent: 0.3184713},{color: 36,percent: 0.07218684},{color: 250,percent: 0.1804671},{color: 244,percent: 0.0955414})"
+},{
+    "type": "bird_red_6",
+    "colormap": "({color: 0,percent: 0.3222958},{color: 250,percent: 0.1942605},{color: 244,percent: 0.08167771})"
+},{
+    "type": "bird_white_1",
+    "colormap": "({color: 36,percent: 0.3168085},{color: 255,percent: 0.2173658},{color: 21,percent: 0.1789381},{color: 254,percent: 0.1088296})"
+},{
+    "type": "bird_white_2",
+    "colormap": "({color: 36,percent: 0.3073314},{color: 255,percent: 0.2143695},{color: 21,percent: 0.1824047},{color: 254,percent: 0.1266862})"
+},{
+    "type": "bird_white_3",
+    "colormap": "({color: 36,percent: 0.2936915},{color: 255,percent: 0.2115907},{color: 21,percent: 0.1823121},{color: 254,percent: 0.1300936})"
+},{
+    "type": "bird_white_4",
+    "colormap": "({color: 36,percent: 0.2845475},{color: 255,percent: 0.1829468},{color: 21,percent: 0.1545247},{color: 254,percent: 0.1522378})"
+},{
+    "type": "bird_white_5",
+    "colormap": "({color: 36,percent: 0.3030204},{color: 255,percent: 0.1890224},{color: 21,percent: 0.1539461},{color: 254,percent: 0.1383566})"
+},{
+    "type": "bird_white_6",
+    "colormap": "({color: 36,percent: 0.2641212},{color: 218,percent: 0.05680025},{color: 255,percent: 0.1574629},{color: 21,percent: 0.2085831},{color: 254,percent: 0.1227517})"
+},{
+    "type": "bird_white_7",
+    "colormap": "({color: 36,percent: 0.2725046},{color: 255,percent: 0.2057563},{color: 21,percent: 0.1537048},{color: 254,percent: 0.1463564})"
+},{
+    "type": "bird_yellow_1",
+    "colormap": "({color: 36,percent: 0.09732143},{color: 248,percent: 0.5919643})"
+},{
+    "type": "bird_yellow_2",
+    "colormap": "({color: 36,percent: 0.07469655},{color: 248,percent: 0.6003735})"
+},{
+    "type": "bird_yellow_3",
+    "colormap": "({color: 36,percent: 0.05703772},{color: 248,percent: 0.6292548})"
+},{
+    "type": "bird_yellow_4",
+    "colormap": "({color: 248,percent: 0.6307278})"
+},{
+    "type": "bird_yellow_5",
+    "colormap": "({color: 36,percent: 0.0614618},{color: 0,percent: 0.1004983},{color: 248,percent: 0.5689369})"
+},{
+    "type": "bird_yellow_6",
+    "colormap": "({color: 0,percent: 0.0897031},{color: 248,percent: 0.320278})"
+},{
+    "type": "bird_yellow_7",
+    "colormap": "({color: 36,percent: 0.06216216},{color: 248,percent: 0.5531532})"
+},{
+    "type": "effects_21",
+    "colormap": "({color: 36,percent: 0.5549316},{color: 68,percent: 0.3452148})"
+},{
+    "type": "effects_34",
+    "colormap": "({color: 104,percent: 0.0754106},{color: 68,percent: 0.1228314},{color: 136,percent: 0.0765672},{color: 172,percent: 0.08905853},{color: 205,percent: 0.1473514},{color: 209,percent: 0.07749248})"
+},{
+    "type": "ice_circle_1",
+    "colormap": "({color: 19,percent: 0.2238913},{color: 87,percent: 0.295422},{color: 123,percent: 0.2902361},{color: 255,percent: 0.07153076})"
+},{
+    "type": "ice_circle_2",
+    "colormap": "({color: 19,percent: 0.2418953},{color: 87,percent: 0.273958},{color: 123,percent: 0.2736017},{color: 255,percent: 0.06875668})"
+},{
+    "type": "ice_circle_3",
+    "colormap": "({color: 19,percent: 0.3193065},{color: 123,percent: 0.2537475},{color: 87,percent: 0.2320751},{color: 255,percent: 0.06339173})"
+},{
+    "type": "ice_circle_4",
+    "colormap": "({color: 19,percent: 0.3304442},{color: 55,percent: 0.07114482},{color: 87,percent: 0.2081979},{color: 123,percent: 0.2056699},{color: 255,percent: 0.06301914})"
+},{
+    "type": "ice_circle_small_1",
+    "colormap": "({color: 19,percent: 0.2946709},{color: 87,percent: 0.1933124},{color: 123,percent: 0.2680251},{color: 255,percent: 0.09613375})"
+},{
+    "type": "ice_circle_small_2",
+    "colormap": "({color: 19,percent: 0.2916219},{color: 87,percent: 0.1944146},{color: 123,percent: 0.2497315},{color: 255,percent: 0.09935553})"
+},{
+    "type": "ice_circle_small_3",
+    "colormap": "({color: 19,percent: 0.3851891},{color: 87,percent: 0.1726159},{color: 123,percent: 0.2152371},{color: 255,percent: 0.09003729})"
+},{
+    "type": "ice_circle_small_4",
+    "colormap": "({color: 19,percent: 0.3930085},{color: 55,percent: 0.0720339},{color: 87,percent: 0.1520127},{color: 123,percent: 0.1657839},{color: 255,percent: 0.09904661})"
+},{
+    "type": "ice_rect_big_1",
+    "colormap": "({color: 19,percent: 0.2409984},{color: 87,percent: 0.3775127},{color: 123,percent: 0.1630219},{color: 255,percent: 0.1190634})"
+},{
+    "type": "ice_rect_big_2",
+    "colormap": "({color: 19,percent: 0.2689076},{color: 87,percent: 0.3151261},{color: 123,percent: 0.158337},{color: 255,percent: 0.1306944})"
+},{
+    "type": "ice_rect_big_3",
+    "colormap": "({color: 19,percent: 0.3374558},{color: 87,percent: 0.2588339},{color: 123,percent: 0.09408128},{color: 255,percent: 0.1329505})"
+},{
+    "type": "ice_rect_big_4",
+    "colormap": "({color: 19,percent: 0.371656},{color: 55,percent: 0.05903162},{color: 87,percent: 0.1866018},{color: 123,percent: 0.07450807},{color: 255,percent: 0.1269069})"
+},{
+    "type": "ice_rect_fat_1",
+    "colormap": "({color: 19,percent: 0.159747},{color: 87,percent: 0.2760517},{color: 123,percent: 0.3786087},{color: 255,percent: 0.09843277})"
+},{
+    "type": "ice_rect_fat_2",
+    "colormap": "({color: 19,percent: 0.2134615},{color: 87,percent: 0.1994506},{color: 123,percent: 0.3252747},{color: 255,percent: 0.1288462})"
+},{
+    "type": "ice_rect_fat_3",
+    "colormap": "({color: 19,percent: 0.2624484},{color: 87,percent: 0.1540578},{color: 123,percent: 0.2877579},{color: 255,percent: 0.1381018})"
+},{
+    "type": "ice_rect_fat_4",
+    "colormap": "({color: 19,percent: 0.3658604},{color: 87,percent: 0.09674729},{color: 123,percent: 0.2402002},{color: 255,percent: 0.1203781})"
+},{
+    "type": "ice_rect_medium_1",
+    "colormap": "({color: 19,percent: 0.2421452},{color: 87,percent: 0.3328819},{color: 123,percent: 0.1990791},{color: 255,percent: 0.1151138})"
+},{
+    "type": "ice_rect_medium_2",
+    "colormap": "({color: 19,percent: 0.278169},{color: 87,percent: 0.2573131},{color: 123,percent: 0.1944745},{color: 255,percent: 0.1310943})"
+},{
+    "type": "ice_rect_medium_3",
+    "colormap": "({color: 19,percent: 0.3616906},{color: 87,percent: 0.1885668},{color: 123,percent: 0.1140612},{color: 255,percent: 0.1503658})"
+},{
+    "type": "ice_rect_medium_4",
+    "colormap": "({color: 19,percent: 0.4065636},{color: 55,percent: 0.05587198},{color: 87,percent: 0.1209656},{color: 123,percent: 0.09031733},{color: 255,percent: 0.1499864})"
+},{
+    "type": "ice_rect_small_1",
+    "colormap": "({color: 19,percent: 0.2604952},{color: 87,percent: 0.2976319},{color: 123,percent: 0.2104413},{color: 255,percent: 0.1054898})"
+},{
+    "type": "ice_rect_small_2",
+    "colormap": "({color: 19,percent: 0.3182552},{color: 55,percent: 0.06192784},{color: 87,percent: 0.1717824},{color: 123,percent: 0.2105547},{color: 255,percent: 0.1287022})"
+},{
+    "type": "ice_rect_small_3",
+    "colormap": "({color: 19,percent: 0.3739224},{color: 87,percent: 0.1153017},{color: 123,percent: 0.1821121},{color: 255,percent: 0.1346983})"
+},{
+    "type": "ice_rect_small_4",
+    "colormap": "({color: 19,percent: 0.5018827},{color: 87,percent: 0.1032813},{color: 123,percent: 0.1178053},{color: 255,percent: 0.1274879})"
+},{
+    "type": "ice_rect_tiny_1",
+    "colormap": "({color: 19,percent: 0.3033827},{color: 123,percent: 0.1638478},{color: 87,percent: 0.3086681},{color: 255,percent: 0.09302326})"
+},{
+    "type": "ice_rect_tiny_2",
+    "colormap": "({color: 19,percent: 0.334038},{color: 123,percent: 0.140592},{color: 87,percent: 0.2769556},{color: 255,percent: 0.09302326})"
+},{
+    "type": "ice_rect_tiny_3",
+    "colormap": "({color: 19,percent: 0.4196617},{color: 123,percent: 0.1331924},{color: 87,percent: 0.1448203},{color: 255,percent: 0.1300211})"
+},{
+    "type": "ice_rect_tiny_4",
+    "colormap": "({color: 19,percent: 0.461945},{color: 123,percent: 0.1088795},{color: 87,percent: 0.07928118},{color: 255,percent: 0.1131078})"
+},{
+    "type": "ice_square_1",
+    "colormap": "({color: 19,percent: 0.1309845},{color: 124,percent: 0.4287541},{color: 156,percent: 0.3202159},{color: 255,percent: 0.06279301})"
+},{
+    "type": "ice_square_2",
+    "colormap": "({color: 19,percent: 0.1365895},{color: 124,percent: 0.4205594},{color: 156,percent: 0.3186142},{color: 255,percent: 0.06573903})"
+},{
+    "type": "ice_square_3",
+    "colormap": "({color: 19,percent: 0.1518555},{color: 124,percent: 0.3967013},{color: 156,percent: 0.3086876})"
+},{
+    "type": "ice_square_4",
+    "colormap": "({color: 19,percent: 0.1939514},{color: 124,percent: 0.3663212},{color: 156,percent: 0.2848218})"
+},{
+    "type": "ice_square_hole_1",
+    "colormap": "({color: 19,percent: 0.4201285},{color: 123,percent: 0.3133476},{color: 155,percent: 0.117202},{color: 255,percent: 0.09607423})"
+},{
+    "type": "ice_square_hole_2",
+    "colormap": "({color: 19,percent: 0.4465867},{color: 123,percent: 0.265924},{color: 155,percent: 0.1188232},{color: 255,percent: 0.1001143})"
+},{
+    "type": "ice_square_hole_3",
+    "colormap": "({color: 19,percent: 0.4904286},{color: 123,percent: 0.215},{color: 155,percent: 0.1011429},{color: 255,percent: 0.09814285})"
+},{
+    "type": "ice_square_hole_4",
+    "colormap": "({color: 19,percent: 0.4939315},{color: 123,percent: 0.1742203},{color: 155,percent: 0.08618835},{color: 255,percent: 0.1069289})"
+},{
+    "type": "ice_square_small_1",
+    "colormap": "({color: 19,percent: 0.2156013},{color: 87,percent: 0.2399783},{color: 123,percent: 0.291441},{color: 255,percent: 0.1267606})"
+},{
+    "type": "ice_square_small_2",
+    "colormap": "({color: 19,percent: 0.24052},{color: 87,percent: 0.2026002},{color: 123,percent: 0.2621885},{color: 255,percent: 0.1386782})"
+},{
+    "type": "ice_square_small_3",
+    "colormap": "({color: 19,percent: 0.3170201},{color: 87,percent: 0.1560631},{color: 123,percent: 0.2376291},{color: 255,percent: 0.1212616})"
+},{
+    "type": "ice_square_small_4",
+    "colormap": "({color: 19,percent: 0.4210526},{color: 87,percent: 0.08388158},{color: 123,percent: 0.1557018},{color: 55,percent: 0.05537281},{color: 255,percent: 0.1359649})"
+},{
+    "type": "ice_square_tiny_1",
+    "colormap": "({color: 19,percent: 0.3542977},{color: 123,percent: 0.2096436},{color: 255,percent: 0.1467505},{color: 87,percent: 0.1111111})"
+},{
+    "type": "ice_square_tiny_2",
+    "colormap": "({color: 19,percent: 0.3596674},{color: 123,percent: 0.2162162},{color: 255,percent: 0.1372141},{color: 87,percent: 0.1205821})"
+},{
+    "type": "ice_square_tiny_3",
+    "colormap": "({color: 19,percent: 0.48125},{color: 123,percent: 0.07708333},{color: 55,percent: 0.06041666},{color: 255,percent: 0.1479167},{color: 87,percent: 0.07291666})"
+},{
+    "type": "ice_square_tiny_4",
+    "colormap": "({color: 19,percent: 0.5280665},{color: 123,percent: 0.07276507},{color: 55,percent: 0.05613306},{color: 255,percent: 0.1309771})"
+},{
+    "type": "ice_triang_1",
+    "colormap": "({color: 19,percent: 0.4248993},{color: 123,percent: 0.1943326},{color: 155,percent: 0.2249923},{color: 136,percent: 0.08067513})"
+},{
+    "type": "ice_triang_2",
+    "colormap": "({color: 19,percent: 0.457406},{color: 123,percent: 0.1662318},{color: 155,percent: 0.2116654},{color: 136,percent: 0.07444359})"
+},{
+    "type": "ice_triang_3",
+    "colormap": "({color: 19,percent: 0.4801667},{color: 155,percent: 0.1921593},{color: 123,percent: 0.157123},{color: 136,percent: 0.06621392})"
+},{
+    "type": "ice_triang_4",
+    "colormap": "({color: 19,percent: 0.2976848},{color: 255,percent: 0.06198656},{color: 155,percent: 0.150112},{color: 123,percent: 0.1159074},{color: 136,percent: 0.148469},{color: 73,percent: 0.1483196})"
+},{
+    "type": "ice_triang_hole_1",
+    "colormap": "({color: 19,percent: 0.5398809},{color: 123,percent: 0.2244661},{color: 155,percent: 0.1343891})"
+},{
+    "type": "ice_triang_hole_2",
+    "colormap": "({color: 19,percent: 0.5646002},{color: 123,percent: 0.1896002},{color: 155,percent: 0.1381808})"
+},{
+    "type": "ice_triang_hole_3",
+    "colormap": "({color: 19,percent: 0.5868971},{color: 255,percent: 0.05773938},{color: 123,percent: 0.1648668},{color: 155,percent: 0.1187905})"
+},{
+    "type": "ice_triang_hole_4",
+    "colormap": "({color: 19,percent: 0.61339},{color: 255,percent: 0.06299444},{color: 123,percent: 0.1431292},{color: 155,percent: 0.09375916})"
+},{
+    "type": "pig_basic_big_1",
+    "colormap": "({color: 84,percent: 0.05801358},{color: 125,percent: 0.5834404},{color: 36,percent: 0.0939967})"
+},{
+    "type": "pig_basic_big_2",
+    "colormap": "({color: 84,percent: 0.07188822},{color: 125,percent: 0.667586})"
+},{
+    "type": "pig_basic_big_3",
+    "colormap": "({color: 4,percent: 0.0601476},{color: 84,percent: 0.05719557},{color: 125,percent: 0.5188192},{color: 36,percent: 0.1158672})"
+},{
+    "type": "pig_basic_big_5",
+    "colormap": "({color: 84,percent: 0.05567646},{color: 125,percent: 0.5729054})"
+},{
+    "type": "pig_basic_big_6",
+    "colormap": "({color: 4,percent: 0.05714286},{color: 125,percent: 0.5184714},{color: 36,percent: 0.07024568})"
+},{
+    "type": "pig_basic_big_8",
+    "colormap": "({color: 4,percent: 0.05796838},{color: 125,percent: 0.4497547},{color: 203,percent: 0.07813919})"
+},{
+    "type": "pig_basic_big_9",
+    "colormap": "({color: 125,percent: 0.4635076},{color: 203,percent: 0.08605664})"
+},{
+    "type": "pig_basic_medium_1",
+    "colormap": "({color: 125,percent: 0.5530726},{color: 36,percent: 0.08350485})"
+},{
+    "type": "pig_basic_medium_2",
+    "colormap": "({color: 80,percent: 0.057844},{color: 84,percent: 0.0663161},{color: 125,percent: 0.6237219})"
+},{
+    "type": "pig_basic_medium_3",
+    "colormap": "({color: 125,percent: 0.4812975},{color: 36,percent: 0.09672706})"
+},{
+    "type": "pig_basic_medium_4",
+    "colormap": "({color: 125,percent: 0.5027528},{color: 36,percent: 0.05940307})"
+},{
+    "type": "pig_basic_medium_5",
+    "colormap": "({color: 125,percent: 0.5371925})"
+},{
+    "type": "pig_basic_medium_6",
+    "colormap": "({color: 125,percent: 0.4876705},{color: 36,percent: 0.05947201})"
+},{
+    "type": "pig_basic_medium_7",
+    "colormap": "({color: 125,percent: 0.4298957},{color: 203,percent: 0.05822711})"
+},{
+    "type": "pig_basic_medium_8",
+    "colormap": "({color: 125,percent: 0.4305998},{color: 203,percent: 0.07070415})"
+},{
+    "type": "pig_basic_medium_9",
+    "colormap": "({color: 4,percent: 0.05590962},{color: 125,percent: 0.4159907},{color: 203,percent: 0.05967555})"
+},{
+    "type": "pig_basic_small_1",
+    "colormap": "({color: 84,percent: 0.07563695},{color: 125,percent: 0.4442675})"
+},{
+    "type": "pig_basic_small_2",
+    "colormap": "({color: 84,percent: 0.113924},{color: 121,percent: 0.06724683},{color: 125,percent: 0.4857595})"
+},{
+    "type": "pig_basic_small_3",
+    "colormap": "({color: 84,percent: 0.05741627},{color: 125,percent: 0.407496})"
+},{
+    "type": "pig_basic_small_4",
+    "colormap": "({color: 84,percent: 0.06112853},{color: 125,percent: 0.4122257})"
+},{
+    "type": "pig_basic_small_5",
+    "colormap": "({color: 84,percent: 0.07728337},{color: 121,percent: 0.06479313},{color: 125,percent: 0.4293521})"
+},{
+    "type": "pig_basic_small_6",
+    "colormap": "({color: 125,percent: 0.3946541})"
+},{
+    "type": "pig_basic_small_7",
+    "colormap": "({color: 121,percent: 0.06593407},{color: 125,percent: 0.3210361})"
+},{
+    "type": "pig_basic_small_8",
+    "colormap": "({color: 121,percent: 0.06367925},{color: 125,percent: 0.3113208})"
+},{
+    "type": "pig_basic_small_9",
+    "colormap": "({color: 121,percent: 0.064213},{color: 125,percent: 0.3226312})"
+},{
+    "type": "pig_king_1",
+    "colormap": "({color: 4,percent: 0.0593711},{color: 84,percent: 0.09989783},{color: 88,percent: 0.07265297},{color: 125,percent: 0.4491997},{color: 36,percent: 0.09535702})"
+},{
+    "type": "stone_circle_1",
+    "colormap": "({color: 19,percent: 0.05942659},{color: 73,percent: 0.229192},{color: 146,percent: 0.3212858},{color: 182,percent: 0.2644657})"
+},{
+    "type": "stone_circle_2",
+    "colormap": "({color: 73,percent: 0.2877698},{color: 146,percent: 0.3183015},{color: 182,percent: 0.2502193})"
+},{
+    "type": "stone_circle_3",
+    "colormap": "({color: 73,percent: 0.3209638},{color: 146,percent: 0.3116426},{color: 182,percent: 0.2411185})"
+},{
+    "type": "stone_circle_4",
+    "colormap": "({color: 73,percent: 0.329707},{color: 146,percent: 0.2830321},{color: 182,percent: 0.2216178})"
+},{
+    "type": "stone_circle_small_1",
+    "colormap": "({color: 73,percent: 0.3908406},{color: 146,percent: 0.2666248},{color: 182,percent: 0.2038896},{color: 219,percent: 0.06649937})"
+},{
+    "type": "stone_circle_small_2",
+    "colormap": "({color: 73,percent: 0.3623469},{color: 146,percent: 0.2843327},{color: 182,percent: 0.1805287},{color: 219,percent: 0.07156673})"
+},{
+    "type": "stone_circle_small_3",
+    "colormap": "({color: 73,percent: 0.3955414},{color: 109,percent: 0.0700637},{color: 146,percent: 0.2770701},{color: 182,percent: 0.1579618},{color: 219,percent: 0.06242038})"
+},{
+    "type": "stone_circle_small_4",
+    "colormap": "({color: 73,percent: 0.4059857},{color: 109,percent: 0.09303839},{color: 146,percent: 0.258946},{color: 182,percent: 0.143136},{color: 219,percent: 0.05595316})"
+},{
+    "type": "stone_rect_big_1",
+    "colormap": "({color: 73,percent: 0.2969991},{color: 146,percent: 0.2239629},{color: 182,percent: 0.3702559},{color: 219,percent: 0.07458076})"
+},{
+    "type": "stone_rect_big_2",
+    "colormap": "({color: 73,percent: 0.3082524},{color: 146,percent: 0.2210944},{color: 182,percent: 0.3486319},{color: 219,percent: 0.07193292})"
+},{
+    "type": "stone_rect_big_3",
+    "colormap": "({color: 73,percent: 0.3278905},{color: 109,percent: 0.06641659},{color: 146,percent: 0.2160194},{color: 182,percent: 0.3186231},{color: 219,percent: 0.06906443})"
+},{
+    "type": "stone_rect_big_4",
+    "colormap": "({color: 73,percent: 0.3543689},{color: 109,percent: 0.09289497},{color: 146,percent: 0.2054281},{color: 182,percent: 0.2897176},{color: 219,percent: 0.05869373})"
+},{
+    "type": "stone_rect_fat_1",
+    "colormap": "({color: 73,percent: 0.208436},{color: 146,percent: 0.2719803},{color: 182,percent: 0.45467})"
+},{
+    "type": "stone_rect_fat_2",
+    "colormap": "({color: 73,percent: 0.2189579},{color: 146,percent: 0.2738359},{color: 182,percent: 0.4226719})"
+},{
+    "type": "stone_rect_fat_3",
+    "colormap": "({color: 73,percent: 0.2580822},{color: 109,percent: 0.07013699},{color: 146,percent: 0.260274},{color: 182,percent: 0.3778082})"
+},{
+    "type": "stone_rect_fat_4",
+    "colormap": "({color: 73,percent: 0.2778082},{color: 109,percent: 0.09424657},{color: 146,percent: 0.2463014},{color: 182,percent: 0.3413699})"
+},{
+    "type": "stone_rect_medium_1",
+    "colormap": "({color: 73,percent: 0.2978896},{color: 146,percent: 0.2332251},{color: 182,percent: 0.3658009},{color: 219,percent: 0.0698052})"
+},{
+    "type": "stone_rect_medium_2",
+    "colormap": "({color: 73,percent: 0.3130411},{color: 146,percent: 0.2237554},{color: 182,percent: 0.3449675},{color: 219,percent: 0.06845238})"
+},{
+    "type": "stone_rect_medium_3",
+    "colormap": "({color: 73,percent: 0.3373918},{color: 109,percent: 0.07224026},{color: 146,percent: 0.2215909},{color: 182,percent: 0.3041126},{color: 219,percent: 0.06547619})"
+},{
+    "type": "stone_rect_medium_4",
+    "colormap": "({color: 73,percent: 0.3563312},{color: 109,percent: 0.08847403},{color: 146,percent: 0.215368},{color: 182,percent: 0.282197},{color: 219,percent: 0.05681818})"
+},{
+    "type": "stone_rect_small_1",
+    "colormap": "({color: 73,percent: 0.3251337},{color: 146,percent: 0.2593583},{color: 182,percent: 0.3304813})"
+},{
+    "type": "stone_rect_small_2",
+    "colormap": "({color: 73,percent: 0.344385},{color: 109,percent: 0.06417112},{color: 146,percent: 0.2475936},{color: 182,percent: 0.2989305})"
+},{
+    "type": "stone_rect_small_3",
+    "colormap": "({color: 73,percent: 0.3647059},{color: 109,percent: 0.07967915},{color: 146,percent: 0.2385027},{color: 182,percent: 0.2764706})"
+},{
+    "type": "stone_rect_small_4",
+    "colormap": "({color: 73,percent: 0.3914438},{color: 109,percent: 0.1037433},{color: 146,percent: 0.2256684},{color: 182,percent: 0.2454545})"
+},{
+    "type": "stone_rect_tiny_1",
+    "colormap": "({color: 73,percent: 0.3816068},{color: 146,percent: 0.256871},{color: 182,percent: 0.2875264})"
+},{
+    "type": "stone_rect_tiny_2",
+    "colormap": "({color: 73,percent: 0.3900634},{color: 146,percent: 0.2663848},{color: 109,percent: 0.06342494},{color: 182,percent: 0.2505285})"
+},{
+    "type": "stone_rect_tiny_3",
+    "colormap": "({color: 73,percent: 0.4270613},{color: 146,percent: 0.2156448},{color: 109,percent: 0.1109937},{color: 182,percent: 0.2241015})"
+},{
+    "type": "stone_rect_tiny_4",
+    "colormap": "({color: 73,percent: 0.4545455},{color: 146,percent: 0.1987315},{color: 109,percent: 0.1247357},{color: 182,percent: 0.1934461})"
+},{
+    "type": "stone_square_hole_1",
+    "colormap": "({color: 73,percent: 0.4896483},{color: 146,percent: 0.2112876},{color: 182,percent: 0.220363},{color: 219,percent: 0.07629041})"
+},{
+    "type": "stone_square_hole_2",
+    "colormap": "({color: 73,percent: 0.4992197},{color: 146,percent: 0.2089658},{color: 182,percent: 0.2139311},{color: 219,percent: 0.0714995})"
+},{
+    "type": "stone_square_hole_3",
+    "colormap": "({color: 73,percent: 0.5078735},{color: 146,percent: 0.2051355},{color: 182,percent: 0.1990353},{color: 219,percent: 0.06823663})"
+},{
+    "type": "stone_square_hole_4",
+    "colormap": "({color: 73,percent: 0.5834873},{color: 146,percent: 0.1681114},{color: 182,percent: 0.1560324},{color: 219,percent: 0.06096348})"
+},{
+    "type": "stone_square_small_1",
+    "colormap": "({color: 73,percent: 0.2855598},{color: 146,percent: 0.249324},{color: 182,percent: 0.3520822},{color: 219,percent: 0.07301244})"
+},{
+    "type": "stone_square_small_2",
+    "colormap": "({color: 73,percent: 0.301948},{color: 146,percent: 0.2440476},{color: 182,percent: 0.3181818},{color: 219,percent: 0.06872294})"
+},{
+    "type": "stone_square_small_3",
+    "colormap": "({color: 73,percent: 0.3293543},{color: 109,percent: 0.06673902},{color: 146,percent: 0.2425393},{color: 182,percent: 0.2783505},{color: 219,percent: 0.06890938})"
+},{
+    "type": "stone_square_small_4",
+    "colormap": "({color: 73,percent: 0.3299081},{color: 109,percent: 0.08923743},{color: 146,percent: 0.223364},{color: 182,percent: 0.259059},{color: 219,percent: 0.06435911})"
+},{
+    "type": "stone_square_tiny_1",
+    "colormap": "({color: 73,percent: 0.4669422},{color: 146,percent: 0.1942149},{color: 219,percent: 0.08677686},{color: 182,percent: 0.196281})"
+},{
+    "type": "stone_square_tiny_2",
+    "colormap": "({color: 73,percent: 0.4896694},{color: 146,percent: 0.2066116},{color: 109,percent: 0.07644628},{color: 219,percent: 0.07438017},{color: 182,percent: 0.1694215})"
+},{
+    "type": "stone_square_tiny_3",
+    "colormap": "({color: 73,percent: 0.4979339},{color: 146,percent: 0.1487603},{color: 109,percent: 0.08677686},{color: 219,percent: 0.08264463},{color: 182,percent: 0.161157})"
+},{
+    "type": "stone_square_tiny_4",
+    "colormap": "({color: 73,percent: 0.5351239},{color: 146,percent: 0.1404959},{color: 109,percent: 0.1053719},{color: 182,percent: 0.1632231})"
+},{
+    "type": "stone_triang_1",
+    "colormap": "({color: 73,percent: 0.5572576},{color: 146,percent: 0.1392028},{color: 182,percent: 0.2648721})"
+},{
+    "type": "stone_triang_2",
+    "colormap": "({color: 73,percent: 0.5638013},{color: 146,percent: 0.1375669},{color: 182,percent: 0.2529744})"
+},{
+    "type": "stone_triang_3",
+    "colormap": "({color: 73,percent: 0.3016939},{color: 146,percent: 0.1440562},{color: 182,percent: 0.2356173},{color: 19,percent: 0.2601862})"
+},{
+    "type": "stone_triang_4",
+    "colormap": "({color: 73,percent: 0.5661808},{color: 146,percent: 0.1301309},{color: 182,percent: 0.1914039})"
+},{
+    "type": "stone_triang_hole_1",
+    "colormap": "({color: 73,percent: 0.5739181},{color: 146,percent: 0.1800755},{color: 182,percent: 0.1969213})"
+},{
+    "type": "stone_triang_hole_2",
+    "colormap": "({color: 73,percent: 0.5975057},{color: 146,percent: 0.1811225},{color: 182,percent: 0.1706349})"
+},{
+    "type": "stone_triang_hole_3",
+    "colormap": "({color: 73,percent: 0.5770029},{color: 146,percent: 0.1884273},{color: 182,percent: 0.1575668})"
+},{
+    "type": "stone_triang_hole_4",
+    "colormap": "({color: 73,percent: 0.5644304},{color: 146,percent: 0.1856526},{color: 182,percent: 0.1574228})"
+},{
+    "type": "wood_circle_1",
+    "colormap": "({color: 136,percent: 0.2027485},{color: 172,percent: 0.1312124},{color: 204,percent: 0.1178464},{color: 240,percent: 0.1489081},{color: 244,percent: 0.0873494},{color: 245,percent: 0.1494729})"
+},{
+    "type": "wood_circle_2",
+    "colormap": "({color: 136,percent: 0.2467633},{color: 172,percent: 0.1277295},{color: 204,percent: 0.1188406},{color: 240,percent: 0.15343},{color: 244,percent: 0.08734299},{color: 245,percent: 0.1499517})"
+},{
+    "type": "wood_circle_3",
+    "colormap": "({color: 136,percent: 0.3137824},{color: 172,percent: 0.1041425},{color: 204,percent: 0.1190476},{color: 240,percent: 0.138405},{color: 244,percent: 0.08555943},{color: 245,percent: 0.1492451})"
+},{
+    "type": "wood_circle_4",
+    "colormap": "({color: 136,percent: 0.383076},{color: 172,percent: 0.09281494},{color: 204,percent: 0.08900324},{color: 240,percent: 0.1227368},{color: 244,percent: 0.07451877},{color: 245,percent: 0.1429388})"
+},{
+    "type": "wood_circle_small_1",
+    "colormap": "({color: 136,percent: 0.3200935},{color: 73,percent: 0.07126168},{color: 172,percent: 0.1501168},{color: 240,percent: 0.1261682},{color: 245,percent: 0.1647196})"
+},{
+    "type": "wood_circle_small_2",
+    "colormap": "({color: 136,percent: 0.3214501},{color: 172,percent: 0.1583082},{color: 240,percent: 0.1232628},{color: 245,percent: 0.1655589})"
+},{
+    "type": "wood_circle_small_3",
+    "colormap": "({color: 136,percent: 0.4180425},{color: 172,percent: 0.1108491},{color: 240,percent: 0.1055425},{color: 245,percent: 0.1574292})"
+},{
+    "type": "wood_circle_small_4",
+    "colormap": "({color: 136,percent: 0.4757576},{color: 172,percent: 0.09393939},{color: 240,percent: 0.1012121},{color: 245,percent: 0.1430303})"
+},{
+    "type": "wood_rect_big_1",
+    "colormap": "({color: 136,percent: 0.2910497},{color: 172,percent: 0.1427624},{color: 240,percent: 0.2696133},{color: 204,percent: 0.0921547})"
+},{
+    "type": "wood_rect_big_2",
+    "colormap": "({color: 136,percent: 0.2947159},{color: 172,percent: 0.1437099},{color: 240,percent: 0.2695114},{color: 208,percent: 0.05836834},{color: 204,percent: 0.08755251})"
+},{
+    "type": "wood_rect_big_3",
+    "colormap": "({color: 136,percent: 0.3076073},{color: 168,percent: 0.08580274},{color: 172,percent: 0.1547988},{color: 204,percent: 0.07762052},{color: 240,percent: 0.2231314},{color: 21,percent: 0.05661212})"
+},{
+    "type": "wood_rect_big_4",
+    "colormap": "({color: 136,percent: 0.3891223},{color: 168,percent: 0.08534159},{color: 172,percent: 0.1452576},{color: 240,percent: 0.1992041})"
+},{
+    "type": "wood_rect_fat_1",
+    "colormap": "({color: 136,percent: 0.2046205},{color: 172,percent: 0.1232123},{color: 204,percent: 0.1262376},{color: 240,percent: 0.400165})"
+},{
+    "type": "wood_rect_fat_2",
+    "colormap": "({color: 136,percent: 0.2107438},{color: 172,percent: 0.1162534},{color: 204,percent: 0.1223141},{color: 240,percent: 0.3944904})"
+},{
+    "type": "wood_rect_fat_3",
+    "colormap": "({color: 136,percent: 0.2442181},{color: 168,percent: 0.05809471},{color: 172,percent: 0.1172908},{color: 204,percent: 0.1139868},{color: 240,percent: 0.3386564})"
+},{
+    "type": "wood_rect_fat_4",
+    "colormap": "({color: 136,percent: 0.3255237},{color: 168,percent: 0.05871003},{color: 172,percent: 0.1176957},{color: 204,percent: 0.09261301},{color: 240,percent: 0.280871})"
+},{
+    "type": "wood_rect_medium_1",
+    "colormap": "({color: 136,percent: 0.2952329},{color: 172,percent: 0.1411159},{color: 240,percent: 0.2600217},{color: 204,percent: 0.1048212})"
+},{
+    "type": "wood_rect_medium_2",
+    "colormap": "({color: 136,percent: 0.2968581},{color: 172,percent: 0.1432828},{color: 240,percent: 0.2583965},{color: 204,percent: 0.1004875})"
+},{
+    "type": "wood_rect_medium_3",
+    "colormap": "({color: 136,percent: 0.3156326},{color: 168,percent: 0.07911135},{color: 172,percent: 0.1517204},{color: 204,percent: 0.09049038},{color: 240,percent: 0.2232457})"
+},{
+    "type": "wood_rect_medium_4",
+    "colormap": "({color: 136,percent: 0.4138211},{color: 168,percent: 0.08373984},{color: 172,percent: 0.1390244},{color: 204,percent: 0.06097561},{color: 240,percent: 0.1818428})"
+},{
+    "type": "wood_rect_small_1",
+    "colormap": "({color: 136,percent: 0.3213132},{color: 172,percent: 0.1571582},{color: 21,percent: 0.0575888},{color: 204,percent: 0.06620021},{color: 240,percent: 0.2578041})"
+},{
+    "type": "wood_rect_small_2",
+    "colormap": "({color: 136,percent: 0.3256314},{color: 172,percent: 0.1504567},{color: 21,percent: 0.05695862},{color: 204,percent: 0.08597528},{color: 240,percent: 0.2256851})"
+},{
+    "type": "wood_rect_small_3",
+    "colormap": "({color: 136,percent: 0.3449946},{color: 172,percent: 0.1684607},{color: 204,percent: 0.08127018},{color: 240,percent: 0.2061356})"
+},{
+    "type": "wood_rect_small_4",
+    "colormap": "({color: 136,percent: 0.3976357},{color: 168,percent: 0.05749597},{color: 172,percent: 0.1816228},{color: 204,percent: 0.05910801},{color: 240,percent: 0.1665771})"
+},{
+    "type": "wood_rect_tiny_1",
+    "colormap": "({color: 136,percent: 0.3731501},{color: 172,percent: 0.1775898},{color: 245,percent: 0.05919662},{color: 204,percent: 0.102537},{color: 240,percent: 0.1437632})"
+},{
+    "type": "wood_rect_tiny_2",
+    "colormap": "({color: 136,percent: 0.3816068},{color: 172,percent: 0.1701903},{color: 204,percent: 0.09619451},{color: 21,percent: 0.05602537},{color: 245,percent: 0.06236786},{color: 240,percent: 0.1501057})"
+},{
+    "type": "wood_rect_tiny_3",
+    "colormap": "({color: 136,percent: 0.4397463},{color: 172,percent: 0.1627907},{color: 204,percent: 0.09725159},{color: 240,percent: 0.1046512})"
+},{
+    "type": "wood_rect_tiny_4",
+    "colormap": "({color: 136,percent: 0.4556025},{color: 168,percent: 0.07399577},{color: 172,percent: 0.1691332},{color: 204,percent: 0.05708245},{color: 240,percent: 0.07293869})"
+},{
+    "type": "wood_square_hole_1",
+    "colormap": "({color: 136,percent: 0.474878},{color: 172,percent: 0.1029285},{color: 240,percent: 0.175567},{color: 208,percent: 0.1326443})"
+},{
+    "type": "wood_square_hole_2",
+    "colormap": "({color: 136,percent: 0.4831993},{color: 172,percent: 0.1072659},{color: 240,percent: 0.1648478},{color: 208,percent: 0.1289489})"
+},{
+    "type": "wood_square_hole_3",
+    "colormap": "({color: 136,percent: 0.5175186},{color: 172,percent: 0.1061172},{color: 208,percent: 0.1213383},{color: 240,percent: 0.1425905})"
+},{
+    "type": "wood_square_hole_4",
+    "colormap": "({color: 136,percent: 0.579023},{color: 172,percent: 0.1034483},{color: 208,percent: 0.09123563},{color: 240,percent: 0.1146552})"
+},{
+    "type": "wood_square_small_1",
+    "colormap": "({color: 136,percent: 0.2843733},{color: 172,percent: 0.128106},{color: 21,percent: 0.08448371},{color: 204,percent: 0.1131971},{color: 240,percent: 0.2898951})"
+},{
+    "type": "wood_square_small_2",
+    "colormap": "({color: 136,percent: 0.289863},{color: 172,percent: 0.1194521},{color: 21,percent: 0.08109589},{color: 204,percent: 0.1063014},{color: 240,percent: 0.2893151})"
+},{
+    "type": "wood_square_small_3",
+    "colormap": "({color: 136,percent: 0.3315068},{color: 172,percent: 0.1243836},{color: 21,percent: 0.07452055},{color: 204,percent: 0.08986302},{color: 240,percent: 0.2580822})"
+},{
+    "type": "wood_square_small_4",
+    "colormap": "({color: 136,percent: 0.3507911},{color: 172,percent: 0.1140207},{color: 208,percent: 0.05400982},{color: 204,percent: 0.07528642},{color: 240,percent: 0.2575014})"
+},{
+    "type": "wood_square_tiny_1",
+    "colormap": "({color: 136,percent: 0.453159},{color: 172,percent: 0.1721133},{color: 240,percent: 0.1633987})"
+},{
+    "type": "wood_square_tiny_2",
+    "colormap": "({color: 136,percent: 0.4698545},{color: 172,percent: 0.1455301},{color: 240,percent: 0.1580042})"
+},{
+    "type": "wood_square_tiny_3",
+    "colormap": "({color: 136,percent: 0.4656965},{color: 172,percent: 0.1580042},{color: 240,percent: 0.1476091},{color: 208,percent: 0.05197505})"
+},{
+    "type": "wood_square_tiny_4",
+    "colormap": "({color: 136,percent: 0.5932914},{color: 172,percent: 0.1006289},{color: 240,percent: 0.08805031})"
+},{
+    "type": "wood_triang_1",
+    "colormap": "({color: 136,percent: 0.4136949},{color: 240,percent: 0.2055739},{color: 208,percent: 0.1074318},{color: 172,percent: 0.05753671},{color: 73,percent: 0.1505844})"
+},{
+    "type": "wood_triang_2",
+    "colormap": "({color: 136,percent: 0.4353823},{color: 240,percent: 0.1947526},{color: 208,percent: 0.1058471},{color: 172,percent: 0.06641679},{color: 73,percent: 0.1356822})"
+},{
+    "type": "wood_triang_3",
+    "colormap": "({color: 136,percent: 0.4676412},{color: 208,percent: 0.09121364},{color: 172,percent: 0.07339729},{color: 240,percent: 0.1530379},{color: 73,percent: 0.1533425})"
+},{
+    "type": "wood_triang_4",
+    "colormap": "({color: 136,percent: 0.3568857},{color: 208,percent: 0.08460846},{color: 172,percent: 0.07875787},{color: 73,percent: 0.3046805},{color: 240,percent: 0.1237624})"
+},{
+    "type": "wood_triang_hole_1",
+    "colormap": "({color: 136,percent: 0.5156543},{color: 208,percent: 0.07242822},{color: 172,percent: 0.09334873},{color: 240,percent: 0.1561102},{color: 19,percent: 0.08397057})"
+},{
+    "type": "wood_triang_hole_2",
+    "colormap": "({color: 136,percent: 0.5197977},{color: 208,percent: 0.07355491},{color: 172,percent: 0.09653179},{color: 240,percent: 0.1479769},{color: 19,percent: 0.08713873})"
+},{
+    "type": "wood_triang_hole_3",
+    "colormap": "({color: 136,percent: 0.542787},{color: 208,percent: 0.07140792},{color: 172,percent: 0.0965597},{color: 240,percent: 0.1263371},{color: 19,percent: 0.08745302})"
+},{
+    "type": "wood_triang_hole_4",
+    "colormap": "({color: 136,percent: 0.5706593},{color: 19,percent: 0.09256294},{color: 208,percent: 0.0660748},{color: 172,percent: 0.08266628},{color: 240,percent: 0.1123563})"
+}]
+}

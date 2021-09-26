@@ -1,0 +1,1399 @@
+fileFormatVersion: 2
+guid: 00372c788e37047739bd2957af4e684a
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -7814471582831894514
+    second: pigs_starwar_0
+  - first:
+      213: -7302674928812019236
+    second: pigs_starwar_1
+  - first:
+      213: 433484520341024122
+    second: pigs_starwar_2
+  - first:
+      213: -6490438256561667173
+    second: pigs_starwar_3
+  - first:
+      213: 3466207993122121317
+    second: pigs_starwar_4
+  - first:
+      213: -84460700676173310
+    second: pigs_starwar_5
+  - first:
+      213: 8038451001719876456
+    second: pigs_starwar_6
+  - first:
+      213: -7373423097752611822
+    second: pigs_starwar_7
+  - first:
+      213: 8929449164014545077
+    second: pigs_starwar_8
+  - first:
+      213: 4304421372126725904
+    second: pigs_starwar_9
+  - first:
+      213: 7635368112682659813
+    second: pigs_starwar_10
+  - first:
+      213: 8871144112615888051
+    second: pigs_starwar_11
+  - first:
+      213: -146540934947349727
+    second: pigs_starwar_12
+  - first:
+      213: 9114133107222041963
+    second: pigs_TIEFighter_1
+  - first:
+      213: -7336745682076608555
+    second: pigs_starwar_14
+  - first:
+      213: -1715784992394326771
+    second: pigs_starwar_15
+  - first:
+      213: 3156229885932546302
+    second: pigs_starwar_16
+  - first:
+      213: -1838168654358673720
+    second: pigs_starwar_17
+  - first:
+      213: -4596608991841081083
+    second: pigs_starwar_18
+  - first:
+      213: 7612716046303035300
+    second: pigs_starwar_19
+  - first:
+      213: -6917161138807460460
+    second: pigs_starwar_20
+  - first:
+      213: 2210912912921573753
+    second: pigs_starwar_21
+  - first:
+      213: 8896702818307689396
+    second: pigs_starwar_22
+  - first:
+      213: 7531057897393846362
+    second: pigs_starwar_23
+  - first:
+      213: -5805581148878551046
+    second: pigs_starwar_24
+  - first:
+      213: -2564690887745219343
+    second: pigs_starwar_25
+  - first:
+      213: -4410030843748279479
+    second: pigs_starwar_26
+  - first:
+      213: -3000309620965112006
+    second: pigs_starwar_27
+  - first:
+      213: -7894361371831306562
+    second: pigs_starwar_28
+  - first:
+      213: 3190212483292490163
+    second: pigs_starwar_29
+  - first:
+      213: -3031241701965836998
+    second: pigs_starwar_30
+  - first:
+      213: -1630114619911501750
+    second: pigs_starwar_31
+  - first:
+      213: 6242939425088189281
+    second: pigs_starwar_32
+  - first:
+      213: 6181297747738644179
+    second: pigs_starwar_33
+  - first:
+      213: 9045512948647547843
+    second: pigs_starwar_34
+  - first:
+      213: 6224795142704646059
+    second: pigs_starwar_35
+  - first:
+      213: -8999939052115118460
+    second: pigs_starwar_36
+  - first:
+      213: 9011334291098883089
+    second: pigs_starwar_37
+  - first:
+      213: 880847410874853746
+    second: pigs_starwar_38
+  - first:
+      213: -3296196281690434751
+    second: pigs_starwar_39
+  - first:
+      213: 5210794543316946511
+    second: pigs_starwar_40
+  - first:
+      213: 6734916709097523979
+    second: pigs_starwar_41
+  - first:
+      213: -7285896820871824655
+    second: pigs_starwar_42
+  - first:
+      213: -4519877718166494148
+    second: pigs_starwar_43
+  - first:
+      213: -7953590635072068801
+    second: pigs_starwar_44
+  - first:
+      213: -2232934622664347500
+    second: pigs_starwar_45
+  - first:
+      213: -2200586904118043462
+    second: pigs_starwar_46
+  - first:
+      213: -8081318513348008985
+    second: pigs_starwar_47
+  - first:
+      213: -4328752038013199096
+    second: pigs_starwar_48
+  - first:
+      213: 1714085720458933853
+    second: pigs_starwar_49
+  - first:
+      213: 7686166153672064674
+    second: pigs_starwar_50
+  - first:
+      213: -3151575042464614129
+    second: pigs_starwar_51
+  - first:
+      213: -5376724747732746310
+    second: pigs_starwar_52
+  - first:
+      213: -5243615661128739985
+    second: pigs_starwar_53
+  externalObjects: {}
+  serializedVersion: 10
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: -1
+    aniso: -1
+    mipBias: -100
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: pigs_starwar_0
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 709
+        width: 226
+        height: 173
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e00abed8f7b6d8390800000000000000
+      internalID: -7814471582831894514
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pigs_starwar_1
+      rect:
+        serializedVersion: 2
+        x: 229
+        y: 768
+        width: 121
+        height: 114
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cd1320ee7dfa7aa90800000000000000
+      internalID: -7302674928812019236
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pigs_starwar_2
+      rect:
+        serializedVersion: 2
+        x: 352
+        y: 768
+        width: 121
+        height: 114
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a7dae82efdb040600800000000000000
+      internalID: 433484520341024122
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pigs_starwar_3
+      rect:
+        serializedVersion: 2
+        x: 475
+        y: 768
+        width: 121
+        height: 114
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b9349012bc45de5a0800000000000000
+      internalID: -6490438256561667173
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pigs_starwar_4
+      rect:
+        serializedVersion: 2
+        x: 598
+        y: 768
+        width: 121
+        height: 114
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 566e9a31ec17a1030800000000000000
+      internalID: 3466207993122121317
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pigs_starwar_5
+      rect:
+        serializedVersion: 2
+        x: 721
+        y: 768
+        width: 121
+        height: 114
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 20257b2b07fe3def0800000000000000
+      internalID: -84460700676173310
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pigs_starwar_6
+      rect:
+        serializedVersion: 2
+        x: 844
+        y: 769
+        width: 121
+        height: 113
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 86b65e5b8905e8f60800000000000000
+      internalID: 8038451001719876456
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pigs_starwar_7
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 578
+        width: 202
+        height: 129
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2149bc732c65ca990800000000000000
+      internalID: -7373423097752611822
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pigs_starwar_8
+      rect:
+        serializedVersion: 2
+        x: 229
+        y: 653
+        width: 167
+        height: 113
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5b8eef454b6cbeb70800000000000000
+      internalID: 8929449164014545077
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pigs_starwar_9
+      rect:
+        serializedVersion: 2
+        x: 398
+        y: 653
+        width: 121
+        height: 113
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0178631ae606cbb30800000000000000
+      internalID: 4304421372126725904
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pigs_starwar_10
+      rect:
+        serializedVersion: 2
+        x: 521
+        y: 653
+        width: 121
+        height: 113
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5ef6bc538d646f960800000000000000
+      internalID: 7635368112682659813
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pigs_starwar_11
+      rect:
+        serializedVersion: 2
+        x: 644
+        y: 653
+        width: 121
+        height: 113
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3b494cfa192ac1b70800000000000000
+      internalID: 8871144112615888051
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pigs_starwar_12
+      rect:
+        serializedVersion: 2
+        x: 767
+        y: 653
+        width: 121
+        height: 113
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 12bd86bcbc167fdf0800000000000000
+      internalID: -146540934947349727
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pigs_TIEFighter_1
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 453
+        width: 192
+        height: 123
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b65d893b5c7eb7e70800000000000000
+      internalID: 9114133107222041963
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pigs_starwar_14
+      rect:
+        serializedVersion: 2
+        x: 229
+        y: 538
+        width: 121
+        height: 113
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5d751748ca4ae2a90800000000000000
+      internalID: -7336745682076608555
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pigs_starwar_15
+      rect:
+        serializedVersion: 2
+        x: 352
+        y: 548
+        width: 130
+        height: 103
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d0dc369d3ae4038e0800000000000000
+      internalID: -1715784992394326771
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pigs_starwar_16
+      rect:
+        serializedVersion: 2
+        x: 484
+        y: 548
+        width: 130
+        height: 103
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ef82b7cdb5e2dcb20800000000000000
+      internalID: 3156229885932546302
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pigs_starwar_17
+      rect:
+        serializedVersion: 2
+        x: 616
+        y: 548
+        width: 130
+        height: 103
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8c681bf09538d76e0800000000000000
+      internalID: -1838168654358673720
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pigs_starwar_18
+      rect:
+        serializedVersion: 2
+        x: 748
+        y: 548
+        width: 130
+        height: 103
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 50922fdc9709530c0800000000000000
+      internalID: -4596608991841081083
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pigs_starwar_19
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 328
+        width: 178
+        height: 123
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4affec309ecc5a960800000000000000
+      internalID: 7612716046303035300
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pigs_starwar_20
+      rect:
+        serializedVersion: 2
+        x: 229
+        y: 423
+        width: 121
+        height: 113
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 49dae3bc79e4100a0800000000000000
+      internalID: -6917161138807460460
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pigs_starwar_21
+      rect:
+        serializedVersion: 2
+        x: 352
+        y: 443
+        width: 126
+        height: 103
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 979b304949dbeae10800000000000000
+      internalID: 2210912912921573753
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pigs_starwar_22
+      rect:
+        serializedVersion: 2
+        x: 480
+        y: 444
+        width: 130
+        height: 102
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4bb42759310777b70800000000000000
+      internalID: 8896702818307689396
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pigs_starwar_23
+      rect:
+        serializedVersion: 2
+        x: 612
+        y: 444
+        width: 130
+        height: 102
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a587f05a141b38860800000000000000
+      internalID: 7531057897393846362
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pigs_starwar_24
+      rect:
+        serializedVersion: 2
+        x: 744
+        y: 444
+        width: 130
+        height: 102
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: af7c36254be6e6fa0800000000000000
+      internalID: -5805581148878551046
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pigs_starwar_25
+      rect:
+        serializedVersion: 2
+        x: 229
+        y: 308
+        width: 121
+        height: 113
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1f4d345d933686cd0800000000000000
+      internalID: -2564690887745219343
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pigs_starwar_26
+      rect:
+        serializedVersion: 2
+        x: 352
+        y: 338
+        width: 126
+        height: 103
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 94b1edd105c6cc2c0800000000000000
+      internalID: -4410030843748279479
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pigs_starwar_27
+      rect:
+        serializedVersion: 2
+        x: 480
+        y: 340
+        width: 130
+        height: 102
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a37003acb42cc56d0800000000000000
+      internalID: -3000309620965112006
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pigs_starwar_28
+      rect:
+        serializedVersion: 2
+        x: 612
+        y: 346
+        width: 112
+        height: 96
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: eb6fd6f8828917290800000000000000
+      internalID: -7894361371831306562
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pigs_starwar_29
+      rect:
+        serializedVersion: 2
+        x: 726
+        y: 346
+        width: 112
+        height: 96
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3b96aa0e959e54c20800000000000000
+      internalID: 3190212483292490163
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pigs_starwar_30
+      rect:
+        serializedVersion: 2
+        x: 840
+        y: 346
+        width: 112
+        height: 96
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a3dc9f57bbddee5d0800000000000000
+      internalID: -3031241701965836998
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pigs_starwar_31
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 204
+        width: 79
+        height: 122
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a480101d36ba069e0800000000000000
+      internalID: -1630114619911501750
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pigs_starwar_32
+      rect:
+        serializedVersion: 2
+        x: 82
+        y: 204
+        width: 74
+        height: 122
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 163b9a2a45063a650800000000000000
+      internalID: 6242939425088189281
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pigs_starwar_33
+      rect:
+        serializedVersion: 2
+        x: 158
+        y: 227
+        width: 47
+        height: 99
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3de42e83d8168c550800000000000000
+      internalID: 6181297747738644179
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pigs_starwar_34
+      rect:
+        serializedVersion: 2
+        x: 229
+        y: 203
+        width: 111
+        height: 103
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3c355530a1e188d70800000000000000
+      internalID: 9045512948647547843
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pigs_starwar_35
+      rect:
+        serializedVersion: 2
+        x: 352
+        y: 233
+        width: 108
+        height: 103
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ba7cc70b33ae26650800000000000000
+      internalID: 6224795142704646059
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pigs_starwar_36
+      rect:
+        serializedVersion: 2
+        x: 480
+        y: 236
+        width: 130
+        height: 102
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4863386ad1bc91380800000000000000
+      internalID: -8999939052115118460
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pigs_starwar_37
+      rect:
+        serializedVersion: 2
+        x: 612
+        y: 248
+        width: 112
+        height: 96
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 114de3d2bc0be0d70800000000000000
+      internalID: 9011334291098883089
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pigs_starwar_38
+      rect:
+        serializedVersion: 2
+        x: 726
+        y: 248
+        width: 112
+        height: 96
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 279a482ad06693c00800000000000000
+      internalID: 880847410874853746
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pigs_starwar_39
+      rect:
+        serializedVersion: 2
+        x: 840
+        y: 248
+        width: 111
+        height: 96
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 143d0ef12fe8142d0800000000000000
+      internalID: -3296196281690434751
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pigs_starwar_40
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 87
+        width: 121
+        height: 115
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f4e43f77706705840800000000000000
+      internalID: 5210794543316946511
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pigs_starwar_41
+      rect:
+        serializedVersion: 2
+        x: 124
+        y: 113
+        width: 82
+        height: 89
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b0bc995501b377d50800000000000000
+      internalID: 6734916709097523979
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pigs_starwar_42
+      rect:
+        serializedVersion: 2
+        x: 229
+        y: 98
+        width: 108
+        height: 103
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1fa79c9917b43ea90800000000000000
+      internalID: -7285896820871824655
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pigs_starwar_43
+      rect:
+        serializedVersion: 2
+        x: 352
+        y: 129
+        width: 126
+        height: 102
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c34ab74a92b2641c0800000000000000
+      internalID: -4519877718166494148
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pigs_starwar_44
+      rect:
+        serializedVersion: 2
+        x: 480
+        y: 132
+        width: 130
+        height: 102
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f33e7a3157b2f9190800000000000000
+      internalID: -7953590635072068801
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pigs_starwar_45
+      rect:
+        serializedVersion: 2
+        x: 612
+        y: 150
+        width: 111
+        height: 96
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 490bb619ac50301e0800000000000000
+      internalID: -2232934622664347500
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pigs_starwar_46
+      rect:
+        serializedVersion: 2
+        x: 725
+        y: 150
+        width: 111
+        height: 96
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: abcdaa2bed1f571e0800000000000000
+      internalID: -2200586904118043462
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pigs_starwar_47
+      rect:
+        serializedVersion: 2
+        x: 838
+        y: 150
+        width: 111
+        height: 96
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7e3aa17f0a369df80800000000000000
+      internalID: -8081318513348008985
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pigs_starwar_48
+      rect:
+        serializedVersion: 2
+        x: 229
+        y: 1
+        width: 112
+        height: 95
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 80d9975c4fe2de3c0800000000000000
+      internalID: -4328752038013199096
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pigs_starwar_49
+      rect:
+        serializedVersion: 2
+        x: 352
+        y: 31
+        width: 112
+        height: 96
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d56368291e7a9c710800000000000000
+      internalID: 1714085720458933853
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pigs_starwar_50
+      rect:
+        serializedVersion: 2
+        x: 480
+        y: 28
+        width: 130
+        height: 102
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2aef04ac46fbaaa60800000000000000
+      internalID: 7686166153672064674
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pigs_starwar_51
+      rect:
+        serializedVersion: 2
+        x: 612
+        y: 52
+        width: 111
+        height: 96
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f09f8e6523b5344d0800000000000000
+      internalID: -3151575042464614129
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pigs_starwar_52
+      rect:
+        serializedVersion: 2
+        x: 725
+        y: 53
+        width: 112
+        height: 95
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: abf765c34590265b0800000000000000
+      internalID: -5376724747732746310
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pigs_starwar_53
+      rect:
+        serializedVersion: 2
+        x: 839
+        y: 53
+        width: 112
+        height: 95
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f631fbb865fea37b0800000000000000
+      internalID: -5243615661128739985
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
