@@ -1,24 +1,29 @@
+## Task Template Designer
+
+This work is a modification of a cover version of the "Angry Birds" game used for research purposes developed by Lucas Ferreira. If you use this clone in your research, please cite:
+
+```
+@inproceedings{ferreira_2014_a,
+    author = {Lucas Ferreira and Claudio Toledo},
+    title = {A Search-based Approach for Generating Angry Birds Levels},
+    booktitle = {Proceedings of the 9th IEEE International Conference on Computational Intelligence in Games},
+    series = {CIG'14},
+    year = {2014},
+    location = {Dortmund, Germany}
+}
+```
 
 ## Run the Code
 
 - To import the project (Note: Please use Unity version 2019.2.13f1 or later):
     - If in **Unity**: select **File->Open Project**  and select the root folder of science birds.
     - If in **Unity Hub**, if project is not added previously, click on **Add** button and select the root folder of science birds. Then click on the project which should have appeared in the list.
-- To config build options:
-    - Press **Shift+Ctrl+B** to open build settings. Select PC, Mac & Linux Standalone in Platform. 
-    - Select the target platform in **Target Platform**
-    - Click **Play Settings** and set Fullscreen Mode to **Windowed** 
-    - Set Default Screen Width to **840** and Default Screen Height to **480**
-- To run the code within Unity for debugging: 
-    - From **Project** panel select **Scenes**->**GameWorld** and click the **play** button <img src="/Docs/PlayButton.png" height="15" /> in the middle of the top bar.
-- To compile the code
-    - Press **Ctrl+B** or select **File->Build and Run** to compile and run the code.
-    - Building the game creates an executable. If no changes have been made to the game, you can later restart it by just running this file.
-- To add/edit levels: Levels are found in `Assets/StreamingAssets/Levels`.
-  The levels in the first directory seem to be compiled into the game when it is built; "streaming"
-  levels can be edited/added without recompiling (though it currently requires restarting the game).
-  These are found in the directory `test_Data/StreamingAssets/Levels` after the game has been built.
-
+- To open the Task Template Designer and create your own task template:
+    - Run the application in Unity Editor and load any game level. 
+    - While in the game level, open the Level Editor menu by navigating to the Level Editor -> Edit Level in the top-menu of the Unity editor.
+    - From the Level Editor menu you can load a game level, save the level, and add any game objects to the level.
+    - Design the template by adding new game objects, adjusting their positions, and resizing them as you wish.
+    - After designing the task template, save the template using the Save Level button in the Level Editor menu.
 
 ## Game Objects
 
@@ -99,8 +104,6 @@ four attributes:
 coordinates system is the centre of the level.
 - **Rotation**: float number that defines the rotation of the game object.
 
-![Alt text](/Docs/Level1.png?raw=true "Level 1")
-
 ```
 <?xml version="1.0" encoding="utf-16"?>
 <Level>
@@ -120,17 +123,3 @@ coordinates system is the centre of the level.
 </Level>
 ```
 
-## Citing this Work
-
-This work is a modification of a cover version of the "Angry Birds" game used for research purposes developed by Lucas Ferreira. If you use this clone in your research, please cite:
-
-```
-@inproceedings{ferreira_2014_a,
-    author = {Lucas Ferreira and Claudio Toledo},
-    title = {A Search-based Approach for Generating Angry Birds Levels},
-    booktitle = {Proceedings of the 9th IEEE International Conference on Computational Intelligence in Games},
-    series = {CIG'14},
-    year = {2014},
-    location = {Dortmund, Germany}
-}
-```
