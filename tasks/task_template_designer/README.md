@@ -1,12 +1,3 @@
-# Science Birds
-A cover version of the "Angry Birds" game used for research purposes.
-
-<p float="left">
-  <img src="/Docs/MainMenu.png" width="210" />
-  <img src="/Docs/LevelSelect.png" width="210" />
-  <img src="/Docs/Level1.png" width="210" />
-  <img src="/Docs/NextLevel.png" width="210" />
-</p>
 
 ## Run the Code
 
@@ -131,7 +122,7 @@ coordinates system is the centre of the level.
 
 ## Citing this Work
 
-If you use this clone in your research, please cite:
+This work is a modification of a cover version of the "Angry Birds" game used for research purposes developed by Lucas Ferreira. If you use this clone in your research, please cite:
 
 ```
 @inproceedings{ferreira_2014_a,
