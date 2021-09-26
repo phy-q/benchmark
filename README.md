@@ -21,9 +21,10 @@ The research paper can be found here: https://arxiv.org/abs/2108.13696
 #### Table of contents
 1. [Physical Scenarios in Phy-Q](#Scenarios)
 2. [Phy-Q in Angry Birds](#Phy-Q)
-3. [Tasks](#Tasks)
+3. [Generating Tasks](#Generating-Tasks)
 	1. [Task Generator](#Task-generator) 	
 	2. [Tasks Generted for the Baseline Analysis](#Tasks-generated-for-baselines)
+	3. [Creating Your Own Tasks](#Creating-Your-Own-Tasks)
 6. [Baseline Agents](#BAF)
 	1. [How to Run Heuristic Agents](#RHA)
 	2. [How to Run Learning Agents](#RLA)
@@ -365,7 +366,7 @@ Sceenshots of the 75 task templates are shown below. x.y represents the y<sup>th
 </table>
 
 
-## 3. Tasks<a name="Tasks"/></a>
+## 3. Generating Tasks<a name="Generating-Tasks"/></a>
 
 ### 3.1 Task Generator<a name="Task-generator"/></a>
 
@@ -388,6 +389,8 @@ We generated 100 tasks from each of the 75 task templates for the baseline analy
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-- index of the scenario/ <br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-- index of the template/ <br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-- task files named as categoryIndex_scenarioIndex_templateIndex_taskIndex.xml<br>	
+
+### Creating Your Own Tasks<a name="Creating-Your-Own-Tasks"/></a>
 
 ## 5. Baseline Agents and the Framework<a name="BAF"></a>
 
