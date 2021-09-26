@@ -370,11 +370,11 @@ Sceenshots of the 75 task templates are shown below. x.y represents the y<sup>th
 
 ### 3.1 Task Generator<a name="Task-generator"/></a>
 
-We develop a task generator that can generate tasks for the task templates we designed for each scenario.<br>
-1. To run the task generator:<br>
+We develop a Task Generator that can generate tasks for the task templates we designed for each scenario.<br>
+1. To run the Task Generator:<br>
     1. Go to ```tasks/task_generator```
     2. Copy the task templates that you want to generate tasks into the ```input``` (level templates can be found in ```tasks/task_templates```)
-    3. Run the task generator providing the number of tasks as an argument
+    3. Run the Task Generator providing the number of tasks as an argument
      ```
         python generate_tasks.py <number of tasks to generate>
      ```
@@ -392,19 +392,19 @@ We generated 100 tasks from each of the 75 task templates for the baseline analy
 
 ### 3.3. Creating Your Own Tasks<a name="Creating-Your-Own-Tasks"/></a>
 
-If you want to design your own task templates, you can use the interactive task _template designer tool_ we have provided, which is developed in Unity.
+If you want to design your own task templates, you can use the interactive Task Template Designer tool we have provided, which is developed in Unity.
 1. To design your own task template:<br>
     1. Open the ```tasks/task_template_designer``` in Unity
     2. Run the application in Unity Editor and load any game level
     3. While in the game level, open the Level Editor menu by navigating to the ```Level Editor -> Edit Level``` in the top-menu of the Unity editor
-    4. From the Level Editor menu you can load a game level, save the level, and add any game object to the level
-    5. Design the template by adding new game objects, adjusting their poisitions, and resizing them as you wish
+    4. From the Level Editor menu you can load a game level, save the level, and add any game objects to the level
+    5. Design the template by adding new game objects, adjusting their positions, and resizing them as you wish
     6. After designing the task template, save the template using the ```Save Level``` button in the Level Editor menu
 
 
 2. To generate tasks using your own task template
-    1. Add necessary constraints according to your template into the ```tasks/task_generator/utils/generate_variations.py``` script of the task generator
-    2. Run the task generator using the instructions given in [Section 3.1](#Task-generator)
+    1. Add necessary constraints according to your template into the ```tasks/task_generator/utils/generate_variations.py``` script of the Task Generator
+    2. Run the Task Generator using the instructions given in [Section 3.1](#Task-generator)
     
 
 ## 5. Baseline Agents and the Framework<a name="BAF"></a>
