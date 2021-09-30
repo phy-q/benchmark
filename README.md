@@ -456,15 +456,15 @@ Before running agents, please:
        ./TestPythonHeuristicAgent.sh PigShooter
        ```
 
-### 5.2.1 How to Run DQN Baselines<a name="RLA"></a>
+### 5.2.1 How to Run DQN and Deep Relational Baselines<a name="RLA"></a>
 
 #### For Symbolic Agent
 1. Go to ```sciencebirdsagents/Utils```
-2. Open ```Parameters.py``` and set ```agent``` to be DQNDiscreteAgent and ```network``` to be DQNSymbolicDuelingFC_v2 and ```state_repr_type``` to be "symbolic"
+2. Open ```Parameters.py``` and set ```agent``` to be DQNDiscreteAgent and ```network``` to be DQNSymbolicDuelingFC_v2 for DQN and DQNRelationalSymbolic for Deep Relationa, and ```state_repr_type``` to be "symbolic"
 
 #### For Image Agent
 1. Go to ```sciencebirdsagents/Utils```
-2. Open ```Parameters.py``` and set ```agent``` to be DQNDiscreteAgent and ```network``` to be DQNImageResNet and ```state_repr_type``` to be "image"
+2. Open ```Parameters.py``` and set ```agent``` to be DQNDiscreteAgent and ```network``` to be DQNImageResNet for DQN and DQNRelationalImage for Deep Relationa and ```state_repr_type``` to be "image"
 
 
 1. Go to ```sciencebirdsagents/```
