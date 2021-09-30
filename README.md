@@ -28,7 +28,7 @@ The research paper can be found here: https://arxiv.org/abs/2108.13696
 6. [Baseline Agents](#BAF)
 	1. [How to Run Heuristic Agents](#RHA)
 	2. [How to Run Learning Agents](#RLA)
-		1. [How to Run DQN Baseline](#RLA)
+		1. [How to Run DQN and Deep Relational Baselines](#RLA)
 		2. [How to Run Stable Baselines](#OLA)
 	4. [How to Develop Your Own Agent](#ROA)
 	5. [Outline of the Agent Code](#code)
