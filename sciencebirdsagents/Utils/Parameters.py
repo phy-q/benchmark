@@ -1,6 +1,9 @@
 # from LearningAgents.RLNetwork.SACNetwork import SACNetwork
 import torch
 from LearningAgents.RLNetwork.DQNSymbolicDuelingFC_v2 import DQNSymbolicDuelingFC_v2
+from LearningAgents.RLNetwork.DQNRelationalSymbolic import DQNRelationalSymbolic
+from LearningAgents.RLNetwork.DQNRelationalImage import DQNRelationalImage
+
 from LearningAgents.RLNetwork.DQNImageResnet import DQNImageResNet
 
 from LearningAgents.DQNDiscreteAgent import DQNDiscreteAgent
@@ -42,25 +45,25 @@ class Parameters:
             'num_update_steps': 20 if not test_template else 40,
             'num_level_per_agent': 10,
             # todo: add an assertion to this.
-            'num_worker': 20,  # make usre it is divisible by the total number of levels
-            'agent': 'ppo', #DQNDiscreteAgent, #DQNDiscreteAgent, #'a2c',
-            'training_attempts_per_level': 20,
+            'num_worker': 10,  # make usre it is divisible by the total number of levels
+            'agent': DQNDiscreteAgent, #DQNDiscreteAgent, #DQNDiscreteAgent, #'a2c',
+            'training_attempts_per_level': 10,
             'memory_size': 100000,
             'memory_type': PrioritizedReplayMemory,
 
             # general trainning parameters
             'resume': False,
             'action_type': 'discrete' , #'continuous'
-            'state_repr_type': 'symbolic',
+            'state_repr_type': 'image',
 
-            'train_time_per_ep': 10,
+            'train_time_per_ep': 32,
             'train_time_rise': 1,
             'train_batch': 32,
             'gamma': 0.99,
             'eps_start': 0.95,
             'eps_test': 0.05,
             'lr': 0.0003,
-            'network': DQNSymbolicDuelingFC_v2, #DQNSymbolicDuelingFC_v2
+            'network': DQNRelationalSymbolic,
             'reward_type': 'passing',
             'simulation_speed': 100,
             'eval_freq': 10,
