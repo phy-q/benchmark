@@ -445,6 +445,8 @@ Before running agents, please:
           ```sh
           java -jar eaglewings_037_v3_java12.jar 1
           ```
+**Note that the integer 1 in the end controls the number of agents to be running. You can set it to different integer value that suits you the best.**
+
 2. Run *Random Agent* and *Pig Shooter*: <br>
     1. Go to ```sciencebirdsagents/```
     2. In terminal, after grant execution permission run Random Agent
