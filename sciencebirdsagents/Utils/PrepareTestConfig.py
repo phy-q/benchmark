@@ -1,15 +1,35 @@
 import os
 from shutil import copyfile
-
+import argparse
 import lxml.etree as etree
 os.chdir("../")
-operating_system = 'Linux'
-target_level_path = '../sciencebirdslevels/generated_levels/fifth_generation'
-origin_level_path = '../sciencebirdsgames/{}/9001_Data/StreamingAssets/Levels/novelty_level_1/type1/Levels/'.format(operating_system)
-game_level_path = '9001_Data/StreamingAssets/Levels/novelty_level_1/type1/Levels/'.format(operating_system)
-game_config_path = '../sciencebirdsgames/{}/config.xml'.format(operating_system)
+
+parser = argparse.ArgumentParser()
+parser.add_argument('--os', type=str, default='Linux')
+args = parser.parse_args()
+operating_system = args.os
+
+if operating_system == 'Linux':
+    target_level_path = '../sciencebirdslevels/generated_levels/fifth_generation'
+    origin_level_path = '../sciencebirdsgames/{}/9001_Data/StreamingAssets/Levels/novelty_level_1/type1/Levels/'.format(operating_system)
+    game_level_path = '9001_Data/StreamingAssets/Levels/novelty_level_1/type1/Levels/'.format(operating_system)
+    game_config_path = '../sciencebirdsgames/{}/config.xml'.format(operating_system)
+
+elif operating_system == 'MacOS':
+    target_level_path = '../sciencebirdslevels/generated_levels/fifth_generation'
+    origin_level_path = '../sciencebirdsgames/MacOS/9001.app/Contents/Resources/Data/StreamingAssets/Levels/novelty_level_1/type1/Levels/'.format(operating_system)
+    game_level_path = './9001.app/Contents/Resources/Data/StreamingAssets/Levels/novelty_level_1/type1/Levels/'.format(operating_system)
+    game_config_path = '../sciencebirdsgames/{}/config.xml'.format(operating_system)
+
+
+elif operating_system == 'Windows':
+    target_level_path = '../sciencebirdslevels/generated_levels/fifth_generation'
+    origin_level_path = '../sciencebirdsgames/MacOS/9001.app/Contents/Resources/Data/StreamingAssets/Levels/novelty_level_1/type1/Levels/'.format(operating_system)
+    game_level_path = './9001.app/Contents/Resources/Data/StreamingAssets/Levels/novelty_level_1/type1/Levels/'.format(operating_system)
+    game_config_path = '../sciencebirdsgames/{}/config.xml'.format(operating_system)
 
 # each for each template, move 20 levels
+print(os.getcwd())
 hi_levels = os.listdir(target_level_path)
 # remove all the levels in self.origin_level_path
 old_levels = os.listdir(origin_level_path)
