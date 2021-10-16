@@ -431,7 +431,7 @@ Before running agents, please:
 
     1. Go to ```Utils``` and in terminal run
           ```
-          python PrepareTestConfig.py
+          python PrepareTestConfig.py --os [Linux/MacOS]
           ```
     2. Go to ```sciencebirdsgames/Linux```, in terminal run
           ```sh
