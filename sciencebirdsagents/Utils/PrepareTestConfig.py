@@ -24,8 +24,8 @@ elif operating_system == 'MacOS':
 
 elif operating_system == 'Windows':
     target_level_path = '../sciencebirdslevels/generated_levels/fifth_generation'
-    origin_level_path = '../sciencebirdsgames/MacOS/9001.app/Contents/Resources/Data/StreamingAssets/Levels/novelty_level_1/type1/Levels/'.format(operating_system)
-    game_level_path = './9001.app/Contents/Resources/Data/StreamingAssets/Levels/novelty_level_1/type1/Levels/'.format(operating_system)
+    origin_level_path = '../sciencebirdsgames/Windows/Levels/novelty_level_1/type1/Levels/'.format(operating_system)
+    game_level_path = './Levels/novelty_level_1/type1/Levels/'.format(operating_system)
     game_config_path = '../sciencebirdsgames/{}/config.xml'.format(operating_system)
 
 # each for each template, move 20 levels
