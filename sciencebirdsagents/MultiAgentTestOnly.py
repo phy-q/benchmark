@@ -43,8 +43,8 @@ if __name__ == '__main__':
     parser = argparse.ArgumentParser()
     parser.add_argument('--template', metavar='N', type=str)
     parser.add_argument('--agent', type=str, default='PigShooter')
-    parser.add_argument('--level_path', type=str, default='fourth generation')
-    parser.add_argument('--game_version', type=str, default='MacOS')
+    parser.add_argument('--level_path', type=str, default='fifth_generation')
+    parser.add_argument('--game_version', type=str, default='Linux')
     parser.add_argument('--if_save_local', type=str2bool, default=False)
     parser.add_argument('--resume', type=str2bool, default=False)
 

@@ -14,3 +14,5 @@ buildgame/Linux/
 tasks/generated_tasks/
 
 sciencebirdsgames/Linux/
+
+**/__pycache__/

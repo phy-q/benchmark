@@ -187,7 +187,7 @@ class MultiThreadTrajCollection:
                 if i == 1:
                     time.sleep(10)
                 else:
-                    time.sleep(0.5)
+                    time.sleep(1)
 
             logger.debug('all agents connected')
             for agent in agents_threads:

@@ -166,4 +166,3 @@ class DQNBase(nn.Module):
             ep_loss.append(processed_loss.detach().cpu().item())
         self.writer.add_scalar('training_td_loss', np.average(ep_loss),
                                total_train_time + _)
-
