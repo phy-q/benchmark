@@ -2,7 +2,7 @@ import argparse
 import math
 import random
 
-from SBEnviornment.SBEnvironmentWrapperOpenAI import SBEnvironmentWrapperOpenAI
+from SBEnvironment.SBEnvironmentWrapperOpenAI import SBEnvironmentWrapperOpenAI
 
 
 def str2bool(v):

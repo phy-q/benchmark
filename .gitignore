@@ -15,4 +15,4 @@ tasks/generated_tasks/
 
 sciencebirdsgames/Linux/
 
-**/__pycache__/
+*.pyc

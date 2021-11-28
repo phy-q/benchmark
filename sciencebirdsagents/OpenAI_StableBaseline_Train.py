@@ -13,8 +13,8 @@ from stable_baselines3.common.vec_env import SubprocVecEnv
 from torch.utils.tensorboard import SummaryWriter
 
 from LearningAgents.RLNetwork.OpenAICustomCNN import OpenAICustomCNN
-from SBEnviornment.SBEnvironmentWrapperOpenAI import SBEnvironmentWrapperOpenAI
-from SBEnviornment.Server import Server
+from SBEnvironment.SBEnvironmentWrapperOpenAI import SBEnvironmentWrapperOpenAI
+from SBEnvironment.Server import Server
 from Utils.Config import config
 from Utils.Parameters import Parameters
 from Utils.utils import make_env, sample_levels_with_at_least_num_agents
@@ -94,7 +94,7 @@ if __name__ == '__main__':
     parser.add_argument('--mode',
                         type=str,
                         default='within_template')  # propose three modes, 'train1testrest', 'trainhalftesthalf', 'trainresttestone'
-    parser.add_argument('--level_path', type=str, default='fourth generation')
+    parser.add_argument('--level_path', type=str, default='fifth_generation')
     parser.add_argument('--game_version', type=str, default='Linux')
 
     args = parser.parse_args()

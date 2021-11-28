@@ -10,7 +10,7 @@ import random
 from LearningAgents.LearningAgent import LearningAgent
 from Utils.LevelSelection import LevelSelectionSchema
 from LearningAgents.Memory import ReplayMemory
-from SBEnviornment.SBEnvironmentWrapper import SBEnvironmentWrapper
+from SBEnvironment.SBEnvironmentWrapper import SBEnvironmentWrapper
 from torch.utils.tensorboard import SummaryWriter
 from LearningAgents.RLNetwork.MultiHeadRelationalModule import MultiHeadRelationalModuleImage
 from einops import rearrange, reduce

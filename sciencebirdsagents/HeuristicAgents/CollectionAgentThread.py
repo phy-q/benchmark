@@ -3,7 +3,7 @@ import time
 from typing import List
 
 from HeuristicAgents.CollectionAgent import CollectionAgent
-from SBEnviornment.SBEnvironmentWrapper import SBEnvironmentWrapper
+from SBEnvironment.SBEnvironmentWrapper import SBEnvironmentWrapper
 import os
 import csv
 import cv2

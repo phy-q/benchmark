@@ -5,7 +5,7 @@ from torch.utils.tensorboard import SummaryWriter
 
 from LearningAgents.LearningAgent import LearningAgent
 from LearningAgents.Memory import ReplayMemory
-from SBEnviornment.SBEnvironmentWrapper import SBEnvironmentWrapper
+from SBEnvironment.SBEnvironmentWrapper import SBEnvironmentWrapper
 from Utils.LevelSelection import LevelSelectionSchema
 
 

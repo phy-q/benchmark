@@ -3,7 +3,7 @@ import random
 import numpy as np
 
 from SBAgent import SBAgent
-from SBEnviornment.SBEnvironmentWrapper import SBEnvironmentWrapper
+from SBEnvironment.SBEnvironmentWrapper import SBEnvironmentWrapper
 from Utils.LevelSelection import LevelSelectionSchema
 from StateReader.SymbolicStateDevReader import SymbolicStateDevReader
 from Utils.point2D import Point2D

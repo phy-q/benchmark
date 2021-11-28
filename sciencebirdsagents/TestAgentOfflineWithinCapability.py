@@ -7,7 +7,7 @@ import torch
 from torch.utils.tensorboard import SummaryWriter
 
 from LearningAgents.LearningAgentThread import MultiThreadTrajCollection
-from SBEnviornment.SBEnvironmentWrapper import SBEnvironmentWrapper
+from SBEnvironment.SBEnvironmentWrapper import SBEnvironmentWrapper
 from Utils.Config import config
 from Utils.LevelSelection import LevelSelectionSchema
 from Utils.Parameters import Parameters

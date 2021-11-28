@@ -327,7 +327,7 @@ class SBEnvironmentWrapperOpenAI(gym.Env):
 
 
 if __name__ == '__main__':
-    from SBEnviornment.Server import Server
+    from SBEnvironment.Server import Server
     from stable_baselines3 import PPO
     from stable_baselines3.common.vec_env import SubprocVecEnv
     from LearningAgents.RLNetwork.OpenAICustomCNN import OpenAICustomCNN
