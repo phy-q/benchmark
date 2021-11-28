@@ -15,7 +15,7 @@ from torch.utils.tensorboard import SummaryWriter
 
 from LearningAgents.LearningAgentThread import MultiThreadTrajCollection
 from LearningAgents.MemoryDataset import MemoryDatasetMemmap
-from SBEnviornment.SBEnvironmentWrapper import SBEnvironmentWrapper
+from SBEnvironment.SBEnvironmentWrapper import SBEnvironmentWrapper
 from Utils.Config import config
 from Utils.LevelSelection import LevelSelectionSchema
 from Utils.Parameters import Parameters

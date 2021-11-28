@@ -40,9 +40,13 @@ def sample_levels(training_level_set, num_agents, agent_idx):
 
 
 if __name__ == '__main__':
-    parser = argparse.ArgumentParser(description='Process some integers.')
+    parser = argparse.ArgumentParser()
     parser.add_argument('--template', metavar='N', type=str)
     parser.add_argument('--agent', type=str, default='PigShooter')
+    parser.add_argument('--level_path', type=str, default='fourth generation')
+    parser.add_argument('--game_version', type=str, default='MacOS')
+    parser.add_argument('--if_save_local', type=str2bool, default=False)
+    parser.add_argument('--resume', type=str2bool, default=False)
 
     args = parser.parse_args()
 
@@ -54,7 +58,9 @@ if __name__ == '__main__':
         raise NotImplementedError(
             "heuristic agent {} not implemented. Please use PigShooter or RandomAgent".format(args.agent))
 
-    param = Parameters([args.template], if_online_learning=False)
+    
+    param = Parameters([args.template], level_path=args.level_path,
+                           game_version=args.game_version)
     c = config(**param.param)
     param_name = args.template + "_random"
     writer = SummaryWriter(log_dir='final_run/{}'.format(param_name), comment=param_name)

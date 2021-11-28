@@ -1,7 +1,7 @@
 import random
 
 from SBAgent import SBAgent
-from SBEnviornment.SBEnvironmentWrapper import SBEnvironmentWrapper
+from SBEnvironment.SBEnvironmentWrapper import SBEnvironmentWrapper
 
 
 class RandomAgent(SBAgent):

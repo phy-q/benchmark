@@ -4,7 +4,7 @@ import time
 from typing import List
 
 from SBAgent import SBAgent
-from SBEnviornment.SBEnvironmentWrapper import SBEnvironmentWrapper
+from SBEnvironment.SBEnvironmentWrapper import SBEnvironmentWrapper
 
 
 class AgentThread(threading.Thread):

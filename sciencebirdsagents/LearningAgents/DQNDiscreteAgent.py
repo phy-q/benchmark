@@ -5,7 +5,7 @@ import torch
 from LearningAgents.LearningAgent import LearningAgent
 from LearningAgents.Memory import ReplayMemory
 from LearningAgents.RLNetwork.DQNBase import DQNBase
-from SBEnviornment.SBEnvironmentWrapper import SBEnvironmentWrapper
+from SBEnvironment.SBEnvironmentWrapper import SBEnvironmentWrapper
 from Utils.LevelSelection import LevelSelectionSchema
 from torch.utils.tensorboard import SummaryWriter
 

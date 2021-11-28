@@ -9,7 +9,7 @@ from typing import List
 import torch
 
 from LearningAgents.LearningAgent import LearningAgent
-from SBEnviornment.SBEnvironmentWrapper import SBEnvironmentWrapper
+from SBEnvironment.SBEnvironmentWrapper import SBEnvironmentWrapper
 
 logger = logging.getLogger("Agent Thread")
 logger.setLevel(logging.DEBUG)

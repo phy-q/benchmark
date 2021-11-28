@@ -1,6 +1,6 @@
 from LearningAgents.Memory import ReplayMemory
 from SBAgent import SBAgent
-from SBEnviornment import SBEnvironmentWrapper
+from SBEnvironment import SBEnvironmentWrapper
 from torch.utils.tensorboard import SummaryWriter
 
 

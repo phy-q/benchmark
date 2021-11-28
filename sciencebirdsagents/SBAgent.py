@@ -1,7 +1,7 @@
 import json
 
 from Client.agent_client import AgentClient
-from SBEnviornment import SBEnvironmentWrapper
+from SBEnvironment import SBEnvironmentWrapper
 from Utils.trajectory_planner import SimpleTrajectoryPlanner
 
 
