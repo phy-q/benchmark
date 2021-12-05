@@ -243,6 +243,7 @@ if __name__ == '__main__':
             callback=TensorboardCallback(model.rollout_buffer),
             tb_log_name=param_name, reset_num_timesteps=False)
         game_server.close()
+        time.sleep(5)
     # last test
     score = []
     winning_rate = []
