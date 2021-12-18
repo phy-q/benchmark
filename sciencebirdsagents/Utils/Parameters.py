@@ -43,18 +43,18 @@ class Parameters:
 
             # multiagent trainning parameters
             'num_update_steps': 20 if not test_template else 40,
-            'num_level_per_agent': 10,
+            'num_level_per_agent': 1, #10
             # todo: add an assertion to this.
             'num_worker': 10,  # make usre it is divisible by the total number of levels
-            'agent': DQNDiscreteAgent, #DQNDiscreteAgent, #DQNDiscreteAgent, #'a2c',
-            'training_attempts_per_level': 10,
+            'agent': 'ppo', #DQNDiscreteAgent, #DQNDiscreteAgent, #'a2c',
+            'training_attempts_per_level': 1, #10
             'memory_size': 100000,
             'memory_type': PrioritizedReplayMemory,
 
             # general trainning parameters
             'resume': False,
             'action_type': 'discrete' , #'continuous'
-            'state_repr_type': 'image',
+            'state_repr_type': 'symbolic',
 
             'train_time_per_ep': 32,
             'train_time_rise': 1,

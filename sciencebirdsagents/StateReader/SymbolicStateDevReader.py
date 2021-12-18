@@ -82,8 +82,8 @@ class SymbolicStateDevReader:
         ret = NDSparseMatrix(c=12, w=w, h=h)
         x_size = 640
         y_size = 480
-        x_range = np.linspace(0, x_size, w)
-        y_range = np.linspace(0, y_size, h)
+        x_range = np.linspace(0, x_size-1, w)
+        y_range = np.linspace(0, y_size-1, h)
         channel_idx = {
             'blueBird': 3, 'yellowBird': 2, 'blackBird': 5, 'redBird': 1, 'whiteBird': 4, 'platform': 11, 'pig': 6,
             'TNT': 10, 'slingshot': 0, 'ice': 8, 'stone': 9, 'wood': 7}
@@ -110,7 +110,7 @@ class SymbolicStateDevReader:
 
                 for x in range(top_left_slot_x, bottom_right_slot_x + 1):
                     for y in range(top_left_slot_y, bottom_right_slot_y + 1):
-                        ret.addValue(c=c,x=x,y=y,value=1)
+                        ret.addValue(c=c, x=x, y=y, value=1)
 
         return ret
 
@@ -188,13 +188,13 @@ class SymbolicStateDevReader:
         '''
 
         self.allObj = {}
-
         # find the type of all object
 
         # 1. vectorize the dictionary of colors
         obj_num = 0
         obj_total_num = len(self.alljson)
         obj_types = np.zeros(obj_total_num).astype(str)
+        self.obj_ids = {}
 
         for j in self.alljson:
             obj_type_splited = j['properties']['label'].split("_")
@@ -226,6 +226,8 @@ class SymbolicStateDevReader:
                 except:
                     self.allObj[self.type_transformer["Slingshot"]] = [game_object]
 
+                self.obj_ids[j['properties']['id']] = game_object
+
             elif j['properties']['label'] == "Ground" or j['properties']['label'] == "Trajectory":
                 pass
 
@@ -240,7 +242,45 @@ class SymbolicStateDevReader:
                 except:
                     self.allObj[self.type_transformer[obj_types[obj_num]]] = [game_object]
 
+                self.obj_ids[j['properties']['id']] = game_object
             obj_num += 1
+
+    def get_symbolic_image_flat(self, h, w):
+        ret = np.zeros((h, w), dtype=np.float)
+        x_size = 640
+        y_size = 480
+        x_range = np.linspace(0, x_size-1, w)
+        y_range = np.linspace(0, y_size-1, h)
+        channel_idx = {
+            'blueBird': 3, 'yellowBird': 2, 'blackBird': 5, 'redBird': 1, 'whiteBird': 4, 'platform': 11, 'pig': 6,
+            'TNT': 10, 'slingshot': 0, 'ice': 8, 'stone': 9, 'wood': 7}
+
+        for obj_type in self.allObj:
+            c = channel_idx[obj_type]
+            for obj in self.allObj[obj_type]:
+                top_left_x, top_left_y = obj.top_left
+                bottom_right_x, bottom_right_y = obj.bottom_right
+
+                # allocate to the slot
+                for i in range(len(x_range) - 1):
+                    if x_range[i] < top_left_x <= x_range[i + 1]:
+                        top_left_slot_x = i
+                for i in range(len(y_range) - 1):
+                    if y_range[i] < top_left_y <= y_range[i + 1]:
+                        top_left_slot_y = i
+                for i in range(len(x_range) - 1):
+                    if x_range[i] < bottom_right_x <= x_range[i + 1]:
+                        bottom_right_slot_x = i
+                for i in range(len(y_range) - 1):
+                    if y_range[i] < bottom_right_y <= y_range[i + 1]:
+                        bottom_right_slot_y = i
+
+                for x in range(top_left_slot_x, bottom_right_slot_x + 1):
+                    for y in range(top_left_slot_y, bottom_right_slot_y + 1):
+                        if ret[y, x] == 0:
+                            ret[y, x] = c
+
+        return ret, self.obj_ids
 
     def _getRect(self, j):
         '''

@@ -1,0 +1,672 @@
+diff --git a/sciencebirdsagents/Client/__pycache__/__init__.cpython-39.pyc b/sciencebirdsagents/Client/__pycache__/__init__.cpython-39.pyc
+index dbfd24b..7dec938 100644
+Binary files a/sciencebirdsagents/Client/__pycache__/__init__.cpython-39.pyc and b/sciencebirdsagents/Client/__pycache__/__init__.cpython-39.pyc differ
+diff --git a/sciencebirdsagents/Client/__pycache__/agent_client.cpython-39.pyc b/sciencebirdsagents/Client/__pycache__/agent_client.cpython-39.pyc
+index 6935da6..97a31f9 100644
+Binary files a/sciencebirdsagents/Client/__pycache__/agent_client.cpython-39.pyc and b/sciencebirdsagents/Client/__pycache__/agent_client.cpython-39.pyc differ
+diff --git a/sciencebirdsagents/HeuristicAgents/CollectionAgentThread.py b/sciencebirdsagents/HeuristicAgents/CollectionAgentThread.py
+index 947d92d..1bc29e2 100644
+--- a/sciencebirdsagents/HeuristicAgents/CollectionAgentThread.py
++++ b/sciencebirdsagents/HeuristicAgents/CollectionAgentThread.py
+@@ -1,16 +1,20 @@
++import csv
++import cv2
++import json
++import numpy as np
++import os
+ import threading
+ import time
+ from typing import List
+-
++import hickle
+ from HeuristicAgents.CollectionAgent import CollectionAgent
+ from SBEnvironment.SBEnvironmentWrapper import SBEnvironmentWrapper
+-import os
+-import csv
+-import cv2
+-import json
++from StateReader.SymbolicStateDevReader import SymbolicStateDevReader
++
++
+ class AgentThread(threading.Thread):
+     def __init__(self, agent: CollectionAgent, env: SBEnvironmentWrapper, lock: threading.Lock, mode='train',
+-                 simulation_speed=100):
++                 simulation_speed=100, saving_path='PhyreStyleTrainingData'):
+         self.result = None
+         threading.Thread.__init__(self)
+         self.agent = agent
+@@ -18,7 +22,9 @@ class AgentThread(threading.Thread):
+         self.mode = mode
+         self.lock = lock
+         self.simulation_speed = simulation_speed
+-        self.saving_path = 'PhyreStyleTrainingData'
++        self.saving_path = saving_path
++        self.model = np.loadtxt("Utils/model", delimiter=",")
++        self.target_class = list(map(lambda x: x.replace("\n", ""), open('Utils/target_class').readlines()))
+ 
+     def save_local(self, s0, s0_image, action, if_win, attempts, obj_movements, game_level_idx, template):
+         if not os.path.exists(self.saving_path):
+@@ -31,16 +37,19 @@ class AgentThread(threading.Thread):
+         if not os.path.exists(game_level_save_path):
+             os.mkdir(game_level_save_path)
+ 
+-        state_path = os.path.join(os.path.join(self.saving_path, template), "{}_{}_state.pt".format(template, game_level_idx))
++        state_path = os.path.join(os.path.join(self.saving_path, template),
++                                  "{}_{}_state.pt".format(template, game_level_idx))
+         if not os.path.exists(state_path):
+             with open(state_path, 'w') as f:
+                 json.dump(s0, f)
+-        image_path = os.path.join(os.path.join(self.saving_path, template), "{}_{}_image.jpg".format(template, game_level_idx))
++        image_path = os.path.join(os.path.join(self.saving_path, template),
++                                  "{}_{}_image.jpg".format(template, game_level_idx))
+         if not os.path.exists(image_path):
+             s0_image = cv2.cvtColor(s0_image, cv2.COLOR_RGB2BGR)
+             cv2.imwrite(image_path, s0_image)
+ 
+-        obj_movements_path = os.path.join(game_level_save_path, "{}_{}_{}_{}".format(template, game_level_idx, str(action), if_win))
++        obj_movements_path = os.path.join(game_level_save_path,
++                                          "{}_{}_{}_{}".format(template, game_level_idx, str(action), if_win))
+         with open(obj_movements_path, 'w') as f:
+             json.dump(obj_movements, f)
+ 
+@@ -71,32 +80,104 @@ class AgentThread(threading.Thread):
+         return obj_dict
+ 
+     def run(self):
+-        if self.mode == 'train':
+-            self.env.make(agent=self.agent, start_level=self.agent.level_list[0],
+-                          state_representation_type='symbolic')
+-            s, r, is_done, info = self.env.reset()
+-            while True:
+-                while not is_done:
+-                    s0 = s
+-                    s0_image = self.agent.ar.do_screenshot()
+-                    save_prefix = self.agent.template + "_" + str(self.env.current_level)
+-                    state_name = save_prefix + "_state"
+-                    action = self.agent.select_action(s)
+-                    s, _, is_done, info = self.env.step(action, batch_gt=True)
+-                did_win = info[0]
+-                batch_gts = info[2]
+-                total_score = info[1]
+-                self.agent.update_score(self.env.current_level, total_score, did_win)
+-                self.agent.update_episode_rewards(self.env.current_level, total_score)
+-                self.agent.update_winning(self.env.current_level, did_win)
+-                attempts = self.agent.total_score_record[self.env.current_level]['attempts']
+-                obj_movements = self.convert_bts_to_obj_movements(batch_gts)
+-                with self.lock:
+-                    self.save_local(s0, s0_image, action, did_win, attempts, obj_movements, self.env.current_level, self.agent.template)
+-                self.env.current_level = self.agent.select_level()
+-                if not self.env.current_level:  # that's when all the levels has been played.
+-                    return
+-                s, r, is_done, info = self.env.reload_current_level()
++
++        self.env.make(agent=self.agent, start_level=self.agent.level_list[0],
++                      state_representation_type='symbolic')
++        s, r, is_done, info = self.env.reset()
++        while True:
++            while not is_done:
++                s0 = s
++                s0_image = self.agent.ar.do_screenshot()
++                save_prefix = self.agent.template + "_" + str(self.env.current_level)
++                state_name = save_prefix + "_state"
++                action, deg = self.agent.select_action(s)
++                s, _, is_done, info = self.env.step(action, batch_gt=True)
++            did_win = info[0]
++            batch_gts = info[2]
++            total_score = info[1]
++            self.agent.update_score(self.env.current_level, total_score, did_win)
++            self.agent.update_episode_rewards(self.env.current_level, total_score)
++            self.agent.update_winning(self.env.current_level, did_win)
++            attempts = self.agent.total_score_record[self.env.current_level]['attempts']
++
++            full_image, boxes, masks = self.process_batch_gts(batch_gts)
++            save_path = f'{self.saving_path}/{self.agent.template}/{self.env.current_level}'
++            os.makedirs(save_path, exist_ok=True)
++            with self.lock:
++                # save bounding boxes
++                hickle.dump(full_image, f'{save_path}/{deg:.4f}_image.hkl', mode='w', compression='gzip')
++                hickle.dump(int(did_win), f'{save_path}/{deg:.4f}_label.hkl', mode='w',
++                            compression='gzip')
++                hickle.dump(boxes, f'{save_path}/{deg:.4f}_boxes.hkl', mode='w', compression='gzip')
++                hickle.dump(masks, f'{save_path}/{deg:.4f}_masks.hkl', mode='w', compression='gzip')
++
++            self.env.current_level = self.agent.select_level()
++
++            if not self.env.current_level:  # that's when all the levels has been played.
++                return
++            s, r, is_done, info = self.env.reload_current_level()
++
++    def process_batch_gts(self, batch_gts):
++
++        '''
++        batch_image: n x h x w array, with each type of object occupys a number
++        boxes: n x n_obj x 6 ([o_id, x1, y1, x2, y2, if_destroyed])
++        masks: n x n_obj x h_mask x w_mask
++        '''
++        input_w = 160
++        input_h = 120
++        im_width = 640
++        im_height = 480
++        mask_size = 21
++
++        full_image = np.zeros((len(batch_gts), input_h, input_w))
++        full_objs = []
++        for i, gt in enumerate(batch_gts):
++            symbolic_state_reader = SymbolicStateDevReader(gt, self.model, self.target_class)
++            image, obj_ids = symbolic_state_reader.get_symbolic_image_flat(input_h, input_w)
++            full_image[i] = image
++            full_objs.append(obj_ids)
++
++        all_ids = set()
++        for objs_t in full_objs:
++            [all_ids.add(obj) for obj in objs_t.keys()]
++
++        boxes = np.zeros((len(batch_gts), len(all_ids), 6))
++        masks = np.zeros((len(batch_gts), len(all_ids), mask_size, mask_size))
++        for t, objs in enumerate(full_objs):
++            for id_ind, id in enumerate(all_ids):
++                if id in objs:
++                    top_left_x, top_left_y = objs[id].top_left
++                    bottom_right_x, bottom_right_y = objs[id].bottom_right
++
++
++
++                    top_left_x *= (input_w-1) / (im_width-1)
++                    bottom_right_x *= (input_w-1) / (im_width-1)
++                    top_left_y *= (input_h-1) / (im_height-1)
++                    bottom_right_y *= (input_h-1) / (im_height-1)
++
++                    top_left_x = min(top_left_x, 0)
++                    bottom_right_x = min(bottom_right_x, input_w-1)
++                    top_left_y = min(top_left_y, 0)
++                    bottom_right_y = min(bottom_right_y, input_h-1)
++
++                    boxes[t, id_ind] = [id_ind, top_left_x, top_left_y, bottom_right_x, bottom_right_y, 1]
++                    mask_im = np.zeros((input_h,input_w))
++
++                    for x in range(np.int(top_left_x), int(np.ceil(bottom_right_x))):
++                        for y in range(np.int(top_left_y), int(np.ceil(bottom_right_y))):
++                            mask_im[y,x] = 1
++
++                    masks[t, id_ind] = cv2.resize(mask_im, (mask_size, mask_size)) >= 0.5
++
++
++                else:
++                    boxes[t, id_ind] = [id_ind, -1, -1, -1, -1, 0]
++                    mask_im = np.zeros((input_h,input_w))
++                    masks[t, id_ind] = cv2.resize(mask_im, (mask_size, mask_size)) >= 0.5
++
++        return full_image, boxes, masks
+ 
+ 
+ # Multithread .agents manager
+@@ -111,13 +192,13 @@ class MultiThreadTrajCollection:
+     # Connects agents to the SB games and starts training
+     # at the moment agents will connect to each level 1 by 1
+     # i.e. agent 1 will correspond to level 1, agent 2 to level 2, etc
+-    def connect_and_run_agents(self, mode='train'):
++    def connect_and_run_agents(self, saving_path='PhyreStyleTrainingData', mode='train'):
+         agents_threads = []
+         try:
+             for i in range(1, len(self.agents) + 1):
+                 print('agent %s running' % str(i))
+                 agent = AgentThread(self.agents[i - 1], self.agents[i - 1].env, self.lock, mode=mode,
+-                                    simulation_speed=self.simulation_speed)
++                                    simulation_speed=self.simulation_speed, saving_path=saving_path)
+                 agent.start()
+                 agents_threads.append(agent)
+                 time.sleep(2)
+diff --git a/sciencebirdsagents/HeuristicAgents/RandomAgent.py b/sciencebirdsagents/HeuristicAgents/RandomAgent.py
+index 37ded9e..33519a4 100644
+--- a/sciencebirdsagents/HeuristicAgents/RandomAgent.py
++++ b/sciencebirdsagents/HeuristicAgents/RandomAgent.py
+@@ -1,11 +1,12 @@
+ import random
+-
++import numpy as np
+ from SBAgent import SBAgent
+ from SBEnvironment.SBEnvironmentWrapper import SBEnvironmentWrapper
+-
++import torch
+ 
+ class RandomAgent(SBAgent):
+-    def __init__(self, env: SBEnvironmentWrapper, level_selection_function, id: int = 28888, level_list: list = [], ):
++    def __init__(self, env: SBEnvironmentWrapper, level_selection_function, id: int = 28888, level_list: list = [],
++                 degree_range=None, ):
+         SBAgent.__init__(self, level_list=level_list, env=env, id=id)
+         # initialise a record of the levels to the agent
+ 
+@@ -15,6 +16,7 @@ class RandomAgent(SBAgent):
+         self.state_representation_type = 'symbolic'
+         self.episode_rewards = {}
+         self.did_win = {}
++        self.degree_range = degree_range
+ 
+     def select_level(self):
+         # you can choose to implement this by yourself, or just get it from the LevelSelectionSchema
+@@ -23,6 +25,9 @@ class RandomAgent(SBAgent):
+ 
+     def select_action(self, state, mode=None):
+         shot = [random.randint(-200, -10), random.randint(-200, 200), random.randint(50, 80)]
++        if self.degree_range:
++            deg = np.random.rand() * (self.degree_range[1] - self.degree_range[0]) + self.degree_range[0]
++            return self.__degToShot(deg), deg
+         return shot
+ 
+     def update_episode_rewards(self, current_level, eps_reward):
+@@ -36,3 +41,13 @@ class RandomAgent(SBAgent):
+             self.did_win[current_level] = [did_win]
+         else:
+             self.did_win[current_level].append(did_win)
++
++    def __degToShot(self, deg):
++        # deg = torch.argmax(q_values, 1) + 90
++        deg = torch.tensor(deg + 90)
++        ax_pixels = 200 * torch.cos(torch.deg2rad(deg)).view(-1, 1)
++        ay_pixels = 200 * torch.sin(torch.deg2rad(deg)).view(-1, 1)
++        out = torch.cat((ax_pixels, ay_pixels), 1)
++        if out.size(0) == 1:
++            return out[0]
++        return out
+\ No newline at end of file
+diff --git a/sciencebirdsagents/HeuristicAgents/__pycache__/CollectionAgent.cpython-39.pyc b/sciencebirdsagents/HeuristicAgents/__pycache__/CollectionAgent.cpython-39.pyc
+index e978b8f..a022ae3 100644
+Binary files a/sciencebirdsagents/HeuristicAgents/__pycache__/CollectionAgent.cpython-39.pyc and b/sciencebirdsagents/HeuristicAgents/__pycache__/CollectionAgent.cpython-39.pyc differ
+diff --git a/sciencebirdsagents/HeuristicAgents/__pycache__/CollectionAgentThread.cpython-39.pyc b/sciencebirdsagents/HeuristicAgents/__pycache__/CollectionAgentThread.cpython-39.pyc
+index 0f009ff..b8def84 100644
+Binary files a/sciencebirdsagents/HeuristicAgents/__pycache__/CollectionAgentThread.cpython-39.pyc and b/sciencebirdsagents/HeuristicAgents/__pycache__/CollectionAgentThread.cpython-39.pyc differ
+diff --git a/sciencebirdsagents/HeuristicAgents/__pycache__/HeuristicAgentThread.cpython-39.pyc b/sciencebirdsagents/HeuristicAgents/__pycache__/HeuristicAgentThread.cpython-39.pyc
+index c7e26ea..f6de70d 100644
+Binary files a/sciencebirdsagents/HeuristicAgents/__pycache__/HeuristicAgentThread.cpython-39.pyc and b/sciencebirdsagents/HeuristicAgents/__pycache__/HeuristicAgentThread.cpython-39.pyc differ
+diff --git a/sciencebirdsagents/HeuristicAgents/__pycache__/PigShooter.cpython-39.pyc b/sciencebirdsagents/HeuristicAgents/__pycache__/PigShooter.cpython-39.pyc
+index 20a5823..c9a1c81 100644
+Binary files a/sciencebirdsagents/HeuristicAgents/__pycache__/PigShooter.cpython-39.pyc and b/sciencebirdsagents/HeuristicAgents/__pycache__/PigShooter.cpython-39.pyc differ
+diff --git a/sciencebirdsagents/HeuristicAgents/__pycache__/RandomAgent.cpython-39.pyc b/sciencebirdsagents/HeuristicAgents/__pycache__/RandomAgent.cpython-39.pyc
+index dcf669a..80c333c 100644
+Binary files a/sciencebirdsagents/HeuristicAgents/__pycache__/RandomAgent.cpython-39.pyc and b/sciencebirdsagents/HeuristicAgents/__pycache__/RandomAgent.cpython-39.pyc differ
+diff --git a/sciencebirdsagents/LearningAgents/__pycache__/DQNDiscreteAgent.cpython-39.pyc b/sciencebirdsagents/LearningAgents/__pycache__/DQNDiscreteAgent.cpython-39.pyc
+index f64f240..2d40b84 100644
+Binary files a/sciencebirdsagents/LearningAgents/__pycache__/DQNDiscreteAgent.cpython-39.pyc and b/sciencebirdsagents/LearningAgents/__pycache__/DQNDiscreteAgent.cpython-39.pyc differ
+diff --git a/sciencebirdsagents/LearningAgents/__pycache__/LearningAgent.cpython-39.pyc b/sciencebirdsagents/LearningAgents/__pycache__/LearningAgent.cpython-39.pyc
+index f31439b..0d85258 100644
+Binary files a/sciencebirdsagents/LearningAgents/__pycache__/LearningAgent.cpython-39.pyc and b/sciencebirdsagents/LearningAgents/__pycache__/LearningAgent.cpython-39.pyc differ
+diff --git a/sciencebirdsagents/LearningAgents/__pycache__/Memory.cpython-39.pyc b/sciencebirdsagents/LearningAgents/__pycache__/Memory.cpython-39.pyc
+index 9cbdb4f..ecccfaf 100644
+Binary files a/sciencebirdsagents/LearningAgents/__pycache__/Memory.cpython-39.pyc and b/sciencebirdsagents/LearningAgents/__pycache__/Memory.cpython-39.pyc differ
+diff --git a/sciencebirdsagents/SBEnvironment/SBEnvironmentWrapper.py b/sciencebirdsagents/SBEnvironment/SBEnvironmentWrapper.py
+index 541067e..7e612fb 100644
+--- a/sciencebirdsagents/SBEnvironment/SBEnvironmentWrapper.py
++++ b/sciencebirdsagents/SBEnvironment/SBEnvironmentWrapper.py
+@@ -36,7 +36,7 @@ class ActionSpace:
+ 
+ # MIMIC SB as if it was Gym Environment (dreams...)
+ class SBEnvironmentWrapper:
+-    def __init__(self, reward_type='score', speed=100, game_version='Linux', if_head=False):
++    def __init__(self, reward_type='score', speed=100, game_version='Linux', if_head=False, headless_server=False):
+         self.agent = None
+         self.request_state = None  # function to request state
+         self.current_level = 0
+@@ -62,6 +62,7 @@ class SBEnvironmentWrapper:
+         self.total_num_birds = 0
+         self.total_num_pigs = 0
+         self.if_head = if_head
++        self.headless_server = headless_server
+ 
+     def make(self, agent, if_first_server=True, start_level=1, state_representation_type='symbolic'):
+         """
+@@ -448,23 +449,47 @@ class SBEnvironmentWrapper:
+         for proc in server_procs:
+             if 'grep' not in proc:
+                 return None
+-        if not if_head:
++        if not self.if_head:
+             if self.state_representation_type == 'symbolic':
++                if self.headless_server:
++                    os.system(
++                        "bash -c \"cd ../sciencebirdsgames/{} && nohup java -jar ./game_playing_interface.jar --headless --dev > out 2>&1 &\"".format(
++                            self.game_version))
++
++                else:
++                    os.system(
++                        "gnome-terminal -- bash -c \"cd ../sciencebirdsgames/{} && java -jar ./game_playing_interface.jar --headless --dev \"".format(
++                            self.game_version))
++
++            else:
++                if self.headless_server:
++                    os.system(
++                        "bash -c \"cd ../sciencebirdsgames/{} && nohup java -jar ./game_playing_interface.jar --dev > out 2>&1 &\"".format(
++                            self.game_version))
++                else:
++                    os.system(
++                        "gnome-terminal -- bash -c \"cd ../sciencebirdsgames/{} && java -jar ./game_playing_interface.jar --dev \"".format(
++                            self.game_version))
++
++        elif self.if_head == 'headless':
++            if self.headless_server:
+                 os.system(
+                     "bash -c \"cd ../sciencebirdsgames/{} && nohup java -jar ./game_playing_interface.jar --headless --dev > out 2>&1 &\"".format(
+                         self.game_version))
+             else:
+                 os.system(
+-                    "bash -c \"cd ../sciencebirdsgames/{} && nohup java -jar ./game_playing_interface.jar --dev > out 2>&1 &\"".format(
++                    "gnome-terminal -- bash -c \"cd ../sciencebirdsgames/{} && java -jar ./game_playing_interface.jar --headless --dev \"".format(
+                         self.game_version))
+-        elif if_head == 'headless':
+-            os.system(
+-                "bash -c \"cd ../sciencebirdsgames/{} && nohup java -jar ./game_playing_interface.jar --headless --dev > out 2>&1 &\"".format(
+-                    self.game_version))
+         else:
+-            os.system(
+-                "bash -c \"cd ../sciencebirdsgames/{} && nohup java -jar ./game_playing_interface.jar --dev > out 2>&1 &\"".format(
+-                    self.game_version))
+-
+-        time.sleep(10)
++            if self.headless_server:
++                os.system(
++                    "bash -c \"cd ../sciencebirdsgames/{} && nohup java -jar ./game_playing_interface.jar --dev > out 2>&1 &\"".format(
++                        self.game_version))
++            else:
++                os.system(
++                    "gnome-terminal -- bash -c \"cd ../sciencebirdsgames/{} && java -jar ./game_playing_interface.jar --dev \"".format(
++                        self.game_version))
++        # logger.debug("Server started...")
++        print("Server started...")
++        time.sleep(2)
+         logger.debug("Server started...")
+diff --git a/sciencebirdsagents/StateReader/SymbolicStateDevReader.py b/sciencebirdsagents/StateReader/SymbolicStateDevReader.py
+index 944bb2c..4aa08bd 100644
+--- a/sciencebirdsagents/StateReader/SymbolicStateDevReader.py
++++ b/sciencebirdsagents/StateReader/SymbolicStateDevReader.py
+@@ -82,8 +82,8 @@ class SymbolicStateDevReader:
+         ret = NDSparseMatrix(c=12, w=w, h=h)
+         x_size = 640
+         y_size = 480
+-        x_range = np.linspace(0, x_size, w)
+-        y_range = np.linspace(0, y_size, h)
++        x_range = np.linspace(0, x_size-1, w)
++        y_range = np.linspace(0, y_size-1, h)
+         channel_idx = {
+             'blueBird': 3, 'yellowBird': 2, 'blackBird': 5, 'redBird': 1, 'whiteBird': 4, 'platform': 11, 'pig': 6,
+             'TNT': 10, 'slingshot': 0, 'ice': 8, 'stone': 9, 'wood': 7}
+@@ -110,7 +110,7 @@ class SymbolicStateDevReader:
+ 
+                 for x in range(top_left_slot_x, bottom_right_slot_x + 1):
+                     for y in range(top_left_slot_y, bottom_right_slot_y + 1):
+-                        ret.addValue(c=c,x=x,y=y,value=1)
++                        ret.addValue(c=c, x=x, y=y, value=1)
+ 
+         return ret
+ 
+@@ -188,13 +188,13 @@ class SymbolicStateDevReader:
+         '''
+ 
+         self.allObj = {}
+-
+         # find the type of all object
+ 
+         # 1. vectorize the dictionary of colors
+         obj_num = 0
+         obj_total_num = len(self.alljson)
+         obj_types = np.zeros(obj_total_num).astype(str)
++        self.obj_ids = {}
+ 
+         for j in self.alljson:
+             obj_type_splited = j['properties']['label'].split("_")
+@@ -226,6 +226,8 @@ class SymbolicStateDevReader:
+                 except:
+                     self.allObj[self.type_transformer["Slingshot"]] = [game_object]
+ 
++                self.obj_ids[j['properties']['id']] = game_object
++
+             elif j['properties']['label'] == "Ground" or j['properties']['label'] == "Trajectory":
+                 pass
+ 
+@@ -240,8 +242,46 @@ class SymbolicStateDevReader:
+                 except:
+                     self.allObj[self.type_transformer[obj_types[obj_num]]] = [game_object]
+ 
++                self.obj_ids[j['properties']['id']] = game_object
+             obj_num += 1
+ 
++    def get_symbolic_image_flat(self, h, w):
++        ret = np.zeros((h, w), dtype=np.float)
++        x_size = 640
++        y_size = 480
++        x_range = np.linspace(0, x_size-1, w)
++        y_range = np.linspace(0, y_size-1, h)
++        channel_idx = {
++            'blueBird': 3, 'yellowBird': 2, 'blackBird': 5, 'redBird': 1, 'whiteBird': 4, 'platform': 11, 'pig': 6,
++            'TNT': 10, 'slingshot': 0, 'ice': 8, 'stone': 9, 'wood': 7}
++
++        for obj_type in self.allObj:
++            c = channel_idx[obj_type]
++            for obj in self.allObj[obj_type]:
++                top_left_x, top_left_y = obj.top_left
++                bottom_right_x, bottom_right_y = obj.bottom_right
++
++                # allocate to the slot
++                for i in range(len(x_range) - 1):
++                    if x_range[i] < top_left_x <= x_range[i + 1]:
++                        top_left_slot_x = i
++                for i in range(len(y_range) - 1):
++                    if y_range[i] < top_left_y <= y_range[i + 1]:
++                        top_left_slot_y = i
++                for i in range(len(x_range) - 1):
++                    if x_range[i] < bottom_right_x <= x_range[i + 1]:
++                        bottom_right_slot_x = i
++                for i in range(len(y_range) - 1):
++                    if y_range[i] < bottom_right_y <= y_range[i + 1]:
++                        bottom_right_slot_y = i
++
++                for x in range(top_left_slot_x, bottom_right_slot_x + 1):
++                    for y in range(top_left_slot_y, bottom_right_slot_y + 1):
++                        if ret[y, x] == 0:
++                            ret[y, x] = c
++
++        return ret, self.obj_ids
++
+     def _getRect(self, j):
+         '''
+         input: json object
+diff --git a/sciencebirdsagents/StateReader/SymbolicStateReader.py b/sciencebirdsagents/StateReader/SymbolicStateReader.py
+index c00b2e8..3077bb3 100644
+--- a/sciencebirdsagents/StateReader/SymbolicStateReader.py
++++ b/sciencebirdsagents/StateReader/SymbolicStateReader.py
+@@ -116,6 +116,42 @@ class SymbolicStateReader:
+ 
+         return ret
+ 
++    def get_symbolic_image_flat(self,h, w):
++        ret = np.zeros((h, w), dtype=np.float)
++        x_size = 640
++        y_size = 480
++        x_range = np.linspace(0, x_size, w)
++        y_range = np.linspace(0, y_size, h)
++        channel_idx = {
++            'blueBird': 3, 'yellowBird': 2, 'blackBird': 5, 'redBird': 1, 'whiteBird': 4, 'platform': 11, 'pig': 6,
++            'TNT': 10, 'slingshot': 0, 'ice': 8, 'stone': 9, 'wood': 7}
++
++        for obj_type in self.allObj:
++            c = channel_idx[obj_type]
++            for obj in self.allObj[obj_type]:
++                top_left_x, top_left_y = obj.top_left
++                bottom_right_x, bottom_right_y = obj.bottom_right
++
++                # allocate to the slot
++                for i in range(len(x_range) - 1):
++                    if x_range[i] < top_left_x <= x_range[i + 1]:
++                        top_left_slot_x = i
++                for i in range(len(y_range) - 1):
++                    if y_range[i] < top_left_y <= y_range[i + 1]:
++                        top_left_slot_y = i
++                for i in range(len(x_range) - 1):
++                    if x_range[i] < bottom_right_x <= x_range[i + 1]:
++                        bottom_right_slot_x = i
++                for i in range(len(y_range) - 1):
++                    if y_range[i] < bottom_right_y <= y_range[i + 1]:
++                        bottom_right_slot_y = i
++
++                for x in range(top_left_slot_x, bottom_right_slot_x + 1):
++                    for y in range(top_left_slot_y, bottom_right_slot_y + 1):
++                        ret[y, x] = c
++
++        return ret
++
+     def get_symbolic_image(self, h: int, w: int) -> np.array:
+         '''
+         get_symbolic_image returns a hxwx12 numpy array as to represent the game state.
+diff --git a/sciencebirdsagents/StateReader/__pycache__/SymbolicStateDevReader.cpython-39.pyc b/sciencebirdsagents/StateReader/__pycache__/SymbolicStateDevReader.cpython-39.pyc
+index c65e817..081d24f 100644
+Binary files a/sciencebirdsagents/StateReader/__pycache__/SymbolicStateDevReader.cpython-39.pyc and b/sciencebirdsagents/StateReader/__pycache__/SymbolicStateDevReader.cpython-39.pyc differ
+diff --git a/sciencebirdsagents/StateReader/__pycache__/SymbolicStateReader.cpython-39.pyc b/sciencebirdsagents/StateReader/__pycache__/SymbolicStateReader.cpython-39.pyc
+index 2ec3274..62279e1 100644
+Binary files a/sciencebirdsagents/StateReader/__pycache__/SymbolicStateReader.cpython-39.pyc and b/sciencebirdsagents/StateReader/__pycache__/SymbolicStateReader.cpython-39.pyc differ
+diff --git a/sciencebirdsagents/StateReader/__pycache__/__init__.cpython-39.pyc b/sciencebirdsagents/StateReader/__pycache__/__init__.cpython-39.pyc
+index 73793a6..6050f72 100644
+Binary files a/sciencebirdsagents/StateReader/__pycache__/__init__.cpython-39.pyc and b/sciencebirdsagents/StateReader/__pycache__/__init__.cpython-39.pyc differ
+diff --git a/sciencebirdsagents/StateReader/__pycache__/cv_utils.cpython-39.pyc b/sciencebirdsagents/StateReader/__pycache__/cv_utils.cpython-39.pyc
+index 6de98b9..dd3a527 100644
+Binary files a/sciencebirdsagents/StateReader/__pycache__/cv_utils.cpython-39.pyc and b/sciencebirdsagents/StateReader/__pycache__/cv_utils.cpython-39.pyc differ
+diff --git a/sciencebirdsagents/StateReader/__pycache__/game_object.cpython-39.pyc b/sciencebirdsagents/StateReader/__pycache__/game_object.cpython-39.pyc
+index 98568c1..a380cd4 100644
+Binary files a/sciencebirdsagents/StateReader/__pycache__/game_object.cpython-39.pyc and b/sciencebirdsagents/StateReader/__pycache__/game_object.cpython-39.pyc differ
+diff --git a/sciencebirdsagents/Utils/GenePhyreStyleData.py b/sciencebirdsagents/Utils/GenePhyreStyleData.py
+new file mode 100755
+index 0000000..3d4017f
+--- /dev/null
++++ b/sciencebirdsagents/Utils/GenePhyreStyleData.py
+@@ -0,0 +1,80 @@
++import argparse
++import math
++from tqdm import tqdm
++import sys
++import os
++sys.path.append(os.path.dirname(__file__) + os.sep + '../')
++from HeuristicAgents.CollectionAgentThread import MultiThreadTrajCollection
++from HeuristicAgents.RandomAgent import RandomAgent
++from SBEnvironment.SBEnvironmentWrapper import SBEnvironmentWrapper
++from Utils.Config import config
++from Utils.LevelSelection import LevelSelectionSchema
++from    Utils.Parameters import Parameters
++
++input_w = 128
++input_h = 128
++mask_size = 21
++max_p_acts = 100
++max_n_acts = 400
++
++one_shot_template = [#'1_01_01',
++     # '1_01_02', '1_01_04',
++    # '1_01_05', '1_01_06', '2_01_02',
++    # '2_01_03', '2_01_05', '2_01_06', '2_01_08',
++    # '2_01_09', '2_02_01', '2_02_02', '2_02_03', '2_02_06', '2_02_08', '2_03_01',
++    # '2_03_03',
++    # '2_03_04', '2_03_05',
++    # '2_03_02', '2_04_01',
++    #'2_04_02', '2_04_04', '2_04_03', '2_04_05', '2_04_06', '3_01_01', '3_01_02',
++    #'3_01_03', '3_01_04', '3_01_06', '3_02_01', '3_02_02', '3_02_03', '3_02_04', '3_03_01', '3_03_02', '3_03_03', '3_03_04', '3_04_01', 
++    #'3_04_02', '3_04_03', '3_04_04', '3_06_01', '3_06_03', '3_06_04', '3_06_05', '3_06_06',
++    '3_06_07',
++]
++
++
++def arg_parse():
++    parser = argparse.ArgumentParser(description='PhyreStyleData parameters')
++    parser.add_argument('--range', type=str, default='10,170',
++                        help='min angle to max angle, e.g. 10,170 meaning shooting from degree 10 to degree 170')
++    parser.add_argument('--num_shot', type=int, default=100, help='number of shots per game level')
++    parser.add_argument('--num_worker', type=int, default=10, help='number of worke to run')
++    parser.add_argument('--headless_server', type=int, default=0, help='0 for running in graphic mode, 1 for command line')
++
++    return parser.parse_args()
++
++
++def sample_levels(training_level_set, num_agents, agent_idx):
++    '''
++    given idx, return the averaged distributed levels
++    '''
++    n = math.ceil(len(training_level_set) / num_agents)
++    total_list = []
++    for i in range(0, len(training_level_set), n):
++        total_list.append(training_level_set[i:i + n])
++    if agent_idx >= len(total_list):
++        return None
++    return total_list[agent_idx]
++
++
++if __name__ == '__main__':
++    args = arg_parse()
++
++    for template in tqdm(one_shot_template):
++        param = Parameters([template], test_template=['1_02_01'], level_path='fifth_generation',
++                           game_version='Linux')
++        c = config(**param.param)
++        agents = []
++        for i in range(args.num_worker):
++            level_sampled = sample_levels(c.train_level_list, args.num_worker, i)
++            if not level_sampled:
++                continue
++            env = SBEnvironmentWrapper(reward_type='passing', speed=100, headless_server=True if args.headless_server==1 else False)
++            agent = RandomAgent(env=env, level_list=level_sampled, id=i + 1,
++                                level_selection_function=LevelSelectionSchema.RepeatPlay(
++                                    args.num_shot).select, degree_range=[int(args.range.split(',')[0]),int(args.range.split(',')[1])])  # add number of attempts per level
++            agent.template = template
++            agents.append(agent)
++
++        am = MultiThreadTrajCollection(agents)
++        am.connect_and_run_agents()
++        env.close()
+diff --git a/sciencebirdsagents/Utils/Parameters.py b/sciencebirdsagents/Utils/Parameters.py
+index 2a6d92d..45a0dc4 100644
+--- a/sciencebirdsagents/Utils/Parameters.py
++++ b/sciencebirdsagents/Utils/Parameters.py
+@@ -43,18 +43,18 @@ class Parameters:
+ 
+             # multiagent trainning parameters
+             'num_update_steps': 20 if not test_template else 40,
+-            'num_level_per_agent': 10,
++            'num_level_per_agent': 1, #10
+             # todo: add an assertion to this.
+             'num_worker': 10,  # make usre it is divisible by the total number of levels
+-            'agent': DQNDiscreteAgent, #DQNDiscreteAgent, #DQNDiscreteAgent, #'a2c',
+-            'training_attempts_per_level': 10,
++            'agent': 'ppo', #DQNDiscreteAgent, #DQNDiscreteAgent, #'a2c',
++            'training_attempts_per_level': 1, #10
+             'memory_size': 100000,
+             'memory_type': PrioritizedReplayMemory,
+ 
+             # general trainning parameters
+             'resume': False,
+             'action_type': 'discrete' , #'continuous'
+-            'state_repr_type': 'image',
++            'state_repr_type': 'symbolic',
+ 
+             'train_time_per_ep': 32,
+             'train_time_rise': 1,
+diff --git a/sciencebirdsagents/Utils/__pycache__/Config.cpython-39.pyc b/sciencebirdsagents/Utils/__pycache__/Config.cpython-39.pyc
+index 08b5cac..7c8cf7d 100644
+Binary files a/sciencebirdsagents/Utils/__pycache__/Config.cpython-39.pyc and b/sciencebirdsagents/Utils/__pycache__/Config.cpython-39.pyc differ
+diff --git a/sciencebirdsagents/Utils/__pycache__/LevelSelection.cpython-39.pyc b/sciencebirdsagents/Utils/__pycache__/LevelSelection.cpython-39.pyc
+index cc2f1ba..107ef57 100644
+Binary files a/sciencebirdsagents/Utils/__pycache__/LevelSelection.cpython-39.pyc and b/sciencebirdsagents/Utils/__pycache__/LevelSelection.cpython-39.pyc differ
+diff --git a/sciencebirdsagents/Utils/__pycache__/NDSparseMatrix.cpython-39.pyc b/sciencebirdsagents/Utils/__pycache__/NDSparseMatrix.cpython-39.pyc
+index 5662b91..7046533 100644
+Binary files a/sciencebirdsagents/Utils/__pycache__/NDSparseMatrix.cpython-39.pyc and b/sciencebirdsagents/Utils/__pycache__/NDSparseMatrix.cpython-39.pyc differ
+diff --git a/sciencebirdsagents/Utils/__pycache__/Parameters.cpython-39.pyc b/sciencebirdsagents/Utils/__pycache__/Parameters.cpython-39.pyc
+index 8ff99b3..85e361f 100644
+Binary files a/sciencebirdsagents/Utils/__pycache__/Parameters.cpython-39.pyc and b/sciencebirdsagents/Utils/__pycache__/Parameters.cpython-39.pyc differ
+diff --git a/sciencebirdsagents/Utils/__pycache__/__init__.cpython-39.pyc b/sciencebirdsagents/Utils/__pycache__/__init__.cpython-39.pyc
+index e3ee655..18f31ed 100644
+Binary files a/sciencebirdsagents/Utils/__pycache__/__init__.cpython-39.pyc and b/sciencebirdsagents/Utils/__pycache__/__init__.cpython-39.pyc differ
+diff --git a/sciencebirdsagents/Utils/__pycache__/point2D.cpython-39.pyc b/sciencebirdsagents/Utils/__pycache__/point2D.cpython-39.pyc
+index 6e6eb71..1f71223 100644
+Binary files a/sciencebirdsagents/Utils/__pycache__/point2D.cpython-39.pyc and b/sciencebirdsagents/Utils/__pycache__/point2D.cpython-39.pyc differ
+diff --git a/sciencebirdsagents/Utils/__pycache__/trajectory_planner.cpython-39.pyc b/sciencebirdsagents/Utils/__pycache__/trajectory_planner.cpython-39.pyc
+index c57e893..1b82031 100644
+Binary files a/sciencebirdsagents/Utils/__pycache__/trajectory_planner.cpython-39.pyc and b/sciencebirdsagents/Utils/__pycache__/trajectory_planner.cpython-39.pyc differ
+diff --git a/sciencebirdsagents/Utils/__pycache__/utils.cpython-39.pyc b/sciencebirdsagents/Utils/__pycache__/utils.cpython-39.pyc
+index cb9053b..2917b70 100644
+Binary files a/sciencebirdsagents/Utils/__pycache__/utils.cpython-39.pyc and b/sciencebirdsagents/Utils/__pycache__/utils.cpython-39.pyc differ
+diff --git a/sciencebirdsagents/__pycache__/SBAgent.cpython-39.pyc b/sciencebirdsagents/__pycache__/SBAgent.cpython-39.pyc
+index dd32118..f3c8761 100644
+Binary files a/sciencebirdsagents/__pycache__/SBAgent.cpython-39.pyc and b/sciencebirdsagents/__pycache__/SBAgent.cpython-39.pyc differ

@@ -36,7 +36,7 @@ class ActionSpace:
 
 # MIMIC SB as if it was Gym Environment (dreams...)
 class SBEnvironmentWrapper:
-    def __init__(self, reward_type='score', speed=100, game_version='Linux', if_head=False):
+    def __init__(self, reward_type='score', speed=100, game_version='Linux', if_head=False, headless_server=False):
         self.agent = None
         self.request_state = None  # function to request state
         self.current_level = 0
@@ -62,6 +62,7 @@ class SBEnvironmentWrapper:
         self.total_num_birds = 0
         self.total_num_pigs = 0
         self.if_head = if_head
+        self.headless_server = headless_server
 
     def make(self, agent, if_first_server=True, start_level=1, state_representation_type='symbolic'):
         """
@@ -448,23 +449,47 @@ class SBEnvironmentWrapper:
         for proc in server_procs:
             if 'grep' not in proc:
                 return None
-        if not if_head:
+        if not self.if_head:
             if self.state_representation_type == 'symbolic':
+                if self.headless_server:
+                    os.system(
+                        "bash -c \"cd ../sciencebirdsgames/{} && nohup java -jar ./game_playing_interface.jar --headless --dev > out 2>&1 &\"".format(
+                            self.game_version))
+
+                else:
+                    os.system(
+                        "gnome-terminal -- bash -c \"cd ../sciencebirdsgames/{} && java -jar ./game_playing_interface.jar --headless --dev \"".format(
+                            self.game_version))
+
+            else:
+                if self.headless_server:
+                    os.system(
+                        "bash -c \"cd ../sciencebirdsgames/{} && nohup java -jar ./game_playing_interface.jar --dev > out 2>&1 &\"".format(
+                            self.game_version))
+                else:
+                    os.system(
+                        "gnome-terminal -- bash -c \"cd ../sciencebirdsgames/{} && java -jar ./game_playing_interface.jar --dev \"".format(
+                            self.game_version))
+
+        elif self.if_head == 'headless':
+            if self.headless_server:
                 os.system(
                     "bash -c \"cd ../sciencebirdsgames/{} && nohup java -jar ./game_playing_interface.jar --headless --dev > out 2>&1 &\"".format(
                         self.game_version))
             else:
                 os.system(
+                    "gnome-terminal -- bash -c \"cd ../sciencebirdsgames/{} && java -jar ./game_playing_interface.jar --headless --dev \"".format(
+                        self.game_version))
+        else:
+            if self.headless_server:
+                os.system(
                     "bash -c \"cd ../sciencebirdsgames/{} && nohup java -jar ./game_playing_interface.jar --dev > out 2>&1 &\"".format(
                         self.game_version))
-        elif if_head == 'headless':
-            os.system(
-                "bash -c \"cd ../sciencebirdsgames/{} && nohup java -jar ./game_playing_interface.jar --headless --dev > out 2>&1 &\"".format(
-                    self.game_version))
-        else:
-            os.system(
-                "bash -c \"cd ../sciencebirdsgames/{} && nohup java -jar ./game_playing_interface.jar --dev > out 2>&1 &\"".format(
-                    self.game_version))
-
-        time.sleep(10)
+            else:
+                os.system(
+                    "gnome-terminal -- bash -c \"cd ../sciencebirdsgames/{} && java -jar ./game_playing_interface.jar --dev \"".format(
+                        self.game_version))
+        # logger.debug("Server started...")
+        print("Server started...")
+        time.sleep(2)
         logger.debug("Server started...")

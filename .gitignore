@@ -7,3 +7,14 @@ buildgame/Linux/
 tasks/generated_tasks/
 sciencebirdsgames/Linux/
 *.pyc
+sciencebirdsagents/PhyreAgents/data/
+
+sciencebirdsagents/__pycache__/
+
+sciencebirdsagents/Client/__pycache__/
+
+sciencebirdsagents/final_run/
+
+sciencebirdsagents/HeuristicAgents/__pycache__/
+
+sciencebirdsagents/LearningAgents/__pycache__/
