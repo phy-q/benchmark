@@ -11,7 +11,7 @@ SOLVER:
   MAX_ITERS: 800000
   VAL_INTERVAL: 5000
   WARMUP_ITERS: 1000
-  BATCH_SIZE: 32 # single GPU Batch Size
+  BATCH_SIZE: 2 # single GPU Batch Size
 INPUT:
   PRELOAD_TO_MEMORY: False
   IMAGE_CHANNEL: 1
@@ -27,7 +27,7 @@ RPIN:
   # input setting:
   INPUT_HEIGHT: 120
   INPUT_WIDTH: 160
-  MAX_NUM_OBJS: 6
+  MAX_NUM_OBJS: 37
   # data augmentation
   HORIZONTAL_FLIP: False
   VERTICAL_FLIP: False

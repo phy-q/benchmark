@@ -135,7 +135,7 @@ def main():
     )
     print(f'size: train {len(train_loader)} / test {len(val_loader)}')
 
-    cfg.SOLVER.MAX_ITERS = len(train_loader) * 5 * cfg.SOLVER.BATCH_SIZE if args.protocal == 'template' else len(train_loader) * 10 * cfg.SOLVER.BATCH_SIZE
+    cfg.SOLVER.MAX_ITERS = len(train_loader) * 5 * cfg.SOLVER.BATCH_SIZE
     cfg.SOLVER.VAL_INTERVAL = len(train_loader) // 1 * cfg.SOLVER.BATCH_SIZE
     print(cfg.SOLVER.MAX_ITERS)
     print(cfg.SOLVER.VAL_INTERVAL)

@@ -1,7 +1,0 @@
-2021-12-18 12:00:25,198 RPIN INFO: progress  | mean | p_1   | p_2   | s_1   | s_2   | m_1   | m_2   
-2021-12-18 12:01:25,785 RPIN INFO: progress  | mean | p_1   | p_2   | s_1   | s_2   | m_1   | m_2   
-2021-12-18 12:02:26,036 RPIN INFO: progress  | mean | p_1   | p_2   | s_1   | s_2   | m_1   | m_2   
-2021-12-18 12:04:06,255 RPIN INFO: progress  | mean | p_1   | p_2   | s_1   | s_2   | m_1   | m_2   
-2021-12-18 12:04:34,363 RPIN INFO: progress  | mean | p_1   | p_2   | s_1   | s_2   | m_1   | m_2   
-2021-12-18 12:05:26,165 RPIN INFO: progress  | mean | p_1   | p_2   | s_1   | s_2   | m_1   | m_2   
-2021-12-18 12:06:09,157 RPIN INFO: progress  | mean | p_1   | p_2   | s_1   | s_2   | m_1   | m_2   

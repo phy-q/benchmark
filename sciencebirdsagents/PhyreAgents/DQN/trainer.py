@@ -94,27 +94,6 @@ class Trainer(object):
             tprint(print_msg)
 
             if self.iterations % self.val_interval == 0:
-                # epoch train
-                print_msg = "train:"
-                print_msg += f"{self.epochs:03}/{self.iterations // 1000:04}k"
-                print_msg += f" | "
-                mean_loss = np.mean(np.array(self.box_p_step_losses[:self.ptrain_size]) / self.loss_cnt) * 1e3
-                print_msg += f"{mean_loss:.3f} | "
-                print_msg += f" | ".join(
-                    ["{:.3f}".format(self.losses[name] * 1e3 / self.loss_cnt) for name in self.loss_name])
-                if C.RPIN.SEQ_CLS_LOSS_WEIGHT:
-                    if self.fg_num == 0 or self.bg_num == 0:
-                        self.fg_num += 1e-6
-                        self.bg_num += 1e-6
-                        print_msg += f" | {self.fg_correct / self.fg_num:.3f} | {self.bg_correct / self.bg_num:.3f}"
-                    else:
-                        print_msg += f" | {self.fg_correct / self.fg_num:.3f} | {self.bg_correct / self.bg_num:.3f}"
-
-                speed = self.loss_cnt / (timer() - self.time)
-                eta = (self.max_iters - self.iterations) / speed / 3600
-                print_msg += f" | speed: {speed:.1f} | eta: {eta:.2f} h"
-                self.logger.info(print_msg)
-
                 self.snapshot()
                 self.val()
                 self._init_loss()
@@ -125,7 +104,26 @@ class Trainer(object):
                 print(f'{self.best_mean:.3f}')
                 break
 
+        #epoch train
+        print_msg = "train:"
+        print_msg += f"{self.epochs:03}/{self.iterations // 1000:04}k"
+        print_msg += f" | "
+        mean_loss = np.mean(np.array(self.box_p_step_losses[:self.ptrain_size]) / self.loss_cnt) * 1e3
+        print_msg += f"{mean_loss:.3f} | "
+        print_msg += f" | ".join(
+            ["{:.3f}".format(self.losses[name] * 1e3 / self.loss_cnt) for name in self.loss_name])
+        if C.RPIN.SEQ_CLS_LOSS_WEIGHT:
+            if self.fg_num == 0 or self.bg_num == 0:
+                self.fg_num += 1e-6
+                self.bg_num += 1e-6
+                print_msg += f" | {self.fg_correct / self.fg_num:.3f} | {self.bg_correct / self.bg_num:.3f}"
+            else:
+                print_msg += f" | {self.fg_correct / self.fg_num:.3f} | {self.bg_correct / self.bg_num:.3f}"
 
+        speed = self.loss_cnt / (timer() - self.time)
+        eta = (self.max_iters - self.iterations) / speed / 3600
+        print_msg += f" | speed: {speed:.1f} | eta: {eta:.2f} h"
+        self.logger.info(print_msg)
 
     def val(self):
         self.model.eval()

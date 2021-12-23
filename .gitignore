@@ -18,3 +18,9 @@ sciencebirdsagents/final_run/
 sciencebirdsagents/HeuristicAgents/__pycache__/
 
 sciencebirdsagents/LearningAgents/__pycache__/
+
+sciencebirdsagents/PhyreAgents/RPIN/output/
+
+sciencebirdsagents/PhyreAgents/RPIN/outputs/
+
+sciencebirdsagents/OpenAIStableBaseline/
