@@ -23,44 +23,44 @@ if not os.path.exists(output_path):
     os.mkdir(output_path)
 
 # # prepare images folder
-# os.mkdir(output_path + '/full')
-# os.mkdir(output_path + '/images')
-# os.mkdir(output_path + '/labels')
-#
-# for template in tqdm(os.listdir(input_path)):
-#     os.mkdir(output_path + '/full/' + template)
-#     os.mkdir(output_path + '/images/' + template)
-#     os.mkdir(output_path + '/labels/' + template)
-#
-#     for game_level in tqdm(os.listdir(input_path + '/' + template)):
-#         invalid_list = []
-#         os.mkdir(output_path + '/full/' + template + '/' + game_level)
-#         os.mkdir(output_path + '/images/' + template + '/' + game_level)
-#         os.mkdir(output_path + '/labels/' + template + '/' + game_level)
-#         # move full image
-#         full_names = glob(f'{input_path}/{template}/{game_level}/*_image.hkl')
-#         for fn in full_names:
-#             shutil.copy(fn, f'{output_path}/full/{template}/{game_level}/{fn.split("/")[-1]}')
-#             # save the first
-#             try:
-#                 image = hickle.load(f'{output_path}/full/{template}/{game_level}/{fn.split("/")[-1]}')[0]
-#             except ValueError:
-#                 print(f'{output_path}/full/{template}/{game_level}/{fn.split("/")[-1]}')
-#                 invalid_list.append(fn.split("/")[-1].split('_')[0])
-#                 continue
-#             np.save(f'{output_path}/images/{template}/{game_level}/{fn.split("/")[-1].split("_")[0]}.npy', image)
-#
-#         # move labels
-#         labels_names = []
-#         labels_names.extend(glob(f'{input_path}/{template}/{game_level}/*_boxes.hkl'))
-#         labels_names.extend(glob(f'{input_path}/{template}/{game_level}/*_masks.hkl'))
-#         labels_names.extend(glob(f'{input_path}/{template}/{game_level}/*_label.hkl'))
-#         for fn in labels_names:
-#             for inv_name in invalid_list:
-#                 if inv_name not in fn:
-#                     continue
-#
-#             shutil.copy(fn, f'{output_path}/labels/{template}/{game_level}/{fn.split("/")[-1]}')
+os.mkdir(output_path + '/full')
+os.mkdir(output_path + '/images')
+os.mkdir(output_path + '/labels')
+
+for template in tqdm(os.listdir(input_path)):
+    os.mkdir(output_path + '/full/' + template)
+    os.mkdir(output_path + '/images/' + template)
+    os.mkdir(output_path + '/labels/' + template)
+
+    for game_level in tqdm(os.listdir(input_path + '/' + template)):
+        invalid_list = []
+        os.mkdir(output_path + '/full/' + template + '/' + game_level)
+        os.mkdir(output_path + '/images/' + template + '/' + game_level)
+        os.mkdir(output_path + '/labels/' + template + '/' + game_level)
+        # move full image
+        full_names = glob(f'{input_path}/{template}/{game_level}/*_image.hkl')
+        for fn in full_names:
+            shutil.copy(fn, f'{output_path}/full/{template}/{game_level}/{fn.split("/")[-1]}')
+            # save the first
+            try:
+                image = hickle.load(f'{output_path}/full/{template}/{game_level}/{fn.split("/")[-1]}')[0]
+            except ValueError:
+                print(f'{output_path}/full/{template}/{game_level}/{fn.split("/")[-1]}')
+                invalid_list.append(fn.split("/")[-1].split('_')[0])
+                continue
+            np.save(f'{output_path}/images/{template}/{game_level}/{fn.split("/")[-1].split("_")[0]}.npy', image)
+
+        # move labels
+        labels_names = []
+        labels_names.extend(glob(f'{input_path}/{template}/{game_level}/*_boxes.hkl'))
+        labels_names.extend(glob(f'{input_path}/{template}/{game_level}/*_masks.hkl'))
+        labels_names.extend(glob(f'{input_path}/{template}/{game_level}/*_label.hkl'))
+        for fn in labels_names:
+            for inv_name in invalid_list:
+                if inv_name not in fn:
+                    continue
+
+            shutil.copy(fn, f'{output_path}/labels/{template}/{game_level}/{fn.split("/")[-1]}')
 
 # generate splits
 os.mkdir(output_path + '/splits')

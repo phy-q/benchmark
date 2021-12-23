@@ -48,6 +48,7 @@ class InterNet(nn.Module):
 
     def forward(self, x, g_idx=None):
         s = x
+        g_idx = g_idx.to(x.device)
         # of shape (b, o, dim, 7, 7)
         batch_size, num_objs, dim, psz, psz = x.shape
         x1 = x.repeat(1, num_objs - 1, 1, 1, 1)

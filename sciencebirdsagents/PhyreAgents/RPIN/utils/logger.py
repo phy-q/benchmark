@@ -22,7 +22,7 @@ def git_diff_config(name):
     return ret
 
 
-def setup_logger(name, save_dir):
+def setup_logger(name, save_dir, template = None):
     logger = logging.getLogger(name)
     logger.setLevel(logging.DEBUG)
     ch = logging.StreamHandler(stream=sys.stdout)
@@ -33,7 +33,7 @@ def setup_logger(name, save_dir):
 
     if save_dir:
         date = str(datetime.datetime.now().strftime('%m%d%H'))
-        fh = logging.FileHandler(os.path.join(save_dir, f'log-{date}.txt'))
+        fh = logging.FileHandler(os.path.join(save_dir, f'log-{date}_{template}.txt'))
         fh.setLevel(logging.DEBUG)
         formatter = logging.Formatter("%(asctime)s %(name)s %(levelname)s: %(message)s")
         fh.setFormatter(formatter)

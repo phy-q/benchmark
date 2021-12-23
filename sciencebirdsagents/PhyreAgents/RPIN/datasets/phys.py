@@ -1,13 +1,11 @@
-import cv2
-import torch
 import random
+
 import numpy as np
-from glob import glob
+import torch
 from torch.utils.data import Dataset
-
-from utils.config import _C as C
 from utils.bbox import xyxy2xywh
-
+from utils.config import _C as C
+import hickle
 plot = False
 debug = False
 
@@ -27,6 +25,7 @@ class Phys(Dataset):
         self.video_list, self.anno_list = None, None
         self.video_info = None
 
+
     def __len__(self):
         return self.video_info.shape[0]
 
@@ -37,7 +36,7 @@ class Phys(Dataset):
         data = self._parse_image(video_name, vid_idx, img_idx)
         data_t = data.copy()
 
-        boxes, gt_masks = self._parse_label(anno_name, vid_idx, img_idx)
+        boxes, if_destroyed, gt_masks = self._parse_label(anno_name, vid_idx, img_idx)
 
         # image flip augmentation
         if random.random() > 0.5 and self.split == 'train' and C.RPIN.HORIZONTAL_FLIP:
@@ -63,21 +62,23 @@ class Phys(Dataset):
         valid = np.ones(C.RPIN.MAX_NUM_OBJS)
         valid[num_objs:] = 0
         boxes = np.concatenate([boxes] + [boxes[:, :1] for _ in range(C.RPIN.MAX_NUM_OBJS - num_objs)], axis=1)
+        if_destroyed = np.concatenate(
+            [if_destroyed] + [if_destroyed[:, :1] * 0 for _ in range(C.RPIN.MAX_NUM_OBJS - num_objs)], axis=1)
         gt_masks = np.concatenate([gt_masks] + [gt_masks[:, :1] for _ in range(C.RPIN.MAX_NUM_OBJS - num_objs)], axis=1)
 
         # rois
         rois = boxes[:self.input_size].copy()
         # gt boxes
         gt_boxes = boxes[self.input_size:].copy()
-        if_destoryed = gt_boxes[:, :, -1]
-        gt_boxes = xyxy2xywh(gt_boxes.reshape(-1, 5)[:,:-1]).reshape((-1, C.RPIN.MAX_NUM_OBJS, 4))
+        if_destroyed = if_destroyed[self.input_size:]
+        gt_boxes = xyxy2xywh(gt_boxes.reshape(-1, 4)).reshape((-1, C.RPIN.MAX_NUM_OBJS, 4))
 
         gt_boxes[..., 0::2] /= self.input_width
         gt_boxes[..., 1::2] /= self.input_height
         gt_boxes = gt_boxes.reshape(self.pred_size, -1, 4)
-        #todo: change it to 5 values
-        gt_boxes = gt_boxes * if_destoryed.reshape(*if_destoryed.shape,1)
-        labels = torch.zeros(1)  # a fake variable used to make interface consistent
+
+        #labels = torch.zeros(1)  # a fake variable used to make interface consistent
+        labels = torch.tensor(hickle.load(anno_name.replace('boxes','label'))).float()
         data = torch.from_numpy(data.astype(np.float32))
         data_t = torch.from_numpy(data_t.astype(np.float32))
         rois = torch.from_numpy(rois.astype(np.float32))
@@ -85,7 +86,9 @@ class Phys(Dataset):
         gt_masks = torch.from_numpy(gt_masks.astype(np.float32))
         valid = torch.from_numpy(valid.astype(np.float32))
 
-        return data, data_t, rois, gt_boxes, gt_masks, valid, g_idx, labels
+        game_level = video_name.split('/')[4]
+
+        return data, data_t, rois, if_destroyed, gt_boxes, gt_masks, valid, g_idx, labels, game_level
 
     def _parse_image(self, video_name, vid_idx, img_idx):
         raise NotImplementedError

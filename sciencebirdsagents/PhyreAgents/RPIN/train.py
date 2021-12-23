@@ -5,17 +5,13 @@ import shutil
 import argparse
 import numpy as np
 import matplotlib.pyplot as plt
-
+import hickle
 plt.switch_backend('agg')
 from datasets import *
 from utils.config import _C as cfg
 from utils.logger import setup_logger, git_diff_config
 from models import *
 from trainer import Trainer
-
-lr = 0.0003
-weight_decay = 0.9
-
 
 def arg_parse():
     parser = argparse.ArgumentParser(description='RPIN Parameters')
@@ -24,6 +20,9 @@ def arg_parse():
     parser.add_argument('--gpus', type=str, help='specification for GPU, use comma to separate GPUS', default='')
     parser.add_argument('--output', type=str, default='./', help='output name')
     parser.add_argument('--seed', type=int, help='set random seed use this command', default=0)
+    parser.add_argument('--template', type=str, help='set random seed use this command', default='1_01_01')
+    parser.add_argument('--protocal', type=str, help='set random seed use this command', default='template')
+    parser.add_argument('--fold', type=int, help='set random seed use this command', default=0)
     return parser.parse_args()
 
 
@@ -52,17 +51,19 @@ def main():
 
     # ---- setup config files
     cfg.merge_from_file(args.cfg)
-    cfg.TEMPLATE = cfg.TEMPLATE.replace('\\', '')
+    cfg.TEMPLATE = args.template #cfg.TEMPLATE.replace('\\', '')
+    cfg.PHYRE_PROTOCAL = args.protocal
+    cfg.PHYRE_FOLD = args.fold
     cfg.SOLVER.BATCH_SIZE *= num_gpus
     cfg.SOLVER.BASE_LR *= num_gpus
-    cfg.freeze()
+
     output_dir = os.path.join(cfg.OUTPUT_DIR, cfg.DATA_ROOT.split('/')[1], args.output)
     # os.makedirs(output_dir, exist_ok=True)
     # shutil.copy(args.cfg, os.path.join(output_dir, 'config.yaml'))
     # shutil.copy(os.path.join('RPIN/models/', cfg.ARCH + '.py'), os.path.join(output_dir, 'arch.py'))
 
     # ---- setup logger
-    logger = setup_logger('RPIN', './output')
+    logger = setup_logger('RPIN', './output', template=cfg.TEMPLATE)
     # print(git_diff_config(args.cfg))
 
     # ---- setup model
@@ -77,8 +78,8 @@ def main():
     other_params = [p for p_name, p in model.named_parameters() if 'vae_lstm' not in p_name]
     optim = torch.optim.Adam(
         [{'params': other_params}],
-        lr=lr,
-        weight_decay=weight_decay,
+        lr=cfg.SOLVER.BASE_LR,
+        weight_decay=cfg.SOLVER.WEIGHT_DECAY,
     )
 
     # ---- if resume experiments, use --init ${model_name}
@@ -96,14 +97,48 @@ def main():
                                            image_ext=cfg.RPIN.IMAGE_EXT)
     val_set = eval(f'{cfg.DATASET_ABS}')(data_root=cfg.DATA_ROOT, split='test', template=cfg.TEMPLATE,
                                          image_ext=cfg.RPIN.IMAGE_EXT)
-    kwargs = {'pin_memory': True, 'num_workers': 16}
+    kwargs = {'pin_memory': True, 'num_workers': 16, 'drop_last':True}
+
+    weights = {}
+    data_weight = []
+    for idx in train_set.video_info:
+        l = hickle.load(train_set.anno_list[idx[0]].replace('boxes', 'label'))
+        if l in weights:
+            weights[l] += 1
+        else:
+            weights[l] = 1
+        data_weight.append(l)
+
+    weights[1] = weights[0] / weights[1]
+    weights[0] = weights[0] / weights[0]
+    data_weight = list(map(lambda x: weights[x], data_weight))
+
+    sampler = torch.utils.data.WeightedRandomSampler(data_weight, num_samples=len(train_set))
+
+    #load num of max objects
+    import json
+    num_max_obj = json.load(open('level_max_num_obj.json'))
+    cfg.RPIN.MAX_NUM_OBJS = num_max_obj[args.template]
+    multiplier = int(288 - (cfg.RPIN.MAX_NUM_OBJS - 6)/20 * (288 - 82))
+
+    cfg.SOLVER.BATCH_SIZE = multiplier // cfg.RPIN.MAX_NUM_OBJS # based on 8gb ram of gpu
+    print(cfg.RPIN.MAX_NUM_OBJS)
+
+    print(cfg.SOLVER.BATCH_SIZE)
+
     train_loader = torch.utils.data.DataLoader(
-        train_set, batch_size=cfg.SOLVER.BATCH_SIZE, shuffle=True, **kwargs,
+        train_set, batch_size=cfg.SOLVER.BATCH_SIZE, shuffle=False, sampler=sampler, **kwargs,
     )
     val_loader = torch.utils.data.DataLoader(
         val_set, cfg.SOLVER.BATCH_SIZE, shuffle=False, **kwargs,
     )
     print(f'size: train {len(train_loader)} / test {len(val_loader)}')
+
+    cfg.SOLVER.MAX_ITERS = len(train_loader) * 5 * cfg.SOLVER.BATCH_SIZE
+    cfg.SOLVER.VAL_INTERVAL = len(train_loader) // 1 * cfg.SOLVER.BATCH_SIZE
+    print(cfg.SOLVER.MAX_ITERS)
+    print(cfg.SOLVER.VAL_INTERVAL)
+    cfg.freeze()
 
     # ---- setup trainer
     kwargs = {'device': torch.device('cuda'),

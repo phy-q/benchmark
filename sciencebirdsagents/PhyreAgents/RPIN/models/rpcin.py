@@ -56,7 +56,7 @@ class Net(nn.Module):
             predictor.append(nn.ReLU(inplace=True))
         self.predictor = nn.Sequential(*predictor)
 
-        self.decoder_output = 4
+        self.decoder_output = 5
         self.bbox_decoder = nn.Linear(self.in_feat_dim * pool_size * pool_size, self.decoder_output)
 
         if C.RPIN.MASK_LOSS_WEIGHT > 0:
@@ -89,6 +89,7 @@ class Net(nn.Module):
         x = self.extract_object_feature(x, rois)
 
         bbox_rollout = []
+        if_destroyed_rollout = []
         mask_rollout = []
         state_list = [x[:, i] for i in range(self.time_step)]
         state_list_buffer = [x[:, i] for i in range(self.time_step)]
@@ -98,10 +99,13 @@ class Net(nn.Module):
             s = self.predictor(all_c.reshape((-1,) + (all_c.shape[-3:])))
             s = s.reshape((batch_size, self.num_objs) + s.shape[-3:])
             bbox = self.bbox_decoder(s.reshape(batch_size, self.num_objs, -1))
+            if_destroyed = nn.Sigmoid()(bbox[:,:,-1])
+            bbox = bbox[:,:,:-1]
             if C.RPIN.MASK_LOSS_WEIGHT:
                 mask = self.mask_decoder(s.reshape(batch_size, self.num_objs, -1))
                 mask_rollout.append(mask)
             bbox_rollout.append(bbox)
+            if_destroyed_rollout.append(if_destroyed)
             state_list = state_list[1:] + [s]
             state_list_buffer.append(s)
 
@@ -114,15 +118,16 @@ class Net(nn.Module):
                 len(self.picked_state_list) * batch_size, self.num_objs, -1)
             ).reshape(len(self.picked_state_list), batch_size, self.num_objs, -1)
             valid_seq = g_idx[:, ::self.num_objs - 1, [2]]
-            valid_seq = valid_seq[None]
+            valid_seq = valid_seq[None].to(seq_feature.device)
             # (p_l, b, feat)
             seq_feature = (seq_feature * valid_seq).sum(dim=-2) / valid_seq.sum(dim=-2)
             seq_feature = seq_feature.permute(1, 2, 0).reshape(batch_size, -1)
             seq_score = self.seq_score(seq_feature).squeeze(1)
 
         bbox_rollout = torch.stack(bbox_rollout).permute(1, 0, 2, 3)
-        bbox_rollout = bbox_rollout.reshape(-1, num_rollouts, self.num_objs, self.decoder_output)
+        bbox_rollout = bbox_rollout.reshape(-1, num_rollouts, self.num_objs, self.decoder_output-1)
 
+        if_destroyed_rollout = torch.stack(if_destroyed_rollout).permute(1, 0, 2).reshape(-1, num_rollouts, self.num_objs)
         if len(mask_rollout) > 0:
             mask_rollout = torch.stack(mask_rollout).permute(1, 0, 2, 3)
             mask_rollout = mask_rollout.reshape(-1, num_rollouts, self.num_objs, self.mask_size, self.mask_size)
@@ -131,15 +136,17 @@ class Net(nn.Module):
             'boxes': bbox_rollout,
             'masks': mask_rollout,
             'score': seq_score,
+            'if_destroyed': if_destroyed_rollout,
         }
         return outputs
 
     def extract_object_feature(self, x, rois):
         # visual feature, comes from RoI Pooling
+        device = x.device
         batch_size, time_step = x.shape[0], x.shape[1]
         x = x.reshape((batch_size * time_step,) + x.shape[2:])  # (b x t, c, h, w)
         x = self.backbone(x)
-        roi_pool = self.roi_align(x, rois.reshape(-1, 5))  # (b * t * num_objs, feat_dim)
+        roi_pool = self.roi_align(x.cpu(), rois.reshape(-1, 5).cpu()).to(device)  # (b * t * num_objs, feat_dim)
         roi_pool = self.roi2state(roi_pool)
         x = roi_pool.reshape((batch_size, time_step, self.num_objs) + (roi_pool.shape[-3:]))
         return x

@@ -26,7 +26,7 @@ def collect_env_info():
 def tprint(*args):
     """Temporarily prints things on the screen"""
     print("\r", end="")
-    print(*args, end="")
+    print(*args, end="", flush=True)
 
 
 def pprint(*args):

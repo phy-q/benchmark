@@ -1,13 +1,11 @@
 import os
-import phyre
-import torch
-import hickle
-import numpy as np
 from glob import glob
 
+import hickle
+import numpy as np
 from datasets.phys import Phys
-from utils.misc import tprint
 from utils.config import _C as C
+from utils.misc import tprint
 
 plot = False
 
@@ -20,7 +18,8 @@ class PHYRE(Phys):
         fold = C.PHYRE_FOLD
         template = C.TEMPLATE
         env_list = open(f'{data_root}/splits/{protocal}_{split}_{template}_fold_{fold}.txt', 'r').read().split('\n')
-        self.video_list = sum([sorted(glob(f'{data_root}/images/{env.replace(":", "/")}/*.npy')) for env in env_list], [])
+        self.video_list = sum([sorted(glob(f'{data_root}/images/{env.replace(":", "/")}/*.npy')) for env in env_list],
+                              [])
         self.anno_list = [(v[:-4] + '_boxes.hkl').replace('images', 'labels') for v in self.video_list]
 
         # video_info_name = f'for_plot.npy'
@@ -51,10 +50,12 @@ class PHYRE(Phys):
 
     def _parse_image(self, video_name, vid_idx, img_idx):
         data = np.load(video_name)
-        return data.reshape(1,1,data.shape[0],data.shape[1])
+        return data.reshape(1, 1, data.shape[0], data.shape[1])
 
     def _parse_label(self, anno_name, vid_idx, img_idx):
         boxes = hickle.load(anno_name)[img_idx:img_idx + self.seq_size, :, 1:]
+        if_destroyed = boxes[:, :, -1]
+        boxes = boxes[:, :, :-1]
         gt_masks = np.zeros((self.pred_size, boxes.shape[1], C.RPIN.MASK_SIZE, C.RPIN.MASK_SIZE))
         if C.RPIN.MASK_LOSS_WEIGHT > 0:
             anno_name = anno_name.replace('boxes.', 'masks.')
@@ -68,4 +69,4 @@ class PHYRE(Phys):
                 [gt_masks] + [gt_masks[[-1]] for _ in range(self.pred_size - gt_masks.shape[0])], axis=0
             )
 
-        return boxes, gt_masks
+        return boxes, if_destroyed, gt_masks
