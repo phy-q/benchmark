@@ -24,6 +24,8 @@ def arg_parse():
     parser.add_argument('--template', type=str, help='set random seed use this command', default='1_01_01')
     parser.add_argument('--protocal', type=str, help='set random seed use this command', default='template')
     parser.add_argument('--fold', type=int, help='set random seed use this command', default=0)
+    parser.add_argument('--model', type=str, help='the type of model to run: dqn or rpcin', default='rpcin')
+
     return parser.parse_args()
 
 
@@ -68,7 +70,7 @@ def main():
     # print(git_diff_config(args.cfg))
 
     # ---- setup model
-    model = eval('rpcin.Net')()
+    model = eval(f'{args.model}.Net')()
     model.to(torch.device('cuda'))
     # model = torch.nn.DataParallel(
     #     model, device_ids=list(range(args.gpus.count(',') + 1))

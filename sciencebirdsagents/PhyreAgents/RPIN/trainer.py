@@ -53,12 +53,21 @@ class Trainer(object):
         for batch_idx, input_data in enumerate(self.train_loader):
             (data, data_t, rois, if_destroyed, gt_boxes, gt_masks, valid, g_idx, seq_l, game_level) = input_data
             self._adjust_learning_rate()
-            data, data_t = data.to(self.device), data_t.to(self.device)
 
-            rois = xyxy_to_rois(rois, batch=data.shape[0], time_step=data.shape[1], num_devices=self.num_gpus)
-            self.optim.zero_grad()
+            if 'dqn' in str(self.model.__class__):
+                data = data[:,0,:,:,:]
+                data = data.to(self.device)
+                self.optim.zero_grad()
+                outputs = self.model(data, phase='train')
 
-            outputs = self.model(data, rois, num_rollouts=self.ptrain_size, g_idx=g_idx, x_t=data_t, phase='train')
+            else:
+                data, data_t = data.to(self.device), data_t.to(self.device)
+
+                rois = xyxy_to_rois(rois, batch=data.shape[0], time_step=data.shape[1], num_devices=self.num_gpus)
+                self.optim.zero_grad()
+
+                outputs = self.model(data, rois, num_rollouts=self.ptrain_size, g_idx=g_idx, x_t=data_t, phase='train')
+
             labels = {
                 'boxes': gt_boxes.to(self.device),
                 'masks': gt_masks.to(self.device),
@@ -66,6 +75,7 @@ class Trainer(object):
                 'seq_l': seq_l.to(self.device),
                 'if_destroyed': if_destroyed.to(self.device),
             }
+
             loss = self.loss(outputs, labels, 'train')
             loss.backward()
             self.optim.step()
@@ -143,9 +153,17 @@ class Trainer(object):
             tprint(f'eval: {batch_idx}/{len(self.val_loader)}')
 
             with torch.no_grad():
+                if 'dqn' in str(self.model.__class__):
+                    data = data[:, 0, :, :, :]
+                    data = data.to(self.device)
+                    self.optim.zero_grad()
+                    outputs = self.model(data, phase='train')
 
-                data = data.to(self.device)
-                rois = xyxy_to_rois(rois, batch=data.shape[0], time_step=data.shape[1], num_devices=self.num_gpus)
+                else:
+                    data = data.to(self.device)
+                    rois = xyxy_to_rois(rois, batch=data.shape[0], time_step=data.shape[1], num_devices=self.num_gpus)
+                    outputs = self.model(data, rois, num_rollouts=self.ptest_size, g_idx=g_idx, phase='test')
+
                 labels = {
                     'boxes': gt_boxes.to(self.device),
                     'masks': gt_masks.to(self.device),
@@ -153,9 +171,6 @@ class Trainer(object):
                     'seq_l': seq_l.to(self.device),
                     'if_destroyed': if_destroyed.to(self.device),
                 }
-
-                outputs = self.model(data, rois, num_rollouts=self.ptest_size, g_idx=g_idx, phase='test')
-
                 for i, gl in enumerate(game_level):
                     if gl in passing_result:
                         passing_result[gl].append({outputs['score'][i].cpu().item(): labels['seq_l'][i].cpu().item()})
@@ -231,6 +246,26 @@ class Trainer(object):
         self.logger.info(val_info)
 
     def loss(self, outputs, labels, phase):
+
+        if 'dqn' in str(self.model.__class__):
+            self.loss_cnt += labels['seq_l'].shape[0]
+
+            seq_loss = F.binary_cross_entropy(outputs['score'], labels['seq_l'], reduction='none')
+
+            self.losses['seq'] += seq_loss.sum().item()
+            seq_loss = seq_loss.mean()
+            # calculate accuracy
+            s = (outputs['score'] >= 0.5).eq(labels['seq_l'])
+            fg_correct = s[labels['seq_l'] == 1].sum().item()
+            bg_correct = s[labels['seq_l'] == 0].sum().item()
+            fg_num = (labels['seq_l'] == 1).sum().item()
+            bg_num = (labels['seq_l'] == 0).sum().item()
+            self.fg_correct += fg_correct
+            self.bg_correct += bg_correct
+            self.fg_num += fg_num
+            self.bg_num += bg_num
+            return seq_loss
+
         self.loss_cnt += labels['boxes'].shape[0]
         pred_size = eval(f'self.p{phase}_size')
         # calculate bbox loss

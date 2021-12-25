@@ -1,6 +1,6 @@
 #!/bin/bash
 #conda activate pytorch
-
+model=$1
 splits=$(ls ../data/splits)
 
 for file in $splits
@@ -21,5 +21,5 @@ do
 		fold=$(echo $file | awk 'BEGIN {FS = "_"} {print $6}')
 	fi
 	echo $protocal $t ${fold:0:1}
-	python train.py --cfg configs/rpcin_within_pred.yaml --template $t --protocal $protocal --fold ${fold:0:1}	
+	python train.py --cfg configs/rpcin_within_pred.yaml --template $t --protocal $protocal --fold ${fold:0:1} --model $model
 done
