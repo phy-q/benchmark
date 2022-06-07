@@ -25,18 +25,18 @@ The research paper can be found here: https://arxiv.org/abs/2108.13696
 	1. [Task Generator](#Task-generator) 	
 	2. [Tasks Generted for the Baseline Analysis](#Tasks-generated-for-baselines)
 	3. [Creating Your Own Tasks](#Creating-Your-Own-Tasks)
-6. [Baseline Agents](#BAF)
+4. [Baseline Agents](#BAF)
 	1. [How to Run Heuristic Agents](#RHA)
 	2. [How to Run Learning Agents](#RLA)
 		1. [How to Run DQN and Deep Relational Baselines](#RLA)
 		2. [How to Run Stable Baselines](#OLA)
 	4. [How to Develop Your Own Agent](#ROA)
 	5. [Outline of the Agent Code](#code)
-8. [Framework](#Framework)
+5. [Framework](#Framework)
    1. [The Game Environment](#Env)
    2. [Symbolic Representation Data Structure](#SymbolicRepresentation)
    3. [Communication Protocols](#Protocol)
-9. [Human Player Data](#HumanPlayerData)
+6. [Play Data](#PlayData)
 ---
 
 ---
@@ -407,7 +407,7 @@ If you want to design your own task templates, you can use the interactive Task 
     2. Run the Task Generator using the instructions given in [Section 3.1](#Task-generator)
     
 
-## 5. Baseline Agents and the Framework<a name="BAF"></a>
+## 4. Baseline Agents and the Framework<a name="BAF"></a>
 
 Tested environments:
 - Ubuntu: 18.04/20.04
@@ -425,7 +425,7 @@ Before running agents, please:
 1. Go to ```sciencebirdsgames``` and unzip ```Linux.zip```
 2. Go to ```sciencebirdslevels/generated_tasks``` and unzip ```fifth_generation.zip```
 
-### 5.1 How to Run Heuristic Agents<a name="RHA"></a>
+### 4.1 How to Run Heuristic Agents<a name="RHA"></a>
 
 1. Run Java heuristic agents: Datalab and Eagle Wings: <br>
 
@@ -458,7 +458,7 @@ Before running agents, please:
        ./TestPythonHeuristicAgent.sh PigShooter
        ```
 
-### 5.2.1 How to Run DQN and Deep Relational Baselines<a name="RLA"></a>
+### 4.2.1 How to Run DQN and Deep Relational Baselines<a name="RLA"></a>
 
 #### For Symbolic Agent
 1. Go to ```sciencebirdsagents/Utils```
@@ -490,7 +490,7 @@ Before running agents, please:
     ```
     
 
-### 5.2.2 How to Run Stable Baselines 3 Agents<a name="OLA"></a>
+### 4.2.2 How to Run Stable Baselines 3 Agents<a name="OLA"></a>
 
 #### For Symbolic Agent
 1. Go to ```sciencebirdsagents/Utils```
@@ -515,7 +515,7 @@ Before running agents, please:
     
 
 
-### 5.3 How to Develop Your Own Agent <a name="ROA"></a>
+### 4.3 How to Develop Your Own Agent <a name="ROA"></a>
 
 We provide a gym-like environment. For a simple demo, which can be found at ```demo.py```
 
@@ -543,7 +543,7 @@ for level_idx in level_list:
     s, r, is_done, info = env.reload_current_level() #go to the next level
 ```
     
-### 5.4 Outline of the Agent Code <a name="Code"></a>
+### 4.4 Outline of the Agent Code <a name="Code"></a>
 
 The ```./sciencebirdsagents``` folder contains all the relevant source code of our agents. Below is the outline of the code (this is a
 simple description. Detailed documentation in progress):
@@ -596,16 +596,16 @@ simple description. Detailed documentation in progress):
 17. ```TrainAndTestOpenAIStableBaselines.sh```: Bash script to run OpenAI Stable Baseline 3 agents to test both local and board generalization.
 18. 
 
-## 6. Framework<a name="Framework"></a>
+## 5. Framework<a name="Framework"></a>
 
-### 6.1 The Game Environment<a name="Env"></a>
+### 5.1 The Game Environment<a name="Env"></a>
 
 1. The coordination system
     - in the science birds game, the origin point (0,0) is the bottom-left corner, and the Y coordinate increases along
       the upwards direction, otherwise the same as above.
     - Coordinates ranging from (0,0) to (640,480).
 
-### 6.2 Symbolic Representation Data Structure<a name="SymbolicRepresentation"></a>
+### 5.2 Symbolic Representation Data Structure<a name="SymbolicRepresentation"></a>
 
 1. Symbolic Representation data of game objects is stored in a Json object. The json object describes an array where each element
    describes a game object. Game object categories, and their properties are described below:
@@ -659,7 +659,7 @@ simple description. Detailed documentation in progress):
     - The noise is uniformly distributed
     - We will later offer more sophisticated and adjustable noise.
 
-### 6.3 Communication Protocols<a name="Protocol"></a>
+### 5.3 Communication Protocols<a name="Protocol"></a>
 
 <table style="text-align:center;">
     <thead>
@@ -910,8 +910,11 @@ simple description. Detailed documentation in progress):
 
 </table>
 
-## 7. Human Player Data 
-<a name="HumanPlayerData"/></a>
+## 6. Play Data 
+<a name="PlayData"/></a>
+Play data folder contains two zip files. human_player_data.zip and baseline_agent_data.zip. 
+
+### 6.1 Human Player Data
 The human player data on Phy-Q is given in ```human_player_data.zip```. This includes summarized data for 20 players. Each .csv file is for a player and the following are the columns.
 1.	levelIndex: The index assigned to the task 
 2.	attempts: Number of attempts taken to solve the task (The value is given as 100 if the task is not solved)
