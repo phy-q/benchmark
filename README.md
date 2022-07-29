@@ -69,13 +69,13 @@ Based on the above physical scenarios, we develop Phy-Q benchmark in Angry Birds
 
 | Task             |  Description |
 :-------------------------:|:-----------
-<img src="tasks/example_tasks/videos/1.1.1.gif" width="1000"/> | 1. Single force: A single force is needed to be applied to the pig to destroy it by a direct bird shot.
-<img src="tasks/example_tasks/videos/1.2.2.gif" width="1000"/> | 2. Multiple forces: Multiple forces are needed to be applied to destroy the pig by multiple bird shots.
-<img src="tasks/example_tasks/videos/2.1.4.gif" width="1000"/> | 3. Rolling: The circular object is needed to be rolled onto the pig, which is unreachable for the bird from the slingshot, causing the pig to be destroyed.
-<img src="tasks/example_tasks/videos/2.2.1.gif" width="1000"/> | 4. Falling: The circular object is needed to be fallen onto the pig causing the pig to be destroyed.
-<img src="tasks/example_tasks/videos/2.3.1.gif" width="1000"/> | 5. Sliding: The square object is needed to be slid to hit the pig, which is unreachable for the bird from the slingshot, causing the pig to be destroyed.
-<img src="tasks/example_tasks/videos/2.4.2.gif" width="1000"/> | 6. Bouncing: The bird is needed to be bounced off the platform (dark-brown object) to hit and destroy the pig.
-<img src="tasks/example_tasks/videos/3.1.3.gif" width="1000"/> | 7. Relative weight: The small circular block is lighter than the big circular block. Out of the two blocks, the small circular block can only be rolled to reach the pig and destroy.
+<img src="tasks/example_tasks/videos/1.1.1.gif" width="2000"/> | 1. Single force: A single force is needed to be applied to the pig to destroy it by a direct bird shot.
+<img src="tasks/example_tasks/videos/1.2.2.gif" width="2000"/> | 2. Multiple forces: Multiple forces are needed to be applied to destroy the pig by multiple bird shots.
+<img src="tasks/example_tasks/videos/2.1.4.gif" width="2000"/> | 3. Rolling: The circular object is needed to be rolled onto the pig, which is unreachable for the bird from the slingshot, causing the pig to be destroyed.
+<img src="tasks/example_tasks/videos/2.2.1.gif" width="2000"/> | 4. Falling: The circular object is needed to be fallen onto the pig causing the pig to be destroyed.
+<img src="tasks/example_tasks/videos/2.3.1.gif" width="2000"/> | 5. Sliding: The square object is needed to be slid to hit the pig, which is unreachable for the bird from the slingshot, causing the pig to be destroyed.
+<img src="tasks/example_tasks/videos/2.4.2.gif" width="2000"/> | 6. Bouncing: The bird is needed to be bounced off the platform (dark-brown object) to hit and destroy the pig.
+<img src="tasks/example_tasks/videos/3.1.3.gif" width="2000"/> | 7. Relative weight: The small circular block is lighter than the big circular block. Out of the two blocks, the small circular block can only be rolled to reach the pig and destroy.
 <img src="tasks/example_tasks/videos/3.2.3.gif" width="2000"/> | 8. Relative height: The square block on top of the taller rectangular block will not fall through the gap due to the height of the rectangular block. Hence the square block on top of the shorter rectangular block needs to be toppled to fall through the gap and destroy the pig.
 <img src="tasks/example_tasks/videos/3.3.3.gif" width="2000"/> | 9. Relative width: The bird cannot go through the lower entrance which has a narrow opening. Hence the bird is needed to be shot to the upper entrance to reach the pig and destroy it.
 <img src="tasks/example_tasks/videos/3.4.3.gif" width="2000"/> | 10. Shape difference: The circular block on two triangle blocks can be rolled down by breaking a one triangle block and the circular block on two square blocks cannot be rolled down by breaking a one square block. Hence, the triangle block needs to be destroyed to make the circular block roll and fall onto the pig causing the pig to be destroyed.
