@@ -1,0 +1,151 @@
+,category,pass_rate,name,event,description
+0,1_01,0.963157895,Human,1,Single force
+1,1_02,0.989473684,Human,2,Multiple forces
+2,2_01,0.852631579,Human,3,Rolling
+3,2_02,0.978947368,Human,4,Falling
+4,2_03,0.8631578950000001,Human,5,Sliding
+5,2_04,0.805263158,Human,6,Bouncing
+6,3_01,0.6315789470000001,Human,7,Relative weight
+7,3_02,0.847368421,Human,8,Relative height
+8,3_03,0.731578947,Human,9,Relative width
+9,3_04,0.926315789,Human,10,Shape difference
+10,3_05,0.5,Human,11,Non-greedy actions
+11,3_06,0.984210526,Human,12,Structural analysis
+12,3_07,0.921052632,Human,13,Clearing paths
+13,3_08,0.568421053,Human,14,Adequate timing
+14,3_09,0.868421053,Human,15,Manoeuvring
+15,1_01,0.8729166666666666,Pig Shooter,1,Single force
+16,1_02,0.8883333333333333,Pig Shooter,2,Multiple forces
+17,2_01,0.008333333333333333,Pig Shooter,3,Rolling
+18,2_02,0.0,Pig Shooter,4,Falling
+19,2_03,0.010526315789473684,Pig Shooter,5,Sliding
+20,2_04,0.0,Pig Shooter,6,Bouncing
+21,3_01,0.0,Pig Shooter,7,Relative weight
+22,3_02,0.0,Pig Shooter,8,Relative height
+23,3_03,0.0,Pig Shooter,9,Relative width
+24,3_04,0.014583333333333332,Pig Shooter,10,Shape difference
+25,3_05,0.02,Pig Shooter,11,Non-greedy actions
+26,3_06,0.07388888888888889,Pig Shooter,12,Structural analysis
+27,3_07,0.03125,Pig Shooter,13,Clearing paths
+28,3_08,0.0,Pig Shooter,14,Adequate timing
+29,3_09,0.003125,Pig Shooter,15,Manoeuvring
+30,1_01,0.89,Datalab,1,Single force
+31,1_02,0.95,Datalab,2,Multiple forces
+32,2_01,0.3699999999999999,Datalab,3,Rolling
+33,2_02,0.0,Datalab,4,Falling
+34,2_03,0.07000000000000002,Datalab,5,Sliding
+35,2_04,0.0,Datalab,6,Bouncing
+36,3_01,0.025,Datalab,7,Relative weight
+37,3_02,0.12000000000000002,Datalab,8,Relative height
+38,3_03,0.005,Datalab,9,Relative width
+39,3_04,0.0,Datalab,10,Shape difference
+40,3_05,0.06999999999999999,Datalab,11,Non-greedy actions
+41,3_06,0.21999999999999995,Datalab,12,Structural analysis
+42,3_07,0.10000000000000002,Datalab,13,Clearing paths
+43,3_08,0.0,Datalab,14,Adequate timing
+44,3_09,0.0,Datalab,15,Manoeuvring
+45,1_01,0.615,Eagle’s Wing,1,Single force
+46,1_02,0.9,Eagle’s Wing,2,Multiple forces
+47,2_01,0.33,Eagle’s Wing,3,Rolling
+48,2_02,0.045,Eagle’s Wing,4,Falling
+49,2_03,0.09,Eagle’s Wing,5,Sliding
+50,2_04,0.06333333333333334,Eagle’s Wing,6,Bouncing
+51,3_01,0.01,Eagle’s Wing,7,Relative weight
+52,3_02,0.2550000000000001,Eagle’s Wing,8,Relative height
+53,3_03,0.01,Eagle’s Wing,9,Relative width
+54,3_04,0.265,Eagle’s Wing,10,Shape difference
+55,3_05,0.035,Eagle’s Wing,11,Non-greedy actions
+56,3_06,0.2433333333333332,Eagle’s Wing,12,Structural analysis
+57,3_07,0.035,Eagle’s Wing,13,Clearing paths
+58,3_08,0.06999999999999999,Eagle’s Wing,14,Adequate timing
+59,3_09,0.0325,Eagle’s Wing,15,Manoeuvring
+60,1_01,0.58,Bambirds,1,Single force
+61,1_02,0.7550000000000001,Bambirds,2,Multiple forces
+62,2_01,0.040000000000000015,Bambirds,3,Rolling
+63,2_02,0.27,Bambirds,4,Falling
+64,2_03,0.035,Bambirds,5,Sliding
+65,2_04,0.0966666666666667,Bambirds,6,Bouncing
+66,3_01,0.005,Bambirds,7,Relative weight
+67,3_02,0.05,Bambirds,8,Relative height
+68,3_03,0.03,Bambirds,9,Relative width
+69,3_04,0.08375,Bambirds,10,Shape difference
+70,3_05,0.06500000000000003,Bambirds,11,Non-greedy actions
+71,3_06,0.23333333333333334,Bambirds,12,Structural analysis
+72,3_07,0.29,Bambirds,13,Clearing paths
+73,3_08,0.030000000000000006,Bambirds,14,Adequate timing
+74,3_09,0.1,Bambirds,15,Manoeuvring
+75,1_01,0.3,D-DDQN-Symbolic,1,Single force
+76,1_02,0.35,D-DDQN-Symbolic,2,Multiple forces
+77,2_01,0.18,D-DDQN-Symbolic,3,Rolling
+78,2_02,0.025,D-DDQN-Symbolic,4,Falling
+79,2_03,0.15,D-DDQN-Symbolic,5,Sliding
+80,2_04,0.233,D-DDQN-Symbolic,6,Bouncing
+81,3_01,0.0,D-DDQN-Symbolic,7,Relative weight
+82,3_02,0.075,D-DDQN-Symbolic,8,Relative height
+83,3_03,0.0,D-DDQN-Symbolic,9,Relative width
+84,3_04,0.275,D-DDQN-Symbolic,10,Shape difference
+85,3_05,0.0,D-DDQN-Symbolic,11,Non-greedy actions
+86,3_06,0.075,D-DDQN-Symbolic,12,Structural analysis
+87,3_07,0.075,D-DDQN-Symbolic,13,Clearing paths
+88,3_08,0.0,D-DDQN-Symbolic,14,Adequate timing
+89,3_09,0.075,D-DDQN-Symbolic,15,Manoeuvring
+90,1_01,0.225,D-DDQN-Image,1,Single force
+91,1_02,0.15,D-DDQN-Image,2,Multiple forces
+92,2_01,0.067,D-DDQN-Image,3,Rolling
+93,2_02,0.025,D-DDQN-Image,4,Falling
+94,2_03,0.05,D-DDQN-Image,5,Sliding
+95,2_04,0.0833,D-DDQN-Image,6,Bouncing
+96,3_01,0.0,D-DDQN-Image,7,Relative weight
+97,3_02,0.25,D-DDQN-Image,8,Relative height
+98,3_03,0.0,D-DDQN-Image,9,Relative width
+99,3_04,0.3,D-DDQN-Image,10,Shape difference
+100,3_05,0.0,D-DDQN-Image,11,Non-greedy actions
+101,3_06,0.1833,D-DDQN-Image,12,Structural analysis
+102,3_07,0.025,D-DDQN-Image,13,Clearing paths
+103,3_08,0.0,D-DDQN-Image,14,Adequate timing
+104,3_09,0.1375,D-DDQN-Image,15,Manoeuvring
+105,1_01,0.375,Relational-Symbolic,1,Single force
+106,1_02,0.275,Relational-Symbolic,2,Multiple forces
+107,2_01,0.3167,Relational-Symbolic,3,Rolling
+108,2_02,0.0,Relational-Symbolic,4,Falling
+109,2_03,0.1,Relational-Symbolic,5,Sliding
+110,2_04,0.15,Relational-Symbolic,6,Bouncing
+111,3_01,0.0,Relational-Symbolic,7,Relative weight
+112,3_02,0.35,Relational-Symbolic,8,Relative height
+113,3_03,0.0,Relational-Symbolic,9,Relative width
+114,3_04,0.225,Relational-Symbolic,10,Shape difference
+115,3_05,0.0,Relational-Symbolic,11,Non-greedy actions
+116,3_06,0.1,Relational-Symbolic,12,Structural analysis
+117,3_07,0.025,Relational-Symbolic,13,Clearing paths
+118,3_08,0.0,Relational-Symbolic,14,Adequate timing
+119,3_09,0.2,Relational-Symbolic,15,Manoeuvring
+120,1_01,0.05,Relational-Image,1,Single force
+121,1_02,0.15,Relational-Image,2,Multiple forces
+122,2_01,0.1667,Relational-Image,3,Rolling
+123,2_02,0.025,Relational-Image,4,Falling
+124,2_03,0.075,Relational-Image,5,Sliding
+125,2_04,0.1667,Relational-Image,6,Bouncing
+126,3_01,0.0,Relational-Image,7,Relative weight
+127,3_02,0.25,Relational-Image,8,Relative height
+128,3_03,0.05,Relational-Image,9,Relative width
+129,3_04,0.1,Relational-Image,10,Shape difference
+130,3_05,0.0,Relational-Image,11,Non-greedy actions
+131,3_06,0.1,Relational-Image,12,Structural analysis
+132,3_07,0.0,Relational-Image,13,Clearing paths
+133,3_08,0.0,Relational-Image,14,Adequate timing
+134,3_09,0.2125,Relational-Image,15,Manoeuvring
+135,1_01,0.08500000199999999,Random Agent,1,Single force
+136,1_02,0.134183675,Random Agent,2,Multiple forces
+137,2_01,0.08469387899999999,Random Agent,3,Rolling
+138,2_02,0.0193877555,Random Agent,4,Falling
+139,2_03,0.021428572000000003,Random Agent,5,Sliding
+140,2_04,0.017346939000000002,Random Agent,6,Bouncing
+141,3_01,0.0045918365,Random Agent,7,Relative weight
+142,3_02,0.066836736,Random Agent,8,Relative height
+143,3_03,0.0086734695,Random Agent,9,Relative width
+144,3_04,0.05714285849999999,Random Agent,10,Shape difference
+145,3_05,0.006999999999999999,Random Agent,11,Non-greedy actions
+146,3_06,0.050666667666666665,Random Agent,12,Structural analysis
+147,3_07,0.0365000005,Random Agent,13,Clearing paths
+148,3_08,0.014285714,Random Agent,14,Adequate timing
+149,3_09,0.033163266000000004,Random Agent,15,Manoeuvring
