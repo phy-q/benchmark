@@ -152,10 +152,13 @@ class SimpleTrajectoryPlanner:
         # find the launch angle
         self._theta = atan2(self._release.Y - self._ref.Y, self._ref.X - self._release.X)
 
+        # gravity
+        g = 0.48 * 9.81 / self.scale_factor
+
         # work out initial velocities and coefficients of the parabola
         self._ux = self._velocity * cos(self._theta)
         self._uy = self._velocity * sin(self._theta)
-        self._a = -0.5 / (self._ux * self._ux)
+        self._a = -0.5 / (self._ux * self._ux) * g
         self._b = self._uy / self._ux
 
         # work out points of the trajectory
